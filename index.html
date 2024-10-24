@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Job Portal - Dzobs Inspired</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="main-header">
+      <nav class="nav">
+        <img
+          src="img/logo.png"
+          alt="Telekom logo"
+          class="nav__logo"
+          id="logo"
+        />
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#">Home</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Browse Jobs</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Company</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Contact Us</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Meetups</a>
+          </li>
+          <!-- <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
+              >Post a Listing</a
+            >
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
+              >Log In/Sign Up</a
+            >
+          </li> -->
+        </ul>
+        <!-- Buttons (Post a Listing and Log In/Sign Up) -->
+        <div class="nav__buttons">
+          <a class="nav__link nav__link--btn" id="postAListing" href="#"
+            >Post a Listing</a
+          >
+          <a class="nav__link nav__link--btn" id="logInSignUp" href="#"
+            >Log In/Sign Up</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content with Search Form and Intro Text -->
+    <section class="intro-section">
+      <div class="container">
+        <h1 class="intro-title">Find Your Dream Job</h1>
+        <p class="intro-text">
+          Search from thousands of job listings in multiple sectors and
+          locations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Search Form Section -->
+    <section class="search-section">
+      <div class="container search-container">
+        <form class="search-form">
+          <div class="search-inputs">
+            <input type="text" placeholder="Location" />
+            <input type="text" placeholder="Field of Study" />
+            <input type="text" placeholder="Job title or Company" />
+            <input type="text" placeholder="Keyword" />
+          </div>
+          <button class="btn-search" type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Featured Jobs Section -->
+    <section class="featured-jobs">
+      <div class="container">
+        <h2>Featured Jobs</h2>
+        <div class="jobs-grid">
+          <div class="job-item">
+            <h3>Frontend Developer</h3>
+            <p>Company XYZ - Remote</p>
+            <!-- <button class="view-job-btn">View Job</button> -->
+            <button
+              class="view-job-btn"
+              onclick="location.href='jobDetailsPage.html';"
+            >
+              View Job
+            </button>
+          </div>
+          <div class="job-item">
+            <h3>Marketing Manager</h3>
+            <p>Company ABC - New York</p>
+            <button class="view-job-btn">View Job</button>
+          </div>
+          <div class="job-item">
+            <h3>Data Analyst</h3>
+            <p>Company 123 - London</p>
+            <button class="view-job-btn">View Job</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+      <div class="container">
+        <p>&copy; 2024 Job Portal. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
