@@ -92,6 +92,13 @@ body {
   color: var(--color-ternary);
 }
 
+/* Main body */
+.company-logo {
+  width: 50px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
 .job-details {
   padding: 40px 0;
   background-color: var(--color-secondary);
@@ -127,13 +134,19 @@ body {
 
 .job-info {
   display: flex;
+  flex-wrap: wrap; /* Allows wrapping to next line */
   justify-content: space-between;
-  margin: 20px 0;
 }
 
 .job-info div {
-  flex: 1;
-  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
 }
 
 .apply-button {
@@ -197,6 +210,34 @@ body {
 /* TEst za branch */
 
 /* Test za github desktop */
+
+/* Newsletter Subscription Section */
+.newsletter {
+  background-color: var(--color-secondary);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.newsletter h2 {
+  font-size: 1.8rem;
+  color: var(--color-primary-darker);
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 280px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
 
 /* Footer Section */
 .main-footer {
