@@ -54,23 +54,27 @@
           <h1 class="job-title">Operations Manager</h1>
           <p class="job-location">Adriatic Valley Digital Holding</p>
           <p class="job-location-single">
-            <svg class="icon"><!-- SVG for location icon here --></svg> Banja
-            Luka
+            <img src="img/marker.svg" alt="Marker Icon" class="icon" />
+            <!-- <svg class="icon"></svg>  -->
+            Banja Luka
           </p>
           <p class="job-tags"><a href="#">SCRUM</a> <a href="#">Sales</a></p>
         </div>
 
         <div class="job-info">
           <div class="job-type">
-            <svg class="icon"><!-- SVG for position icon here --></svg>
+            <img src="img/marker.svg" alt="Marker Icon" class="icon" />
+            <!-- <svg class="icon"></svg> -->
             <p><strong>Position:</strong> Senior</p>
           </div>
           <div class="job-engagement">
-            <svg class="icon"><!-- SVG for engagement icon here --></svg>
+            <img src="img/marker.svg" alt="Marker Icon" class="icon" />
+            <!-- <svg class="icon"></svg> -->
             <p><strong>Engagement:</strong> Full-time</p>
           </div>
           <div class="job-deadline">
-            <svg class="icon"><!-- SVG for deadline icon here --></svg>
+            <img src="img/marker.svg" alt="Marker Icon" class="icon" />
+            <!-- <svg class="icon"></svg> -->
             <p><strong>Application Deadline:</strong> 15 days left</p>
           </div>
         </div>
@@ -115,16 +119,34 @@
             companies implement sustainable tech solutions...
           </p>
         </div>
+
+        <!-- Add a second Apply Now Button at the end of main content area -->
+        <div class="apply-button">
+          <a href="#" class="apply-now-btn">Apply Now</a>
+        </div>
     </section>
 
-    <!-- Newsletter Subscription Section -->
-    <section class="newsletter">
-      <h2>Top IT jobs in your inbox</h2>
-      <form action="#">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </section>
+<!-- Newsletter Subscription Section -->
+<section class="newsletter">
+  <h2>Top IT jobs in your inbox</h2>
+  <p>Subscribe to the Job Portal newsletter, and we'll send you the latest jobs in your selected category once a week.</p>
+  <form action="#">
+    <div class="custom-select-wrapper">
+      <select name="field-of-interest" required>
+        <option value="" disabled selected>Choose a field...</option>
+        <option value="Backend Developer">Backend Developer</option>
+        <option value="Frontend Developer">Frontend Developer</option>
+        <option value="Full Stack Developer">Full Stack Developer</option>
+        <option value="QA Guru">QA Guru</option>
+        <option value="Designer">Designer</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Management">Management</option>
+      </select> 
+    </div>  
+    <input type="email" placeholder="Your email address..." required>
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
     
 
     <!-- Footer Section -->

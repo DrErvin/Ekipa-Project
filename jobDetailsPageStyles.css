@@ -182,7 +182,7 @@ body {
   color: #666;
 }
 
-.newsletter {
+/* .newsletter {
   margin-top: 40px;
   text-align: center;
 }
@@ -205,7 +205,7 @@ body {
 
 .newsletter button:hover {
   background-color: var(--color-primary-darker);
-}
+} */
 
 /* TEst za branch */
 
@@ -223,6 +223,17 @@ body {
   color: var(--color-primary-darker);
 }
 
+.newsletter p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
 .newsletter input {
   padding: 10px;
   width: 280px;
@@ -237,6 +248,46 @@ body {
   color: #fff;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: var(--color-primary-darker);
+}
+
+.custom-select-wrapper {
+  position: relative;
+  /* display: inline-block; */
+  width: 200px;
+  margin-right: 10px;
+}
+
+.newsletter select {
+  width: 100%;
+  padding: 10px;
+  padding-right: 30px; /* Space for the arrow */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none; /* Hides default arrow */
+  background-color: white;
+  /* font-size: 1rem; */
+  color: #666;
+}
+
+.custom-select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #666;
+  pointer-events: none; /* Prevents clicking on the arrow */
+}
+
+.newsletter select:focus {
+  border-color: var(--color-primary);
+  outline: none;
 }
 
 /* Footer Section */
