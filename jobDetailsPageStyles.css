@@ -1,3 +1,4 @@
+/* Global Color Variables */
 :root {
   --color-primary: #0a6cff;
   --color-secondary: hsl(194, 52%, 90%);
@@ -5,11 +6,12 @@
   --color-primary-darker: #004fc7;
 }
 
+/* Global Styling */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  /* color: #333; */
 }
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -17,32 +19,22 @@ body {
   padding: 20px 0;
 }
 
-/* Header Section */
+/* Header Section Styling */
 .nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px;
-  /* padding: 0 13rem; */
-  /* z-index: 100; */
-  /* position: relative; */
+  padding: 10px;
 }
 
 .nav__logo {
   height: 5.5rem;
-  /* margin-right: auto;  */
-  /* Push the logo to the left */
 }
 
 .nav__links {
   display: flex;
   list-style: none;
-  /* align-items: center; */
-  /*flex-grow: 1; Allow the links to take up remaining space */
-  /* Center links */
-  /* justify-content: center; */
-  /* gap: 2rem; */
-  /* margin-left: auto; */
+  gap: 10px; /* Adjust gap for spacing similar to Dzobs */
 }
 
 .nav__links li {
@@ -52,25 +44,14 @@ body {
 .nav__link {
   color: #666;
   text-decoration: none;
-  /* font-size: 1rem; */
-  /* font-weight: 500; */
-  /* display: block; */
-  /* white-space: nowrap; */
+  white-space: nowrap;
 }
-
-/* Buttons on the right */
-/* .nav__buttons {
-  display: flex;
-  gap: 1.5rem;
-  margin-left: auto;
-} */
 
 .nav__link--btn {
   padding: 0.5rem 1rem;
   border-radius: 5px;
   margin-right: 15px;
   border: 2px solid var(--color-primary);
-  /* white-space: nowrap; */
 }
 
 #postAListing {
@@ -92,7 +73,7 @@ body {
   color: var(--color-ternary);
 }
 
-/* Main body */
+/* Main Job Content Area Styling */
 .company-logo {
   width: 50px;
   margin-right: 10px;
@@ -112,17 +93,29 @@ body {
 }
 
 .job-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 .job-title {
   font-size: 2.5rem;
   color: var(--color-primary);
+  margin-bottom: 0;
 }
 
-.job-location {
+.job-location,
+.job-tags {
   font-size: 1.2rem;
   color: #666;
+}
+
+/* Adjust Banja Luka location font and position */
+.job-location-single {
+  font-size: 0.9rem; /* Smaller font size */
+  color: #666;
+  margin-top: -5px; /* Move closer to the company name */
 }
 
 .job-tags a {
@@ -132,13 +125,15 @@ body {
   font-weight: bold;
 }
 
+/* Job Information Section (Position, Engagement, Deadline, Location) */
 .job-info {
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping to next line */
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .job-info div {
+  flex: 1;
   display: flex;
   align-items: center;
 }
@@ -149,6 +144,7 @@ body {
   margin-right: 8px;
 }
 
+/* Apply Now Button Styling */
 .apply-button {
   text-align: center;
   margin-top: 20px;
@@ -167,6 +163,7 @@ body {
   background-color: var(--color-primary-darker);
 }
 
+/* Job Description, Profile, and Offer Sections */
 .job-section {
   margin: 30px 0;
 }
@@ -181,35 +178,6 @@ body {
   padding-left: 20px;
   color: #666;
 }
-
-/* .newsletter {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.newsletter input {
-  padding: 10px;
-  width: 300px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-right: 10px;
-}
-
-.newsletter button {
-  padding: 10px 20px;
-  background-color: var(--color-primary);
-  color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-.newsletter button:hover {
-  background-color: var(--color-primary-darker);
-} */
-
-/* TEst za branch */
-
-/* Test za github desktop */
 
 /* Newsletter Subscription Section */
 .newsletter {
@@ -255,9 +223,9 @@ body {
   background-color: var(--color-primary-darker);
 }
 
+/* Custom Select Dropdown Styling */
 .custom-select-wrapper {
   position: relative;
-  /* display: inline-block; */
   width: 200px;
   margin-right: 10px;
 }
@@ -265,12 +233,11 @@ body {
 .newsletter select {
   width: 100%;
   padding: 10px;
-  padding-right: 30px; /* Space for the arrow */
+  padding-right: 30px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  appearance: none; /* Hides default arrow */
+  appearance: none;
   background-color: white;
-  /* font-size: 1rem; */
   color: #666;
 }
 
@@ -280,9 +247,8 @@ body {
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-  font-size: 1rem;
   color: #666;
-  pointer-events: none; /* Prevents clicking on the arrow */
+  pointer-events: none;
 }
 
 .newsletter select:focus {
@@ -296,4 +262,62 @@ body {
   background-color: #333;
   color: white;
   text-align: center;
+}
+
+/* Responsive Styles */
+
+/* Tablet Layout (600px and above) */
+@media (min-width: 600px) {
+  /* Increase navigation logo size */
+  .nav__logo {
+    height: 4.5rem;
+  }
+
+  /* Align job info elements horizontally */
+  .job-info {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  /* Newsletter input fields arranged in a row */
+  .newsletter form {
+    flex-direction: row;
+    gap: 15px;
+  }
+}
+
+/* Desktop Layout (1024px and above) */
+/* Desktop layout adjustments for Job Info alignment */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+    padding: 40px;
+  }
+
+  /* Center align job container on the desktop view */
+  .job-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Align job info items side-by-side in the center */
+  .job-info {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .job-info div {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+  }
+
+  /* Center apply button */
+  .apply-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
 }
