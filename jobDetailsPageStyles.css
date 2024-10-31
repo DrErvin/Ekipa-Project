@@ -17,28 +17,35 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 0;
+  /* padding: 40px; */
 }
 
+/* Default: 1024px and above */
 /* Header Section Styling */
 .nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px;
+  padding: 10px 0;
+  max-width: 1380px; /* Controls how wide the header contents can stretch */
+  margin: 0 auto; /* Centers the header contents within the screen */
+  flex-wrap: wrap;
 }
 
 .nav__logo {
   height: 5.5rem;
+  /* margin-right: 20px; */
 }
 
 .nav__links {
   display: flex;
   list-style: none;
-  gap: 10px; /* Adjust gap for spacing similar to Dzobs */
+  gap: 15px;
 }
 
 .nav__links li {
   margin-right: 20px;
+  /* margin-right: 15px; */
 }
 
 .nav__link {
@@ -49,6 +56,7 @@ body {
 
 .nav__link--btn {
   padding: 0.5rem 1rem;
+  /* padding: 0.4rem 0.8rem; */
   border-radius: 5px;
   margin-right: 15px;
   border: 2px solid var(--color-primary);
@@ -90,6 +98,8 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .job-header {
@@ -130,6 +140,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  /* gap: 30px; */
 }
 
 .job-info div {
@@ -266,41 +277,38 @@ body {
 
 /* Responsive Styles */
 
-/* Tablet Layout (600px and above) */
-@media (min-width: 600px) {
-  /* Increase navigation logo size */
+/* @media (min-width: 600px) {
+
   .nav__logo {
     height: 4.5rem;
   }
 
-  /* Align job info elements horizontally */
+
   .job-info {
     flex-direction: row;
     justify-content: space-evenly;
   }
 
-  /* Newsletter input fields arranged in a row */
+
   .newsletter form {
     flex-direction: row;
     gap: 15px;
   }
-}
+} */
 
 /* Desktop Layout (1024px and above) */
 /* Desktop layout adjustments for Job Info alignment */
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .container {
     max-width: 1200px;
     padding: 40px;
   }
 
-  /* Center align job container on the desktop view */
   .job-container {
     max-width: 900px;
     margin: 0 auto;
   }
 
-  /* Align job info items side-by-side in the center */
   .job-info {
     display: flex;
     flex-wrap: nowrap;
@@ -310,14 +318,73 @@ body {
 
   .job-info div {
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
   }
 
-  /* Center apply button */
   .apply-button {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+  }
+} */
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+  .nav {
+    padding: 10px 20px;
+  }
+
+  .nav__logo {
+    height: 4.5rem;
+  }
+
+  .nav__links {
+    gap: 10px;
+  }
+
+  .nav__link--btn {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .nav__links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav__link--btn {
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .nav__logo {
+    height: 4.5rem;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 5px;
+  }
+
+  .nav__links {
+    gap: 5px;
+  }
+
+  .nav__link--btn {
+    font-size: 0.9rem;
+  }
+
+  .nav__logo {
+    height: 3.5rem;
   }
 }
