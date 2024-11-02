@@ -1,3 +1,4 @@
+/* Global Color Variables */
 :root {
   --color-primary: #0a6cff;
   --color-secondary: hsl(194, 52%, 90%);
@@ -8,6 +9,7 @@
   --color-secondary-opacity: #ffcd0331;
 }
 
+/* Global Styling */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -22,60 +24,46 @@ body {
   padding: 20px 0;
 }
 
+/* Default: 1024px and above */
 /* Header Section */
 .nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px;
-  /* padding: 0 13rem; */
-  /* z-index: 100; */
-  /* position: relative; */
+  padding: 10px 0;
+  max-width: 1380px; /* Controls how wide the header contents can stretch */
+  margin: 0 auto; /* Centers the header contents within the screen */
+  flex-wrap: wrap;
 }
 
 .nav__logo {
   height: 5.5rem;
-  /* margin-right: auto;  */
-  /* Push the logo to the left */
+  /* margin-right: 20px; */
 }
 
 .nav__links {
   display: flex;
   list-style: none;
-  /* align-items: center; */
-  /*flex-grow: 1; Allow the links to take up remaining space */
-  /* Center links */
-  /* justify-content: center; */
-  /* gap: 2rem; */
-  /* margin-left: auto; */
+  gap: 15px;
 }
 
 .nav__links li {
   margin-right: 20px;
+  /* margin-right: 15px; */
 }
 
 .nav__link {
   color: #666;
   text-decoration: none;
-  /* font-size: 1rem; */
-  /* font-weight: 500; */
-  /* display: block; */
-  /* white-space: nowrap; */
+  white-space: nowrap;
 }
-
-/* Buttons on the right */
-/* .nav__buttons {
-  display: flex;
-  gap: 1.5rem;
-  margin-left: auto;
-} */
 
 .nav__link--btn {
   padding: 0.5rem 1rem;
+  /* padding: 0.4rem 0.8rem; */
   border-radius: 5px;
   margin-right: 15px;
   border: 2px solid var(--color-primary);
-  /* white-space: nowrap; */
 }
 
 #postAListing {
@@ -97,7 +85,8 @@ body {
   color: var(--color-ternary);
 }
 
-/* Intro Section */
+/* Main content body */
+/* Intro Section  */
 .intro-section {
   text-align: center;
   padding: 40px 0;
@@ -197,8 +186,6 @@ body {
   cursor: pointer;
 }
 
-/* TEst za pokazivanje */
-
 /* Footer Section */
 .main-footer {
   padding: 20px;
@@ -206,7 +193,140 @@ body {
   color: white;
   text-align: center;
 }
-/* Pokusaj collaborationa */
-/* TEst za work-branch remote rep */
 
-/* Second TEst za collaboration */
+/* Responsive Styling */
+@media (max-width: 1024px) {
+  /* Navigation Header */
+  .nav {
+    padding: 10px 20px;
+  }
+
+  .nav__logo {
+    height: 4.5rem;
+  }
+
+  .nav__links {
+    gap: 10px;
+  }
+
+  .nav__link--btn {
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Main content body */
+  .intro-title {
+    font-size: 2rem;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+  }
+
+  .search-form {
+    max-width: 90%;
+  }
+
+  .jobs-grid {
+    gap: 15px;
+  }
+
+  .job-item {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navigation Header */
+  .nav {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .nav__links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav__link--btn {
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .nav__logo {
+    height: 4.5rem;
+    margin-bottom: 5px;
+  }
+
+  /* Main content body */
+  .intro-title {
+    font-size: 1.8rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .search-inputs {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-search {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .jobs-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Navigation Header */
+  .nav {
+    padding: 5px;
+  }
+
+  .nav__links {
+    gap: 5px;
+  }
+
+  .nav__link--btn {
+    font-size: 0.9rem;
+  }
+
+  .nav__logo {
+    height: 3.5rem;
+  }
+
+  /* Main content body */
+  .intro-title {
+    font-size: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 0.9rem;
+  }
+
+  .search-inputs input {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .btn-search {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+
+  .job-item {
+    padding: 10px;
+  }
+
+  .view-job-btn {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+}

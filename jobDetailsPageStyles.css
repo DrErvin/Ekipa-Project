@@ -12,6 +12,7 @@ body {
   line-height: 1.6;
 }
 
+/* Main Layout Container */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -147,6 +148,7 @@ body {
   flex: 1;
   display: flex;
   align-items: center;
+  min-width: 250px; /* Ensures each div is large enough on smaller screens */
 }
 
 .icon {
@@ -330,6 +332,7 @@ body {
 
 /* Responsive Styling */
 @media (max-width: 1024px) {
+  /* Navigation Header */
   .nav {
     padding: 10px 20px;
   }
@@ -345,9 +348,35 @@ body {
   .nav__link--btn {
     padding: 0.4rem 0.8rem;
   }
+
+  /* Main content body */
+  .job-container {
+    max-width: 80%;
+    padding: 15px;
+  }
+
+  .job-title {
+    font-size: 2rem;
+  }
+
+  .job-location,
+  .job-tags {
+    font-size: 1.1rem;
+  }
+
+  .job-info div {
+    min-width: 200px;
+    margin-bottom: 15px; /* Adds spacing for wrap alignment */
+  }
+
+  .apply-now-btn {
+    font-size: 1.1rem;
+    padding: 8px 16px;
+  }
 }
 
 @media (max-width: 768px) {
+  /* Navigation Header */
   .nav {
     flex-direction: column;
     padding: 15px;
@@ -369,9 +398,45 @@ body {
     height: 4.5rem;
     margin-bottom: 5px;
   }
+
+  /* Main content body */
+  .job-container {
+    padding: 10px;
+    max-width: 90%;
+  }
+
+  .job-title {
+    font-size: 1.8rem;
+  }
+
+  .job-location,
+  .job-tags {
+    font-size: 1rem;
+  }
+
+  .job-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .job-info div {
+    min-width: auto;
+    justify-content: center;
+  }
+
+  .apply-now-btn {
+    font-size: 1rem;
+    padding: 8px 14px;
+  }
+
+  .job-section h2 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
+  /* Navigation Header */
   .nav {
     padding: 5px;
   }
@@ -386,5 +451,43 @@ body {
 
   .nav__logo {
     height: 3.5rem;
+  }
+
+  /* Main content body */
+  .job-container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .company-logo {
+    width: 40px;
+  }
+
+  .job-title {
+    font-size: 1.5rem;
+  }
+
+  .job-location,
+  .job-tags {
+    font-size: 0.9rem;
+  }
+
+  .apply-now-btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .job-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .job-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .job-info div {
+    margin-bottom: 10px;
   }
 }
