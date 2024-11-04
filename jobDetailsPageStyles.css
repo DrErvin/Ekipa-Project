@@ -82,6 +82,10 @@ body {
   color: var(--color-ternary);
 }
 
+.nav__link:hover {
+  color: var(--color-primary-darker);
+}
+
 /* Main Job Content Area Styling */
 .company-logo {
   width: 50px;

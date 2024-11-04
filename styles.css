@@ -85,6 +85,10 @@ body {
   color: var(--color-ternary);
 }
 
+.nav__link:hover {
+  color: var(--color-primary-darker);
+}
+
 /* Main content body */
 /* Intro Section  */
 .intro-section {
@@ -186,6 +190,10 @@ body {
   cursor: pointer;
 }
 
+.view-job-btn:hover {
+  background-color: var(--color-primary-darker);
+}
+
 /* Newsletter Subscription Section */
 .newsletter {
   background-color: var(--color-secondary);
@@ -253,7 +261,7 @@ body {
 }
 
 .select-field::after {
-  content: "▼";
+  content: '▼';
   position: absolute;
   top: 50%;
   right: 10px;
