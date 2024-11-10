@@ -12,18 +12,22 @@ export const state = {
 };
 
 const createOpportunityObject = function (data) {
-  const opportunity = data.data[0];
+  const opportunity = data[0];
   return {
-    slug: opportunity.slug,
-    companyName: opportunity.company_name,
+    id: opportunity.id,
     title: opportunity.title,
-    description: opportunity.description,
-    remote: opportunity.remote,
-    sourceUrl: opportunity.url,
-    tags: opportunity.tags,
-    jobTypes: opportunity.job_types,
+    company: opportunity.company,
     location: opportunity.location,
-    createdAt: opportunity.created_at,
+    jobDescription: opportunity.jobDescription,
+    qualificationReq: opportunity.qualificationReq,
+    tags: opportunity.tags,
+    positionExp: opportunity.positionExp,
+    engagementJobType: opportunity.engagementJobType,
+    postingDate: opportunity.postingDate,
+    benefits: opportunity.benefits,
+    employeeInfo: opportunity.employeeInfo,
+    contactPerson: opportunity.contactPerson,
+    contactPersonEmail: opportunity.contactPersonEmail,
   };
 };
 
