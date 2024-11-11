@@ -35,6 +35,8 @@ body {
   padding: 20px 0;
 }
 
+/* ////////////////////////////////// */
+/* ////////////////////////////////// */
 /* Default: 1024px and above */
 /* Header Section */
 .nav {
@@ -102,6 +104,8 @@ body {
   color: var(--color-primary-darker);
 }
 
+/* ////////////////////////////////// */
+/* ////////////////////////////////// */
 /* Main content body */
 /* Intro Section  */
 .intro-section {
@@ -165,18 +169,18 @@ body {
 }
 
 /* Featured Jobs Section */
-.featured-jobs {
+.featured-opportunity {
   padding: 40px 0;
   background-color: #f9f9f9;
 }
 
-.jobs-grid {
+.opportunities-grid {
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 
-.job-item {
+.opportunity-item {
   flex: 1;
   background-color: white;
   padding: 20px;
@@ -194,7 +198,7 @@ body {
   color: #666;
 }
 
-.view-job-btn {
+.view-opportunity-btn {
   margin-top: 10px;
   padding: 10px 20px;
   background-color: var(--color-primary);
@@ -205,10 +209,12 @@ body {
   font-weight: bold;
 }
 
-.view-job-btn:hover {
+.view-opportunity-btn:hover {
   background-color: var(--color-primary-darker);
 }
 
+/* ////////////////////////////////// */
+/* ////////////////////////////////// */
 /* Newsletter Subscription Section */
 .newsletter {
   background-color: var(--color-secondary);
@@ -299,6 +305,120 @@ body {
   text-align: center;
 }
 
+/* ////////////////////////////////// */
+/* ////////////////////////////////// */
+/* Main Job Content Area Styling */
+.company-logo {
+  width: 50px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.job-details {
+  padding: 40px 0;
+  background-color: var(--color-secondary);
+}
+
+.job-container {
+  background-color: var(--color-ternary);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.job-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.job-title {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0;
+}
+
+.job-location,
+.job-tags {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Adjust Banja Luka location font and position */
+.job-location-single {
+  font-size: 0.9rem; /* Smaller font size */
+  color: #666;
+  margin-top: -5px; /* Move closer to the company name */
+}
+
+.job-tags a {
+  color: var(--color-primary);
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Job Information Section (Position, Engagement, Deadline, Location) */
+.job-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* gap: 30px; */
+}
+
+.job-info div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 250px; /* Ensures each div is large enough on smaller screens */
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+/* Apply Now Button Styling */
+.apply-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.apply-now-btn {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.apply-now-btn:hover {
+  background-color: var(--color-primary-darker);
+}
+
+/* Job Description, Profile, and Offer Sections */
+.job-section {
+  margin: 30px 0;
+}
+
+.job-section h2 {
+  color: var(--color-primary-darker);
+  margin-bottom: 10px;
+}
+
+.job-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #666;
+}
+
+/* ////////////////////////////////// */
+/* ////////////////////////////////// */
 /* Responsive Styling */
 @media (max-width: 1024px) {
   /* Navigation Header */
@@ -321,6 +441,7 @@ body {
     font-size: 0.9rem;
   }
 
+  /* ////////////////////////////////// */
   /* Main content body */
   .intro-title {
     font-size: 2rem;
@@ -342,6 +463,33 @@ body {
     padding: 15px;
   }
 
+  /* ////////////////////////////////// */
+  /* Main content body */
+  .job-container {
+    max-width: 80%;
+    padding: 15px;
+  }
+
+  .job-title {
+    font-size: 2rem;
+  }
+
+  .job-location,
+  .job-tags {
+    font-size: 1.1rem;
+  }
+
+  .job-info div {
+    min-width: 200px;
+    margin-bottom: 15px; /* Adds spacing for wrap alignment */
+  }
+
+  .apply-now-btn {
+    font-size: 1.1rem;
+    padding: 8px 16px;
+  }
+
+  /* ////////////////////////////////// */
   /* Newsletter Section */
   .newsletter h2 {
     font-size: 1.6rem;
@@ -356,6 +504,7 @@ body {
     margin-right: 5px;
   }
 
+  /* ////////////////////////////////// */
   /* Footer Section */
   .main-footer {
     padding: 15px;
@@ -387,6 +536,7 @@ body {
     margin-bottom: 5px;
   }
 
+  /* ////////////////////////////////// */
   /* Main content body */
   .intro-title {
     font-size: 1.8rem;
@@ -411,6 +561,43 @@ body {
     gap: 20px;
   }
 
+  /* ////////////////////////////////// */
+  /* Main content body */
+  .job-container {
+    padding: 10px;
+    max-width: 90%;
+  }
+
+  .job-title {
+    font-size: 1.8rem;
+  }
+
+  .job-location,
+  .job-tags {
+    font-size: 1rem;
+  }
+
+  .job-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .job-info div {
+    min-width: auto;
+    justify-content: center;
+  }
+
+  .apply-now-btn {
+    font-size: 1rem;
+    padding: 8px 14px;
+  }
+
+  .job-section h2 {
+    font-size: 1.5rem;
+  }
+
+  /* ////////////////////////////////// */
   /* Newsletter Section */
   .newsletter h2 {
     font-size: 1.4rem;
@@ -439,6 +626,7 @@ body {
     padding: 8px;
   }
 
+  /* ////////////////////////////////// */
   /* Footer Section */
   .main-footer {
     padding: 10px;
@@ -465,6 +653,7 @@ body {
     height: 1.9rem;
   }
 
+  /* ////////////////////////////////// */
   /* Main content body */
   .intro-title {
     font-size: 1.5rem;
@@ -493,6 +682,46 @@ body {
     padding: 8px 14px;
   }
 
+  /* ////////////////////////////////// */
+  /* Main content body */
+  .job-container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .company-logo {
+    width: 40px;
+  }
+
+  .job-title {
+    font-size: 1.5rem;
+  }
+
+  .job-location,
+  .job-tags {
+    font-size: 0.9rem;
+  }
+
+  .apply-now-btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .job-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .job-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .job-info div {
+    margin-bottom: 10px;
+  }
+
+  /* ////////////////////////////////// */
   /* Newsletter Section */
   .newsletter h2 {
     font-size: 1.2rem;
@@ -514,6 +743,7 @@ body {
     padding: 6px 12px;
   }
 
+  /* ////////////////////////////////// */
   /* Footer Section */
   .main-footer {
     padding: 10px;

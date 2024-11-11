@@ -97,6 +97,7 @@ body {
   color: var(--color-primary-darker);
 }
 
+/* ////////////////////////////////// */
 /* Main Job Content Area Styling */
 .company-logo {
   width: 50px;
@@ -207,6 +208,7 @@ body {
   color: #666;
 }
 
+/* ////////////////////////////////// */
 /* Newsletter Subscription Section */
 .newsletter {
   background-color: var(--color-secondary);
@@ -373,6 +375,7 @@ body {
     font-size: 0.9rem;
   }
 
+  /* ////////////////////////////////// */
   /* Main content body */
   .job-container {
     max-width: 80%;
@@ -398,6 +401,7 @@ body {
     padding: 8px 16px;
   }
 
+  /* ////////////////////////////////// */
   /* Newsletter Section */
   .newsletter h2 {
     font-size: 1.6rem;
@@ -412,6 +416,7 @@ body {
     margin-right: 5px;
   }
 
+  /* ////////////////////////////////// */
   /* Footer Section */
   .main-footer {
     padding: 15px;
@@ -443,6 +448,7 @@ body {
     margin-bottom: 5px;
   }
 
+  /* ////////////////////////////////// */
   /* Main content body */
   .job-container {
     padding: 10px;
@@ -478,6 +484,7 @@ body {
     font-size: 1.5rem;
   }
 
+  /* ////////////////////////////////// */
   /* Newsletter Section */
   .newsletter h2 {
     font-size: 1.4rem;
@@ -506,6 +513,7 @@ body {
     padding: 8px;
   }
 
+  /* ////////////////////////////////// */
   /* Footer Section */
   .main-footer {
     padding: 10px;
@@ -532,6 +540,7 @@ body {
     height: 1.9rem;
   }
 
+  /* ////////////////////////////////// */
   /* Main content body */
   .job-container {
     padding: 10px;
@@ -570,6 +579,7 @@ body {
     margin-bottom: 10px;
   }
 
+  /* ////////////////////////////////// */
   /* Newsletter Section */
   .newsletter h2 {
     font-size: 1.2rem;
@@ -591,6 +601,7 @@ body {
     padding: 6px 12px;
   }
 
+  /* ////////////////////////////////// */
   /* Footer Section */
   .main-footer {
     padding: 10px;
