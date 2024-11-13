@@ -168,6 +168,99 @@ body {
   background-color: var(--color-primary-darker);
 }
 
+/* Cards List */
+/* Opportunities List Section */
+.opportunities-list {
+  padding: 40px 0;
+}
+
+.opportunity-card {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-logo {
+  width: 50px;
+}
+
+.card-info {
+  flex: 1;
+}
+
+.card-type {
+  font-size: 1rem;
+  color: #888;
+  margin: 0;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  margin: 5px 0 0;
+}
+
+.card-details {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+  align-items: center;
+}
+
+.card-detail-item {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.last-item {
+  width: 100px;
+}
+
+.card-detail-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.card-detail-label img {
+  width: 16px;
+  height: 16px;
+}
+
+.card-detail-item p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+  margin: 0;
+  padding-top: 2px;
+  word-wrap: break-word;
+}
+
+.card-btn {
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.card-btn:hover {
+  background-color: var(--color-primary-darker);
+}
+
 /* Featured Jobs Section */
 .featured-opportunity {
   padding: 40px 0;
@@ -307,7 +400,7 @@ body {
 
 /* ////////////////////////////////// */
 /* ////////////////////////////////// */
-/* Main Job Content Area Styling */
+/* Content for Opportunity Details Page */
 .company-logo {
   width: 50px;
   margin-right: 10px;
@@ -373,10 +466,10 @@ body {
   flex: 1;
   display: flex;
   align-items: center;
-  min-width: 250px; /* Ensures each div is large enough on smaller screens */
+  min-width: 250px;
 }
 
-.icon {
+.icon-opport-header {
   width: 20px;
   height: 20px;
   margin-right: 8px;
@@ -463,8 +556,38 @@ body {
     padding: 15px;
   }
 
+  /* Cards List */
+  /* Opportunities List Section */
+  .opportunities-list {
+    padding: 20px 0;
+  }
+
+  .opportunity-card {
+    padding: 15px;
+    gap: 15px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-details {
+    gap: 1rem;
+  }
+
+  .card-detail-item {
+    width: auto;
+  }
+
+  .card-btn {
+    padding: 8px 16px;
+  }
+
   /* ////////////////////////////////// */
-  /* Main content body */
+  /* Content for Opportunity Details Page */
   .job-container {
     max-width: 80%;
     padding: 15px;
@@ -561,8 +684,50 @@ body {
     gap: 20px;
   }
 
+  /* Cards List */
+  /* Opportunities List Section */
+  .opportunity-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .card-info {
+    flex: 1;
+    text-align: left;
+  }
+
+  .card-type,
+  .card-title {
+    text-align: left;
+  }
+
+  .card-details {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-top: 10px;
+  }
+
+  .card-detail-item {
+    width: auto;
+    text-align: center;
+  }
+
+  .card-btn {
+    flex-basis: 100%;
+    margin-top: 15px;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
   /* ////////////////////////////////// */
-  /* Main content body */
+  /* Content for Opportunity Details Page */
   .job-container {
     padding: 10px;
     max-width: 90%;
@@ -682,8 +847,59 @@ body {
     padding: 8px 14px;
   }
 
+  /* Cards List */
+  /* Opportunities List Section */
+  .opportunity-card {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .card-logo {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+
+  .card-info {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .card-detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    text-align: center;
+  }
+
+  .card-btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
   /* ////////////////////////////////// */
-  /* Main content body */
+  /* Content for Opportunity Details Page */
   .job-container {
     padding: 10px;
     max-width: 100%;
