@@ -15,14 +15,15 @@ const createOpportunityObject = function (data) {
   const opportunity = data[0];
   return {
     id: opportunity.id,
+    type: opportunity.type,
     title: opportunity.title,
     company: opportunity.company,
     location: opportunity.location,
     jobDescription: opportunity.jobDescription,
-    qualificationReq: opportunity.qualificationReq,
+    yourProfile: opportunity.qualificationReq,
     tags: opportunity.tags,
     positionExp: opportunity.positionExp,
-    engagementJobType: opportunity.engagementJobType,
+    engagementType: opportunity.engagementJobType,
     postingDate: opportunity.postingDate,
     benefits: opportunity.benefits,
     employeeInfo: opportunity.employeeInfo,
