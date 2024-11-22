@@ -19,7 +19,7 @@ const createOpportunityObject = function (data) {
     title: opportunity.title,
     company: opportunity.company,
     location: opportunity.location,
-    jobDescription: opportunity.jobDescription,
+    opportunityDescription: opportunity.description,
     yourProfile: opportunity.qualificationReq,
     tags: opportunity.tags,
     positionExp: opportunity.positionExp,
