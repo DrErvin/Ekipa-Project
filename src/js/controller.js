@@ -1,5 +1,6 @@
 import { RES_PER_PAGE } from './config.js';
 import * as model from './model.js';
+import SearchView from './views/SearchView.js';
 
 console.log(RES_PER_PAGE);
 
@@ -28,4 +29,25 @@ const controlOpportunities = async function () {
   }
 };
 
-controlOpportunities();
+// A handler function to process the search query
+const controlSearchResults = async function () {
+  try {
+    // 1) Get search query
+    const query = SearchView.getQuery();
+    if (!query) return;
+    console.log(query);
+
+    // 2) Load search results
+    await model.loadSearchResults(query);
+
+    // Proceed to fetch and process results based on `query`
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const init = function () {
+  SearchView.addHandlerSearch(controlSearchResults);
+  controlOpportunities();
+};
+init();

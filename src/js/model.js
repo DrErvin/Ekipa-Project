@@ -54,3 +54,43 @@ export const loadOpportunity = async function (id) {
     throw err;
   }
 };
+
+export const loadSearchResults = async function (query) {
+  try {
+    // Save the query in the global state
+    state.search.query = query;
+
+    // Fetch the JSON data from the local file
+    const data = await AJAX(`${API_URL}`);
+    // If was a real API, we would use something like this
+    //  const data = await AJAX(`${API_URL}?${queryString}`);
+    console.log('Check for data in loadSearchResults', data);
+
+    // Filter the data based on the query parameters
+    const { location, fieldOfStudy, title, keyword } = query;
+    state.search.results = data.filter((opportunity) => {
+      return (
+        (!location ||
+          opportunity.location
+            .toLowerCase()
+            .includes(location.toLowerCase())) &&
+        (!fieldOfStudy ||
+          opportunity.tags.some((tag) =>
+            tag.toLowerCase().includes(fieldOfStudy.toLowerCase())
+          )) &&
+        (!title ||
+          opportunity.title.toLowerCase().includes(title.toLowerCase())) &&
+        (!keyword ||
+          opportunity.description.toLowerCase().includes(keyword.toLowerCase()))
+      );
+    });
+
+    // Reset the current page to the first page
+    state.search.page = 1;
+
+    console.log(state.search.results); // Debug: Check processed search results
+  } catch (err) {
+    console.error(`${err} 💥`);
+    throw err;
+  }
+};
