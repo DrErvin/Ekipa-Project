@@ -16,6 +16,7 @@ const createOpportunityObject = function (data) {
   return {
     id: opportunity.id,
     type: opportunity.type,
+    fieldOfStudy: opportunity.fieldOfStudy,
     title: opportunity.title,
     company: opportunity.company,
     location: opportunity.location,
@@ -68,21 +69,26 @@ export const loadSearchResults = async function (query) {
     console.log('Check for data in loadSearchResults', data);
 
     // Filter the data based on the query parameters
-    const { location, fieldOfStudy, title, keyword } = query;
+    const { location, titleOrKeyword, fieldOfStudy, type } = query;
     state.search.results = data.filter((opportunity) => {
       return (
         (!location ||
           opportunity.location
             .toLowerCase()
             .includes(location.toLowerCase())) &&
-        (!fieldOfStudy ||
+        (!titleOrKeyword ||
+          opportunity.title
+            .toLowerCase()
+            .includes(titleOrKeyword.toLowerCase()) ||
           opportunity.tags.some((tag) =>
-            tag.toLowerCase().includes(fieldOfStudy.toLowerCase())
+            tag.toLowerCase().includes(titleOrKeyword.toLowerCase())
           )) &&
-        (!title ||
-          opportunity.title.toLowerCase().includes(title.toLowerCase())) &&
-        (!keyword ||
-          opportunity.description.toLowerCase().includes(keyword.toLowerCase()))
+        (!fieldOfStudy ||
+          (opportunity.fieldOfStudy &&
+            opportunity.fieldOfStudy
+              .toLowerCase()
+              .includes(fieldOfStudy.toLowerCase()))) &&
+        (!type || opportunity.type.toLowerCase().includes(type.toLowerCase()))
       );
     });
 

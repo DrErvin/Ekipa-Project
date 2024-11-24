@@ -135,7 +135,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
 }
@@ -143,14 +143,66 @@ body {
 .search-inputs {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
-.search-inputs input {
+/* .search-inputs input {
   flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 0.9rem;
+} */
+
+.search-inputs input,
+.search-inputs select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+/* Adjust individual field widths */
+.search-inputs input:first-child {
+  /* Location */
+  flex: 0 0 15%; /* Fixed width relative to container */
+  min-width: 120px;
+}
+
+.search-inputs input:nth-child(2) {
+  /* Title or Keyword */
+  flex: 1; /* Grow to take remaining space */
+}
+
+.search-inputs select:nth-child(3) {
+  /* Field of Study */
+  flex: 0 0 25%; /* Larger width for more content */
+}
+
+.search-inputs select:last-child {
+  /* Type */
+  flex: 0 0 20%; /* Smaller width since it's a short dropdown */
+}
+
+.dropdown {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #666;
+  appearance: none; /* Remove default styles for consistency */
+}
+
+/* .dropdown:focus {
+  outline: none;
+  border-color: var(--color-primary);
+} */
+
+.dropdown option {
+  padding: 5px;
+  /* font-size: 1rem; */
 }
 
 .btn-search {
@@ -386,7 +438,7 @@ body {
 }
 
 .newsletter select:focus {
-  border-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
   outline: none;
 }
 
@@ -548,6 +600,13 @@ body {
 
   .search-form {
     max-width: 90%;
+  }
+  .search-inputs {
+    flex-wrap: wrap;
+  }
+  .search-inputs select:last-child {
+    /* Type */
+    flex: 1;
   }
 
   .opportunities-grid {

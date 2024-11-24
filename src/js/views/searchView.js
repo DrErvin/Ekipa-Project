@@ -8,11 +8,13 @@ class SearchView {
 
   getQuery() {
     const inputs = this.#parentEl.querySelectorAll('input[type="text"]');
+    const dropdowns = this.#parentEl.querySelectorAll('select');
+
     const query = {
       location: inputs[0].value.trim(),
-      fieldOfStudy: inputs[1].value.trim(),
-      title: inputs[2].value.trim(),
-      keyword: inputs[3].value.trim(),
+      titleOrKeyword: inputs[1].value.trim(),
+      fieldOfStudy: dropdowns[0].value.trim(),
+      type: dropdowns[1].value.trim(),
     };
 
     this.#clearInput();
