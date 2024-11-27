@@ -98,7 +98,7 @@
     </section>
 
     <!-- Featured opportunities Section -->
-    <section class="featured-opportunity">
+    <section class="featured-opportunity" style="display: none;">
       <div class="container">
         <h2>Featured Opportunity</h2>
         <div class="opportunities-grid">
@@ -125,40 +125,44 @@
     </section>
 
     <!-- Opportunities List Section -->
-    <section class="opportunities-list" style="display: none;">
-      <div class=" container">
+    <section class="opportunities-list">
+      <div class="container">
         <h2>Available Opportunities</h2>
-        <div class="opportunity-card">
-          <img src="src/img/logo2.jpg" alt="Telekom logo" class="card-logo" />
-          <div class="card-info">
-            <h3 class="card-type">Job Offer</h3>
-            <h2 class="card-title">C# Developer</h2>
+
+        <div class="container-opp-list">
+          <div class="opportunity-card">
+            <img src="src/img/logo2.jpg" alt="Telekom logo" class="card-logo" />
+            <div class="card-info">
+              <h3 class="card-type">Job Offer</h3>
+              <h2 class="card-title">Frontend Developer</h2>
+            </div>
+            <div class="card-details">
+              <div class="card-detail-item">
+                <div class="card-detail-label">
+                  <img src="src/img/marker.svg" alt="Location Icon" class="card-icon" />
+                  <span>Location</span>
+                </div>
+                <p>Sarajevo, Mostar</p>
+              </div>
+              <div class="card-detail-item">
+                <div class="card-detail-label">
+                  <img src="src/img/marker.svg" alt="Experience Icon" class="card-icon" />
+                  <span>Experience</span>
+                </div>
+                <p>Senior</p>
+              </div>
+              <div class="card-detail-item last-item">
+                <div class="card-detail-label">
+                  <img src="src/img/marker.svg" alt="Deadline Icon" class="card-icon" />
+                  <span>Deadline</span>
+                </div>
+                <p>28 days left</p>
+              </div>
+            </div>
+            <button class="card-btn">View Opportunity</button>
           </div>
-          <div class="card-details">
-            <div class="card-detail-item">
-              <div class="card-detail-label">
-                <img src="src/img/marker.svg" alt="Location Icon" class="card-icon" />
-                <span>Location</span>
-              </div>
-              <p>Sarajevo, Mostar</p>
-            </div>
-            <div class="card-detail-item">
-              <div class="card-detail-label">
-                <img src="src/img/marker.svg" alt="Experience Icon" class="card-icon" />
-                <span>Experience</span>
-              </div>
-              <p>Senior</p>
-            </div>
-            <div class="card-detail-item last-item">
-              <div class="card-detail-label">
-                <img src="src/img/marker.svg" alt="Deadline Icon" class="card-icon" />
-                <span>Deadline</span>
-              </div>
-              <p>28 days left</p>
-            </div>
-          </div>
-          <button class="card-btn">View Opportunity</button>
         </div>
+
       </div>
     </section>
 

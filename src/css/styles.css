@@ -235,7 +235,12 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  margin-bottom: 1rem;
+}
+
+.opportunity-card:last-child {
+  margin-bottom: 0;
 }
 
 .card-logo {
@@ -244,6 +249,7 @@ body {
 
 .card-info {
   flex: 1;
+  min-width: 0; /* Prevent overflowing */
 }
 
 .card-type {
@@ -257,6 +263,9 @@ body {
   font-weight: bold;
   color: #333;
   margin: 5px 0 0;
+  white-space: wrap;
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
 }
 
 .card-details {
@@ -264,6 +273,8 @@ body {
   gap: 0.5rem;
   margin-left: auto;
   align-items: center;
+  flex-shrink: 0; /* Prevent shrinking */
+  justify-content: flex-end;
 }
 
 .card-detail-item {

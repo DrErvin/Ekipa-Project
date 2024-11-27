@@ -26,7 +26,7 @@ const createOpportunityObject = function (data) {
     experience: opportunity.experienceRequired,
     engagementType: opportunity.engagementType,
     workArrangement: opportunity.workArrangement,
-    postingDate: opportunity.postingDate,
+    deadline: new Date(opportunity.endingDate).toISOString(),
     benefits: opportunity.benefits,
     employeeInfo: opportunity.employeeInfo,
     contactPerson: opportunity.contactPerson,
@@ -70,7 +70,7 @@ export const loadSearchResults = async function (query) {
 
     // Filter the data based on the query parameters
     const { location, titleOrKeyword, fieldOfStudy, type } = query;
-    state.search.results = data.filter((opportunity) => {
+    const matchedResults = data.filter((opportunity) => {
       return (
         (!location ||
           opportunity.location
@@ -92,6 +92,16 @@ export const loadSearchResults = async function (query) {
       );
     });
 
+    // Map the filtered results to include only the required fields
+    state.search.results = matchedResults.map((opportunity) => ({
+      id: opportunity.id,
+      type: opportunity.type,
+      location: opportunity.location,
+      title: opportunity.title,
+      experience: opportunity.experienceRequired,
+      deadline: opportunity.endingDate,
+    }));
+
     // Reset the current page to the first page
     state.search.page = 1;
 
@@ -100,4 +110,13 @@ export const loadSearchResults = async function (query) {
     console.error(`${err} 💥`);
     throw err;
   }
+};
+
+export const getSearchResultsPage = function (page = state.search.page) {
+  state.search.page = page;
+
+  const start = (page - 1) * state.search.resultsPerPage; // 0
+  const end = page * state.search.resultsPerPage; // 9
+
+  return state.search.results.slice(start, end);
 };

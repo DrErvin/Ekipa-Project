@@ -1,6 +1,7 @@
 import { RES_PER_PAGE } from './config.js';
 import * as model from './model.js';
 import SearchView from './views/SearchView.js';
+import resultsView from './views/resultsView.js';
 
 console.log(RES_PER_PAGE);
 
@@ -40,7 +41,8 @@ const controlSearchResults = async function () {
     // 2) Load search results
     await model.loadSearchResults(query);
 
-    // Proceed to fetch and process results based on `query`
+    // 3) Render results
+    resultsView.render(model.getSearchResultsPage());
   } catch (err) {
     console.error(err);
   }
