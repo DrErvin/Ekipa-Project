@@ -16,21 +16,27 @@ class PreviewView extends View {
           <div class="card-details">
             <div class="card-detail-item">
               <div class="card-detail-label">
-                <img src="src/img/marker.svg" alt="Location Icon" class="card-icon" />
+                <svg class="card-icon">
+                    <use href="src/img/icons.svg#icon-location-marker"></use>
+                  </svg>
                 <span>Location</span>
               </div>
               <p>${this._data.location || 'Not specified'}</p>
             </div>
             <div class="card-detail-item">
               <div class="card-detail-label">
-                <img src="src/img/marker.svg" alt="Experience Icon" class="card-icon" />
+                <svg class="card-icon">
+                    <use href="src/img/icons.svg#icon-experience"></use>
+                  </svg>
                 <span>Experience</span>
               </div>
               <p>${this._data.experience || 'N/A'}</p>
             </div>
             <div class="card-detail-item last-item">
               <div class="card-detail-label">
-                <img src="src/img/marker.svg" alt="Deadline Icon" class="card-icon" />
+                 <svg class="card-icon">
+                    <use href="src/img/icons.svg#icon-deadline"></use>
+                  </svg>
                 <span>Deadline</span>
               </div>
               <p>${this._data.deadline || 'No deadline'}</p>

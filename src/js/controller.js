@@ -35,7 +35,10 @@ const controlSearchResults = async function () {
   try {
     // 1) Get search query
     const query = SearchView.getQuery();
-    if (!query) return;
+
+    // Guard clause: Do nothing if all query fields are empty
+    const isEmpty = Object.values(query).every((value) => value === '');
+    if (isEmpty || !query) return;
     console.log(query);
 
     // 2) Load search results

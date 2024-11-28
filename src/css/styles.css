@@ -300,6 +300,12 @@ body {
   height: 16px;
 }
 
+.card-icon {
+  width: 19px;
+  height: 19px;
+  fill: var(--color-primary);
+}
+
 .card-detail-item p {
   font-size: 1rem;
   font-weight: bold;
@@ -535,8 +541,8 @@ body {
 }
 
 .icon-opport-header {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   margin-right: 8px;
 }
 
