@@ -27,3 +27,13 @@ export const AJAX = async function (url, uploadData = undefined) {
     throw err;
   }
 };
+
+export const calculateRemainingDays = (endingDate) => {
+  const currentDate = new Date();
+  const targetDate = new Date(endingDate);
+  const remainingDays = Math.ceil(
+    (targetDate - currentDate) / (1000 * 60 * 60 * 24)
+  );
+
+  return remainingDays >= 0 ? `${remainingDays} Days Left` : `Deadline Passed`;
+};

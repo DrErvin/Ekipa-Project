@@ -19,7 +19,6 @@
   --color-secondary-opacity: #ffcd0331;
 }
 
-/* radil ovo*/
 /* Global Styling */
 body {
   font-family: Arial, sans-serif;
@@ -218,6 +217,33 @@ body {
 
 .btn-search:hover {
   background-color: var(--color-primary-darker);
+}
+
+.spinner {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.spinner svg {
+  height: 4rem;
+  width: 4rem;
+  fill: var(--color-primary);
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error svg {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--color-primary);
 }
 
 /* Cards List */

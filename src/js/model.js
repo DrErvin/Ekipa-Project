@@ -1,5 +1,6 @@
 import { RES_PER_PAGE, API_URL } from './config.js';
 import { AJAX } from './helpers.js';
+import { calculateRemainingDays } from './helpers.js';
 
 export const state = {
   opportunity: {},
@@ -26,7 +27,7 @@ const createOpportunityObject = function (data) {
     experience: opportunity.experienceRequired,
     engagementType: opportunity.engagementType,
     workArrangement: opportunity.workArrangement,
-    deadline: new Date(opportunity.endingDate).toISOString(),
+    deadline: calculateRemainingDays(opportunity.endingDate),
     benefits: opportunity.benefits,
     employeeInfo: opportunity.employeeInfo,
     contactPerson: opportunity.contactPerson,
@@ -99,7 +100,7 @@ export const loadSearchResults = async function (query) {
       location: opportunity.location,
       title: opportunity.title,
       experience: opportunity.experienceRequired,
-      deadline: opportunity.endingDate,
+      deadline: calculateRemainingDays(opportunity.endingDate),
     }));
 
     // Reset the current page to the first page

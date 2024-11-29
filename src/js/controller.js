@@ -33,12 +33,15 @@ const controlOpportunities = async function () {
 // A handler function to process the search query
 const controlSearchResults = async function () {
   try {
+    resultsView.renderSpinner();
+
     // 1) Get search query
     const query = SearchView.getQuery();
 
     // Guard clause: Do nothing if all query fields are empty
-    const isEmpty = Object.values(query).every((value) => value === '');
-    if (isEmpty || !query) return;
+    // const isEmpty = Object.values(query).every((value) => value === '');
+    // if (isEmpty || !query) return;
+    if (!query) return;
     console.log(query);
 
     // 2) Load search results

@@ -1,3 +1,6 @@
+// import icons from 'url:../../img/icons.svg';
+// WIth module bundler like Parcel we would use svg import like so
+
 export default class View {
   _data;
 
@@ -30,12 +33,24 @@ export default class View {
     this._parentElement.innerHTML = '';
   }
 
+  renderSpinner() {
+    const markup = `
+          <div class="spinner">
+            <svg>
+              <use href="src/img/icons.svg#icon-loading"></use>
+            </svg>
+          </div>
+          `;
+    this._clearHtml();
+    this._parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+
   renderError(message = this._errorMessage) {
     const markup = `
         <div class="error">
-            <div>
-              <img src="src/img/marker.svg" alt="Marker Icon" class="icon-opport-header" />
-            </div>
+            <svg>
+              <use href="src/img/icons.svg#icon-warning"></use>
+            </svg>
             <p>${message}</p>
         </div>
     `;
