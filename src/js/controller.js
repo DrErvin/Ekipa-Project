@@ -2,6 +2,7 @@ import { RES_PER_PAGE } from './config.js';
 import * as model from './model.js';
 import SearchView from './views/SearchView.js';
 import resultsView from './views/resultsView.js';
+import paginationView from './views/paginationView.js';
 
 console.log(RES_PER_PAGE);
 
@@ -49,13 +50,25 @@ const controlSearchResults = async function () {
 
     // 3) Render results
     resultsView.render(model.getSearchResultsPage());
+
+    // 4) Render initial pagination buttons
+    paginationView.render(model.state.search);
   } catch (err) {
     console.error(err);
   }
 };
 
+const controlPagination = function (goToPage) {
+  // 1) Render new results
+  resultsView.render(model.getSearchResultsPage(goToPage));
+
+  // 2) Render new pagination buttons
+  paginationView.render(model.state.search);
+};
+
 const init = function () {
   SearchView.addHandlerSearch(controlSearchResults);
+  paginationView.addHandlerClick(controlPagination);
   controlOpportunities();
 };
 init();
