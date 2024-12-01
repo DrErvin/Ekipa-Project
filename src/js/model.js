@@ -5,7 +5,7 @@ import { calculateRemainingDays } from './helpers.js';
 export const state = {
   opportunity: {},
   search: {
-    query: '',
+    query: {},
     results: [],
     page: 1,
     resultsPerPage: RES_PER_PAGE,

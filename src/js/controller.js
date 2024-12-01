@@ -3,6 +3,7 @@ import * as model from './model.js';
 import SearchView from './views/SearchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
+import IntroView from './views/IntroView.js';
 
 console.log(RES_PER_PAGE);
 
@@ -45,13 +46,16 @@ const controlSearchResults = async function () {
     if (!query) return;
     console.log(query);
 
-    // 2) Load search results
+    // 2) Render intro-section with query data
+    IntroView.render(query);
+
+    // 3) Load search results
     await model.loadSearchResults(query);
 
-    // 3) Render results
+    // 4) Render results
     resultsView.render(model.getSearchResultsPage());
 
-    // 4) Render initial pagination buttons
+    // 5) Render initial pagination buttons
     paginationView.render(model.state.search);
   } catch (err) {
     console.error(err);
