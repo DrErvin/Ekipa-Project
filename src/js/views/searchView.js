@@ -1,9 +1,12 @@
 class SearchView {
   #parentEl = document.querySelector('.search-form');
 
+  #featuredSection = document.querySelector('.featured-opportunity');
+  #listSection = document.querySelector('.opportunities-list');
+
   /**
-   * Get the user input from the form fields
-   * @returns {Object} An object containing all input field values
+   * Get search query values from the form
+   * @returns {Object} The search query object
    */
 
   getQuery() {
@@ -18,12 +21,25 @@ class SearchView {
     };
 
     this.#clearInput();
+    this.#toggleSections();
     return query;
   }
 
   #clearInput() {
+    // Clear text inputs
     const inputs = this.#parentEl.querySelectorAll('input[type="text"]');
     inputs.forEach((input) => (input.value = ''));
+
+    // Clear dropdown inputs
+    const selects = this.#parentEl.querySelectorAll('select');
+    selects.forEach((select) => (select.value = ''));
+  }
+
+  #toggleSections() {
+    if (!this.#featuredSection.classList.contains('hidden')) {
+      this.#featuredSection.classList.add('hidden');
+    }
+    this.#listSection.classList.remove('hidden');
   }
 
   addHandlerSearch(handler) {

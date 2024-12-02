@@ -35,6 +35,12 @@ body {
   padding: 20px 0;
 }
 
+.hidden {
+  display: none;
+  /* visibility: hidden;
+  opacity: 0; */
+}
+
 /* ////////////////////////////////// */
 /* ////////////////////////////////// */
 /* Default: 1024px and above */

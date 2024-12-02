@@ -30,7 +30,11 @@ class PreviewView extends View {
                   </svg>
                 <span>Experience</span>
               </div>
-              <p>${this._data.experience || 'N/A'}</p>
+              <p>${
+                Array.isArray(this._data.experience)
+                  ? this._data.experience.join(', ')
+                  : this._data.experience || 'N/A'
+              }</p>
             </div>
             <div class="card-detail-item last-item">
               <div class="card-detail-label">
