@@ -582,13 +582,15 @@ body {
 .opportunity-tags {
   font-size: 1.2rem;
   color: #666;
+  margin-bottom: 0;
 }
 
 /* Adjust Banja Luka location font and position */
 .opportunity-location-single {
-  font-size: 0.9rem; /* Smaller font size */
+  font-size: 0.9rem;
   color: #666;
-  margin-top: -5px; /* Move closer to the company name */
+  display: flex;
+  align-items: center;
 }
 
 .opportunity-tags a {
@@ -619,6 +621,8 @@ body {
   width: 22px;
   height: 22px;
   margin-right: 8px;
+  display: block;
+  flex-shrink: 0;
 }
 
 /* Apply Now Button Styling */
@@ -646,7 +650,7 @@ body {
 }
 
 .opportunity-section h2 {
-  color: var(--color-primary-darker);
+  color: var(--color-primary);
   margin-bottom: 10px;
 }
 
@@ -654,6 +658,68 @@ body {
   list-style-type: disc;
   padding-left: 20px;
   color: #666;
+}
+
+/* Contact Person Section */
+.contact-person-section {
+  /* text-align: center; */
+  /* margin-top: 30px; */
+  /* padding: 20px; */
+  /* background-color: var(--color-secondary); */
+  border-radius: 5px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.contact-person-section h2 {
+  /* font-size: 1.8rem; */
+  color: var(--color-primary);
+  /* color: #666; */
+  margin-bottom: 0;
+}
+
+.contact-person-details {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 10px;
+}
+
+.contact-person-image {
+  width: 120px;
+  /* height: 80px; */
+  border-radius: 5px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.contact-person-info {
+  text-align: left;
+  font-size: 1rem;
+  color: #666;
+}
+
+.contact-person-info p {
+  margin: 5px 0;
+}
+
+.contact-person-info a {
+  color: var(--color-primary);
+  text-decoration: none;
+  border: none;
+  padding: 3px;
+}
+
+.contact-person-info a:visited {
+  text-decoration: underline;
+}
+
+.contact-person-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-person-info a:focus:active {
+  outline: none;
+  border: 2px dotted var(--color-primary-darker);
+  padding: 3px;
 }
 
 /* ////////////////////////////////// */
@@ -1077,6 +1143,10 @@ body {
   }
 
   .opportunity-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .contact-person-section h2 {
     font-size: 1.2rem;
   }
 
