@@ -46,7 +46,9 @@ class PreviewView extends View {
               <p>${this._data.deadline || 'No deadline'}</p>
             </div>
           </div>
-          <button class="card-btn">View Opportunity</button>
+          <a href="#${this._data.id}" class="card-link">
+              <button class="card-btn">View Opportunity</button>
+          </a>
         </div>
     `;
   }

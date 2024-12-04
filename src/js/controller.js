@@ -4,14 +4,15 @@ import SearchView from './views/SearchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import IntroView from './views/IntroView.js';
+import OpportunitiesView from './views/OpportunitiesView.js';
 
 console.log(RES_PER_PAGE);
 
 const controlOpportunities = async function () {
   try {
-    // const id = window.location.hash.slice(1);
+    const id = window.location.hash.slice(1);
 
-    // if (!id) return;
+    if (!id) return;
     // recipeView.renderSpinner();
 
     // 0) Update results view to mark selected search result
@@ -22,7 +23,7 @@ const controlOpportunities = async function () {
 
     // 2) Loading recipe
     // await model.loadRecipe(id);
-    await model.loadOpportunity();
+    await model.loadOpportunity(id);
 
     // 3) Rendering recipe
     // recipeView.render(model.state.recipe);
@@ -73,6 +74,7 @@ const controlPagination = function (goToPage) {
 const init = function () {
   SearchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
-  controlOpportunities();
+  OpportunitiesView.addHandlerRender(controlOpportunities);
+  // controlOpportunities();
 };
 init();

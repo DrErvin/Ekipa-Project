@@ -40,7 +40,14 @@ export const loadOpportunity = async function (id) {
     // const data = await AJAX(`${API_URL}${id}?key=${KEY}`);
     const data = await AJAX(`${API_URL}`);
     console.log(data);
-    state.opportunity = createOpportunityObject(data);
+    console.log(typeof id);
+
+    // Find the opportunity with the specified ID
+    const result = data.find((opportunity) => opportunity.id === +id);
+    console.log(result);
+    if (!result) throw new Error(`Opportunity with ID ${id} not found`);
+
+    state.opportunity = createOpportunityObject([result]);
 
     // Check if recipe that you click on has the same ID as the recipes
     // stored in the bookmark array in state

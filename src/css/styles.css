@@ -321,6 +321,10 @@ body {
   word-wrap: break-word;
 }
 
+.card-link {
+  text-decoration: none;
+}
+
 .card-btn {
   padding: 10px 20px;
   background-color: var(--color-primary);
