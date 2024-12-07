@@ -582,7 +582,7 @@ body {
   margin-bottom: 0;
 }
 
-.opportunity-location,
+.opportunity-type,
 .opportunity-tags {
   font-size: 1.2rem;
   color: #666;
@@ -590,17 +590,24 @@ body {
 }
 
 /* Adjust Banja Luka location font and position */
-.opportunity-location-single {
+.opportunity-location {
   font-size: 0.9rem;
   color: #666;
   display: flex;
   align-items: center;
 }
 
+/* Not needed only for preview */
 .opportunity-tags a {
   color: var(--color-primary);
   margin-right: 10px;
   text-decoration: none;
+  font-weight: bold;
+}
+
+.opportunity-tags span {
+  color: var(--color-primary);
+  margin-right: 10px;
   font-weight: bold;
 }
 
@@ -820,7 +827,7 @@ body {
     font-size: 2rem;
   }
 
-  .opportunity-location,
+  .opportunity-type,
   .opportunity-tags {
     font-size: 1.1rem;
   }
@@ -960,7 +967,7 @@ body {
     font-size: 1.8rem;
   }
 
-  .opportunity-location,
+  .opportunity-type,
   .opportunity-tags {
     font-size: 1rem;
   }
@@ -1136,7 +1143,7 @@ body {
     font-size: 1.5rem;
   }
 
-  .opportunity-location,
+  .opportunity-type,
   .opportunity-tags {
     font-size: 0.9rem;
   }

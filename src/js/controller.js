@@ -25,11 +25,13 @@ const controlOpportunities = async function () {
     // await model.loadRecipe(id);
     await model.loadOpportunity(id);
 
+    OpportunitiesView.toggleInit();
+
     // 3) Rendering recipe
-    // recipeView.render(model.state.recipe);
+    OpportunitiesView.render(model.state.opportunity);
   } catch (err) {
     console.error(err);
-    // recipeView.renderError();
+    OpportunitiesView.renderError();
   }
 };
 
