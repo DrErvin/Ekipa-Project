@@ -558,9 +558,12 @@ body {
 .details-opportunity {
   padding: 40px 0;
   background-color: var(--color-secondary);
+  min-height: 60vh;
+  text-align: center;
 }
 
 .details-container {
+  text-align: left;
   background-color: var(--color-ternary);
   padding: 20px;
   border-radius: 10px;

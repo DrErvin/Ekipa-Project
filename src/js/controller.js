@@ -13,7 +13,12 @@ const controlOpportunities = async function () {
     const id = window.location.hash.slice(1);
 
     if (!id) return;
-    // recipeView.renderSpinner();
+
+    // 0) Toggle sections visibility
+    OpportunitiesView.toggleInit();
+
+    // 1) Start rendering the loading spinner
+    OpportunitiesView.renderSpinner();
 
     // 0) Update results view to mark selected search result
     // resultsView.update(model.getSearchResultsPage());
@@ -24,8 +29,6 @@ const controlOpportunities = async function () {
     // 2) Loading recipe
     // await model.loadRecipe(id);
     await model.loadOpportunity(id);
-
-    OpportunitiesView.toggleInit();
 
     // 3) Rendering recipe
     OpportunitiesView.render(model.state.opportunity);
