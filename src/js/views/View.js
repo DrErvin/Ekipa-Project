@@ -23,14 +23,19 @@ export default class View {
     if (!render) return markup;
 
     this._clearHtml();
+
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
-    console.log(this._data);
-    console.log('Ovo gore je this._data a ovo dole je samo argument data');
-    console.log(data);
   }
 
   _clearHtml() {
     this._parentElement.innerHTML = '';
+  }
+
+  scrollUp() {
+    window.scrollTo({
+      top: 0,
+      // behavior: 'smooth',
+    });
   }
 
   renderSpinner() {

@@ -14,15 +14,15 @@ class opportunitiesView extends View {
     );
   }
 
-  toggleInit() {
-    this.#toggleSections();
-  }
-
   #toggleSections() {
     if (!this.#mainContent.classList.contains('hidden')) {
       this.#mainContent.classList.add('hidden');
     }
     this.#detailsContent.classList.remove('hidden');
+  }
+
+  toggleInit() {
+    this.#toggleSections();
   }
 
   _generateMarkup() {
@@ -90,13 +90,19 @@ class opportunitiesView extends View {
         <!-- Qualifications & Requirements Section -->
         <div class="opportunity-section">
           <h2>Your Profile (Qualifications & Requirements)</h2>
-          <p>${this._data.yourProfile || 'Not specified.'}</p>
+          <ul>
+            ${this._data.yourProfile.map((req) => `<li>${req}</li>`).join('')}
+          </ul>
         </div>
 
         <!-- Benefits Section -->
         <div class="opportunity-section">
           <h2>What We Offer</h2>
-          <p>${this._data.benefits || 'Not specified.'}</p>
+          <ul>
+            ${this._data.benefits
+              .map((benefit) => `<li>${benefit}</li>`)
+              .join('')}
+          </ul>
         </div>
 
         <!-- Employee(Telekom DE) Info Section -->

@@ -14,11 +14,13 @@ const controlOpportunities = async function () {
 
     if (!id) return;
 
-    // 0) Toggle sections visibility
-    OpportunitiesView.toggleInit();
-
-    // 1) Start rendering the loading spinner
+    // 0) Scroll the viewport to the top and
+    //    start rendering the loading spinner
+    OpportunitiesView.scrollUp();
     OpportunitiesView.renderSpinner();
+
+    // 1) Toggle sections visibility
+    OpportunitiesView.toggleInit();
 
     // 0) Update results view to mark selected search result
     // resultsView.update(model.getSearchResultsPage());
@@ -41,6 +43,9 @@ const controlOpportunities = async function () {
 // A handler function to process the search query
 const controlSearchResults = async function () {
   try {
+    // 0) Scroll the viewport to the top and
+    //    start rendering the loading spinner
+    resultsView.scrollUp();
     resultsView.renderSpinner();
 
     // 1) Get search query
@@ -69,6 +74,7 @@ const controlSearchResults = async function () {
 };
 
 const controlPagination = function (goToPage) {
+  resultsView.scrollUp();
   // 1) Render new results
   resultsView.render(model.getSearchResultsPage(goToPage));
 
