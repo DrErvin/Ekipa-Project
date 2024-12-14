@@ -5,6 +5,7 @@ import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import IntroView from './views/IntroView.js';
 import OpportunitiesView from './views/OpportunitiesView.js';
+import publishOpportunityView from './views/publishOpportunityView.js';
 
 console.log(RES_PER_PAGE);
 
@@ -82,10 +83,43 @@ const controlPagination = function (goToPage) {
   paginationView.render(model.state.search);
 };
 
+const controlAddRecipe = async function (newRecipe) {
+  try {
+    // Show loading spinner
+    addRecipeView.renderSpinner();
+
+    // Upload the new recipe data
+    // await model.uploadRecipe(newRecipe);
+    // console.log(model.state.recipe);
+
+    // Render recipe
+    // recipeView.render(model.state.recipe);
+
+    // Success message
+    // addRecipeView.renderMessage();
+
+    // Render bookmark view
+    // bookmarksView.render(model.state.bookmarks);
+
+    // Change ID in URL
+    // window.history.pushState(null, '', `#${model.state.recipe.id}`);
+    // window.history.back() // Automatically goes back to last page
+
+    // Close form window
+    setTimeout(function () {
+      addRecipeView.toggleWindow();
+    }, MODAL_CLOSE_SEC * 1000);
+  } catch (err) {
+    console.error('💥', err);
+    addRecipeView.renderError(err.message);
+  }
+};
+
 const init = function () {
   SearchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   OpportunitiesView.addHandlerRender(controlOpportunities);
+  publishOpportunityView.addHandlerUpload(controlAddRecipe);
   // controlOpportunities();
 };
 init();

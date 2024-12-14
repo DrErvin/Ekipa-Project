@@ -47,8 +47,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 900px; /* Adjusted for wider layout */
+  width: 80%; /* Increased width */
+  max-width: 1100px; /* Adjusted for a wider layout */
   background-color: var(--color-ternary);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -118,8 +118,8 @@ body {
 }
 
 .publish-opportunity-window input,
-select,
-textarea {
+.publish-opportunity-window select,
+.publish-opportunity-window textarea {
   width: 100%;
   padding: 10px;
   font-size: 0.9rem;
@@ -136,8 +136,8 @@ textarea {
 }
 
 .publish-opportunity-window input:focus,
-select:focus,
-textarea:focus {
+.publish-opportunity-window select:focus,
+.publish-opportunity-window textarea:focus {
   outline: none;
   border-color: var(--color-primary);
 }
@@ -214,6 +214,18 @@ textarea:focus {
   font-weight: 500;
 }
 
+.nav__button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-right: 15px;
+  border: 2px solid var(--color-primary);
+  font-weight: 500;
+  background-color: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
 #publishOpportunities {
   background-color: var(--color-primary);
   color: var(--color-ternary);
@@ -235,6 +247,15 @@ textarea:focus {
 
 .nav__link:hover {
   color: var(--color-primary-darker);
+}
+
+.nav__button:hover {
+  color: var(--color-primary-darker);
+}
+
+.nav__button:focus {
+  outline: none;
+  box-shadow: 0 0 3px var(--color-primary-darker);
 }
 
 /* ////////////////////////////////// */
@@ -870,6 +891,11 @@ textarea:focus {
 /* ////////////////////////////////// */
 /* Responsive Styling */
 @media (max-width: 1024px) {
+  /* Publish Opportunity Form  */
+  .publish-opportunity-window {
+    width: 90%;
+  }
+
   /* Navigation Header */
   .nav {
     padding: 10px 10px;
@@ -884,9 +910,19 @@ textarea:focus {
     font-size: 0.9rem;
   }
 
-  .nav__link--btn {
-    /* padding: 0.4rem 0.8rem; */
+  .nav__buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  /* .nav__link--btn {
+    padding: 0.4rem 0.8rem; ovo je bilo commented
     padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  } */
+
+  .nav__button {
+    padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
   }
 
@@ -999,10 +1035,55 @@ textarea:focus {
 }
 
 @media (max-width: 768px) {
+  /* Publish Opportunity Form  */
+  .publish-opportunity-window {
+    width: 95%; /* Make the form fit almost the full width */
+    max-width: none; /* Remove the max-width restriction */
+    padding: 15px; /* Adjust padding for smaller screens */
+    box-sizing: border-box; /* Ensure padding fits within width */
+  }
+
+  .upload {
+    flex-direction: column; /* Stack columns vertically */
+    gap: 15px; /* Slightly reduce gap between elements */
+  }
+
+  .upload__column {
+    width: 100%; /* Ensure each column spans the full width */
+    min-width: auto; /* Remove minimum width to prevent overflow */
+  }
+
+  .btn--close-modal {
+    top: 5px; /* Adjust the close button position */
+    right: 10px;
+    font-size: 1.2rem; /* Slightly smaller for smaller screens */
+  }
+
+  .publish-opportunity-window input,
+  .publish-opportunity-window select,
+  .publish-opportunity-window textarea {
+    font-size: 0.85rem; /* Slightly reduce font size for inputs */
+    padding: 8px; /* Adjust padding for smaller inputs */
+  }
+
+  .upload__heading {
+    font-size: 1.3rem; /* Adjust the heading size */
+    margin-bottom: 15px; /* Reduce margin */
+    text-align: center;
+  }
+
+  .upload__btn {
+    width: 100%; /* Make the button span the full width */
+    padding: 10px; /* Adjust button padding */
+    /* font-size: 1rem; */
+  }
+
   /* Navigation Header */
   .nav {
     flex-direction: column;
     padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav__links {
@@ -1020,6 +1101,20 @@ textarea:focus {
   .nav__logo {
     height: 2.3rem;
     margin-bottom: 5px;
+  }
+
+  .nav__buttons {
+    flex-direction: column;
+    gap: 5px;
+    max-width: 200px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav__button {
+    width: 80%; /* Buttons take up most of the width on smaller screens */
+    padding: 0.5rem;
+    font-size: 0.85rem;
   }
 
   /* ////////////////////////////////// */
@@ -1164,6 +1259,64 @@ textarea:focus {
 }
 
 @media (max-width: 480px) {
+  /* Publish Opportunity Form  */
+  /* Adjust the form container */
+  .publish-opportunity-window {
+    width: 95%;
+    padding: 10px;
+    max-height: 85vh;
+    overflow-y: auto; /* Ensure it scrolls properly if content overflows */
+  }
+
+  .btn--close-modal {
+    top: 5px;
+    right: 10px;
+    font-size: 1.2rem;
+  }
+
+  /* Stack columns vertically */
+  .upload {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .upload__column {
+    width: 100%;
+    flex: none; /* Prevents unwanted resizing */
+    gap: 10px; /* Reduce the gap between inputs */
+  }
+
+  .upload__heading {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* Adjust inputs and textareas */
+  .publish-opportunity-window input,
+  .publish-opportunity-window select,
+  .publish-opportunity-window textarea {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .publish-opportunity-window textarea {
+    min-height: 80px; /* Adjust the height for smaller screens */
+  }
+
+  .upload__btn {
+    width: 100%;
+    padding: 10px;
+    /* font-size: 1rem; */
+    margin-top: 15px;
+  }
+
+  /* Simplify icon size in buttons */
+  .upload__btn svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
   /* Navigation Header */
   .nav {
     padding: 5px;
@@ -1179,6 +1332,17 @@ textarea:focus {
 
   .nav__logo {
     height: 1.9rem;
+  }
+
+  .nav__buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav__button {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+    width: 80%;
   }
 
   /* ////////////////////////////////// */
