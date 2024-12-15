@@ -42,6 +42,16 @@ body {
 }
 
 /* Publish Opportunity Form Styling */
+.publish-opportunity-window.hiddenOpp {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay.hiddenOpp {
+  visibility: hidden;
+  opacity: 0;
+}
+
 .publish-opportunity-window {
   position: fixed;
   top: 50%;
@@ -57,6 +67,7 @@ body {
   overflow-y: auto;
   max-height: 90vh; /* Ensures it fits smaller screens */
   box-sizing: border-box; /* Ensures padding is included in width/height */
+  transition: all 0.5s;
 }
 
 .btn--close-modal {
@@ -128,6 +139,7 @@ body {
   color: #666;
   margin-bottom: 10px; /* Space between inputs */
   box-sizing: border-box; /* Ensure padding fits within the width */
+  transition: all 0.2s;
 }
 
 .publish-opportunity-window textarea {

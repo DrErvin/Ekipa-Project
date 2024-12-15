@@ -16,8 +16,8 @@ class PublishOpportunityView extends View {
   }
 
   toggleWindow() {
-    this._overlay.classList.toggle('hidden');
-    this._window.classList.toggle('hidden');
+    this._overlay.classList.toggle('hiddenOpp');
+    this._window.classList.toggle('hiddenOpp');
   }
 
   _addHandlerShowWindow() {
@@ -27,6 +27,7 @@ class PublishOpportunityView extends View {
   _addHandlerHideWindow() {
     this._btnClose.addEventListener('click', this.toggleWindow.bind(this));
     this._overlay.addEventListener('click', this.toggleWindow.bind(this));
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') this.toggleWindow();
     });
@@ -37,6 +38,7 @@ class PublishOpportunityView extends View {
       e.preventDefault();
       const dataArr = [...new FormData(this)];
       const data = Object.fromEntries(dataArr);
+      console.log(data);
       handler(data);
     });
   }

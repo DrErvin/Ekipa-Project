@@ -16,22 +16,26 @@ const createOpportunityObject = function (data) {
   const opportunity = data[0];
   return {
     id: opportunity.id,
-    type: opportunity.type,
-    fieldOfStudy: opportunity.fieldOfStudy,
-    title: opportunity.title,
-    company: opportunity.company,
-    location: opportunity.location,
-    opportunityDescription: opportunity.description,
-    yourProfile: opportunity.qualificationsAndRequirements,
-    tags: opportunity.tags,
-    experience: opportunity.experienceRequired,
-    engagementType: opportunity.engagementType,
-    workArrangement: opportunity.workArrangement,
-    deadline: calculateRemainingDays(opportunity.endingDate),
-    benefits: opportunity.benefits,
-    employeeInfo: opportunity.employeeInfo,
-    contactPerson: opportunity.contactPerson,
-    contactPersonEmail: opportunity.contactPersonEmail,
+    type: opportunity.type || 'Unknown Type',
+    fieldOfStudy: opportunity.fieldOfStudy || 'General',
+    title: opportunity.title || 'Untitled Opportunity',
+    company: opportunity.company || 'Deutsche Telekom', // Default value
+    location: opportunity.location || 'Not specified',
+    opportunityDescription:
+      opportunity.description || 'Description not available',
+    yourProfile: opportunity.qualificationsAndRequirements || [],
+    tags: opportunity.tags || [],
+    experience: opportunity.experienceRequired || [],
+    engagementType: opportunity.engagementType || 'Unknown Engagement Type',
+    workArrangement: opportunity.workArrangement || 'Unknown Work Arrangement',
+    deadline:
+      calculateRemainingDays(opportunity.endingDate) || 'No deadline provided',
+    benefits: opportunity.benefits || [],
+    employeeInfo:
+      opportunity.employeeInfo ||
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', // Default value
+    contactPerson: opportunity.contactPerson || 'Not specified',
+    contactPersonEmail: opportunity.contactPersonEmail || 'Not provided',
   };
 };
 
@@ -127,4 +131,65 @@ export const getSearchResultsPage = function (page = state.search.page) {
   const end = page * state.search.resultsPerPage; // 9
 
   return state.search.results.slice(start, end);
+};
+
+export const uploadOpportunity = async function (newOpportunity) {
+  try {
+    // Process tags field into an array
+    const tags = newOpportunity.tags
+      ? newOpportunity.tags.split(',').map((tag) => tag.trim())
+      : [];
+
+    // Process experienceRequired field into an array
+    const experienceRequired = newOpportunity.experienceRequired
+      ? newOpportunity.experienceRequired.split(',').map((exp) => exp.trim())
+      : [];
+
+    // Process qualificationsAndRequirements into an array
+    const qualificationsAndRequirements =
+      newOpportunity.qualificationsAndRequirements
+        ? newOpportunity.qualificationsAndRequirements
+            .split(',')
+            .map((req) => req.trim())
+        : [];
+
+    // Process benefits into an array
+    const benefits = newOpportunity.benefits
+      ? newOpportunity.benefits.split(',').map((ben) => ben.trim())
+      : [];
+
+    // Create opportunity object
+    const opportunity = createOpportunityObject([
+      {
+        id: new Date().toISOString(), // Generate a unique ID for now
+        type: newOpportunity.type,
+        fieldOfStudy: newOpportunity.fieldOfStudy,
+        title: newOpportunity.title,
+        location: newOpportunity.location,
+        opportunityDescription: newOpportunity.description,
+        qualificationsAndRequirements, // Processed field
+        benefits, // Processed field
+        tags,
+        engagementType: newOpportunity.engagementType,
+        workArrangement: newOpportunity.workArrangement,
+        contactPerson: newOpportunity.contactPerson,
+        contactPersonEmail: newOpportunity.contactPersonEmail,
+        experienceRequired, // Processed field
+        deadline: newOpportunity.endingDate,
+      },
+    ]);
+
+    // If real API was used we could now upload an get a response
+    // const data = await AJAX(`${API_URL}?key=${KEY}`, opportunity);
+    // state.opportunity = createOpportunityObject(data);
+
+    // Add to existing data
+    state.opportunity = opportunity;
+    // state.opportunity = createOpportunityObject(data);
+
+    // Simulate saving to data.json (adjust for real server if necessary)
+    console.log('Opportunity Uploaded:', opportunity);
+  } catch (err) {
+    throw err;
+  }
 };

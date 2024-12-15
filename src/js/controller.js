@@ -1,4 +1,5 @@
 import { RES_PER_PAGE } from './config.js';
+import { MODAL_CLOSE_SEC } from './config.js';
 import * as model from './model.js';
 import SearchView from './views/SearchView.js';
 import resultsView from './views/resultsView.js';
@@ -83,20 +84,20 @@ const controlPagination = function (goToPage) {
   paginationView.render(model.state.search);
 };
 
-const controlAddRecipe = async function (newRecipe) {
+const controlAddRecipe = async function (newOpportunity) {
   try {
     // Show loading spinner
-    addRecipeView.renderSpinner();
+    publishOpportunityView.renderSpinner();
 
-    // Upload the new recipe data
-    // await model.uploadRecipe(newRecipe);
-    // console.log(model.state.recipe);
+    // Upload the new opportunity data
+    await model.uploadOpportunity(newOpportunity);
+    console.log(model.state.opportunity);
 
     // Render recipe
     // recipeView.render(model.state.recipe);
 
     // Success message
-    // addRecipeView.renderMessage();
+    // publishOpportunityView.renderMessage();
 
     // Render bookmark view
     // bookmarksView.render(model.state.bookmarks);
@@ -107,11 +108,11 @@ const controlAddRecipe = async function (newRecipe) {
 
     // Close form window
     setTimeout(function () {
-      addRecipeView.toggleWindow();
+      publishOpportunityView.toggleWindow();
     }, MODAL_CLOSE_SEC * 1000);
   } catch (err) {
     console.error('💥', err);
-    addRecipeView.renderError(err.message);
+    publishOpportunityView.renderError(err.message);
   }
 };
 
