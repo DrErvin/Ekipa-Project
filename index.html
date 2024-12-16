@@ -125,12 +125,12 @@
     </section>
 
     <!-- Opportunities List Section -->
-    <section class="opportunities-list">
+    <section class="opportunities-list hidden">
       <div class="container">
         <h2>Available Opportunities</h2>
 
         <div class="container-opp-list">
-          <div class="opportunity-card">
+          <!-- <div class="opportunity-card">
             <img src="src/img/logo2.jpg" alt="Telekom logo" class="card-logo" />
             <div class="card-info">
               <h3 class="card-type">Job Offer</h3>
@@ -168,7 +168,7 @@
             <a href="#" class="card-link">
               <button class="card-btn">View Opportunity</button>
             </a>
-          </div>
+          </div> -->
         </div>
 
         <div class="pagination">
@@ -192,10 +192,10 @@
   </div>
 
   <!-- Opportunity Details Section (initially hidden) style="display: none;" -->
-  <div id="opportunity-details-section" class="hidden">
+  <div id="opportunity-details-section" class="">
     <!-- Main Details Section -->
-    <section class="details-opportunity">
-      <div class="container details-container">
+    <section class="details-opportunity hidden">
+      <!--<div class="container details-container">
         <div class="details-header">
           <img src="src/img/logo.jpg" alt="Company Logo" class="company-logo" />
           <h1 class="opportunity-title">Operations Manager</h1>
@@ -230,18 +230,15 @@
           </div>
         </div>
 
-        <!-- Apply Now Button -->
         <div class="apply-button">
           <a href="#" class="apply-now-btn">Apply Now</a>
         </div>
 
-        <!-- Opportunity Description Section -->
         <div class="opportunity-section">
           <h2>Your Tasks (Job Description)</h2>
           <p>As an Operations Manager, you will oversee daily operations...</p>
         </div>
 
-        <!-- Qualifications & Requirements Section -->
         <div class="opportunity-section">
           <h2>Your Profile (Qualifications & Requirements)</h2>
           <ul>
@@ -251,7 +248,6 @@
           </ul>
         </div>
 
-        <!-- Benefits Section -->
         <div class="opportunity-section">
           <h2>What We Offer</h2>
           <ul>
@@ -261,7 +257,6 @@
           </ul>
         </div>
 
-        <!-- Employee(Telekom DE) Info Section -->
         <div class="opportunity-section">
           <h2>About the Company</h2>
           <p>
@@ -271,7 +266,6 @@
           </p>
         </div>
 
-        <!-- Contact Person Section -->
         <div class="contact-person-section">
           <h2>Contact Person</h2>
           <div class="contact-person-details">
@@ -283,10 +277,9 @@
           </div>
         </div>
 
-        <!-- Add a second Apply Now Button at the end of main content area -->
         <div class="apply-button">
           <a href="#" class="apply-now-btn">Apply Now</a>
-        </div>
+        </div>-->
     </section>
 
   </div>
@@ -358,9 +351,10 @@
         <label>Job Description</label>
         <textarea required name="description" placeholder="Add a brief description..."></textarea>
         <label>Qualifications & Requirements</label>
-        <textarea required name="qualificationsAndRequirements" placeholder="Comma-separated qualifications"></textarea>
+        <textarea required name="qualificationsAndRequirements"
+          placeholder="Semicolon-separated qualifications"></textarea>
         <label>Benefits</label>
-        <textarea required name="benefits" placeholder="Comma-separated benefits"></textarea>
+        <textarea required name="benefits" placeholder="Semicolon-separated benefits"></textarea>
       </div>
 
       <div class="upload__column">

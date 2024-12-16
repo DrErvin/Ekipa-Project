@@ -1,4 +1,4 @@
-import { RES_PER_PAGE, API_URL } from './config.js';
+import { RES_PER_PAGE, API_URL, EMPLOYEE_INFO } from './config.js';
 import { AJAX } from './helpers.js';
 import { calculateRemainingDays } from './helpers.js';
 
@@ -31,9 +31,7 @@ const createOpportunityObject = function (data) {
     deadline:
       calculateRemainingDays(opportunity.endingDate) || 'No deadline provided',
     benefits: opportunity.benefits || [],
-    employeeInfo:
-      opportunity.employeeInfo ||
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', // Default value
+    employeeInfo: opportunity.employeeInfo || EMPLOYEE_INFO, // Default value
     contactPerson: opportunity.contactPerson || 'Not specified',
     contactPersonEmail: opportunity.contactPersonEmail || 'Not provided',
   };
@@ -149,42 +147,40 @@ export const uploadOpportunity = async function (newOpportunity) {
     const qualificationsAndRequirements =
       newOpportunity.qualificationsAndRequirements
         ? newOpportunity.qualificationsAndRequirements
-            .split(',')
+            .split(';')
             .map((req) => req.trim())
         : [];
 
     // Process benefits into an array
     const benefits = newOpportunity.benefits
-      ? newOpportunity.benefits.split(',').map((ben) => ben.trim())
+      ? newOpportunity.benefits.split(';').map((ben) => ben.trim())
       : [];
 
     // Create opportunity object
-    const opportunity = createOpportunityObject([
-      {
-        id: new Date().toISOString(), // Generate a unique ID for now
-        type: newOpportunity.type,
-        fieldOfStudy: newOpportunity.fieldOfStudy,
-        title: newOpportunity.title,
-        location: newOpportunity.location,
-        opportunityDescription: newOpportunity.description,
-        qualificationsAndRequirements, // Processed field
-        benefits, // Processed field
-        tags,
-        engagementType: newOpportunity.engagementType,
-        workArrangement: newOpportunity.workArrangement,
-        contactPerson: newOpportunity.contactPerson,
-        contactPersonEmail: newOpportunity.contactPersonEmail,
-        experienceRequired, // Processed field
-        deadline: newOpportunity.endingDate,
-      },
-    ]);
+    const opportunity = {
+      id: new Date().toISOString(), // Generate a unique ID for now
+      type: newOpportunity.type,
+      fieldOfStudy: newOpportunity.fieldOfStudy,
+      title: newOpportunity.title,
+      location: newOpportunity.location,
+      opportunityDescription: newOpportunity.description,
+      qualificationsAndRequirements, // Processed field
+      benefits, // Processed field
+      tags,
+      engagementType: newOpportunity.engagementType,
+      workArrangement: newOpportunity.workArrangement,
+      contactPerson: newOpportunity.contactPerson,
+      contactPersonEmail: newOpportunity.contactPersonEmail,
+      experienceRequired, // Processed field
+      deadline: newOpportunity.endingDate,
+    };
 
     // If real API was used we could now upload an get a response
     // const data = await AJAX(`${API_URL}?key=${KEY}`, opportunity);
     // state.opportunity = createOpportunityObject(data);
 
     // Add to existing data
-    state.opportunity = opportunity;
+    state.opportunity = createOpportunityObject([opportunity]);
     // state.opportunity = createOpportunityObject(data);
 
     // Simulate saving to data.json (adjust for real server if necessary)

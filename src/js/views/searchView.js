@@ -21,7 +21,7 @@ class SearchView {
     };
 
     this.#clearInput();
-    this.#toggleSections();
+    // this.#toggleSections();
     return query;
   }
 
@@ -35,12 +35,19 @@ class SearchView {
     selects.forEach((select) => (select.value = ''));
   }
 
-  #toggleSections() {
-    if (!this.#featuredSection.classList.contains('hidden')) {
-      this.#featuredSection.classList.add('hidden');
-    }
-    this.#listSection.classList.remove('hidden');
-  }
+  // #toggleSections() {
+  //   if (!this.#featuredSection.classList.contains('hidden')) {
+  //     this.#featuredSection.classList.add('hidden');
+  //   }
+  //   this.#listSection.classList.remove('hidden');
+  // }
+  // toggleInit() {
+  //   // this.#toggleSections();
+  //   this.toggleSections([
+  //     document.querySelector('.opportunities-list'),
+  //     document.querySelector('.intro-section'),
+  //   ]);
+  // }
 
   addHandlerSearch(handler) {
     this.#parentEl.addEventListener('submit', function (e) {

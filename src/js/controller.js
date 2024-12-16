@@ -16,8 +16,7 @@ const controlOpportunities = async function () {
 
     if (!id) return;
 
-    // 0) Scroll the viewport to the top and
-    //    start rendering the loading spinner
+    // 0) Scroll the viewport to the top and render the loading spinner
     OpportunitiesView.scrollUp();
     OpportunitiesView.renderSpinner();
 
@@ -34,7 +33,7 @@ const controlOpportunities = async function () {
     // await model.loadRecipe(id);
     await model.loadOpportunity(id);
 
-    // 3) Rendering recipe
+    // 3) Rendering opportunity
     OpportunitiesView.render(model.state.opportunity);
   } catch (err) {
     console.error(err);
@@ -45,12 +44,14 @@ const controlOpportunities = async function () {
 // A handler function to process the search query
 const controlSearchResults = async function () {
   try {
-    // 0) Scroll the viewport to the top and
-    //    start rendering the loading spinner
+    // 0) Scroll the viewport to the top and render the loading spinner
     resultsView.scrollUp();
     resultsView.renderSpinner();
 
-    // 1) Get search query
+    // 1) Toggle sections visibility
+    resultsView.toggleInit();
+
+    // 2) Get search query
     const query = SearchView.getQuery();
 
     // Guard clause: Do nothing if all query fields are empty
@@ -59,16 +60,16 @@ const controlSearchResults = async function () {
     if (!query) return;
     console.log(query);
 
-    // 2) Render intro-section with query data
+    // 3) Render intro-section with query data
     IntroView.render(query);
 
-    // 3) Load search results
+    // 4) Load search results
     await model.loadSearchResults(query);
 
-    // 4) Render results
+    // 5) Render results
     resultsView.render(model.getSearchResultsPage());
 
-    // 5) Render initial pagination buttons
+    // 6) Render initial pagination buttons
     paginationView.render(model.state.search);
   } catch (err) {
     console.error(err);
@@ -93,8 +94,8 @@ const controlAddRecipe = async function (newOpportunity) {
     await model.uploadOpportunity(newOpportunity);
     console.log(model.state.opportunity);
 
-    // Render recipe
-    // recipeView.render(model.state.recipe);
+    // Render opportunity
+    OpportunitiesView.render(model.state.opportunity);
 
     // Success message
     // publishOpportunityView.renderMessage();
@@ -103,7 +104,7 @@ const controlAddRecipe = async function (newOpportunity) {
     // bookmarksView.render(model.state.bookmarks);
 
     // Change ID in URL
-    // window.history.pushState(null, '', `#${model.state.recipe.id}`);
+    window.history.pushState(null, '', `#${model.state.opportunity.id}`);
     // window.history.back() // Automatically goes back to last page
 
     // Close form window

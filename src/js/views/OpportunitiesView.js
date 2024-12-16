@@ -8,21 +8,24 @@ class opportunitiesView extends View {
   _errorMessage = 'We could not find that Opportunity. Please try another one!';
   _message = '';
 
+  #targetSection = document.querySelector('.details-opportunity');
+
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach((ev) =>
       window.addEventListener(ev, handler)
     );
   }
 
-  #toggleSections() {
-    if (!this.#mainContent.classList.contains('hidden')) {
-      this.#mainContent.classList.add('hidden');
-    }
-    this.#detailsContent.classList.remove('hidden');
-  }
+  // #toggleSections() {
+  //   if (!this.#mainContent.classList.contains('hidden')) {
+  //     this.#mainContent.classList.add('hidden');
+  //   }
+  //   this.#detailsContent.classList.remove('hidden');
+  // }
 
   toggleInit() {
-    this.#toggleSections();
+    // this.#toggleSections();
+    this.toggleSections([this.#targetSection]);
   }
 
   _generateMarkup() {

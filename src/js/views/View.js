@@ -38,6 +38,29 @@ export default class View {
     });
   }
 
+  // toggleSections(visibleSection) {
+  //   // Get all sections
+  //   const sections = document.querySelectorAll('section, .overlay');
+
+  //   // Hide all sections
+  //   sections.forEach((section) => section.classList.add('hidden'));
+
+  //   // Show the specified section
+  //   if (visibleSection) visibleSection.classList.remove('hidden');
+  // }
+
+  toggleSections(visibleSections = []) {
+    const sections = document.querySelectorAll('section');
+
+    sections.forEach((section) => {
+      const shouldBeVisible =
+        section.classList.contains('newsletter') ||
+        visibleSections.includes(section);
+
+      section.classList.toggle('hidden', !shouldBeVisible);
+    });
+  }
+
   renderSpinner() {
     const markup = `
           <div class="spinner">
@@ -56,6 +79,21 @@ export default class View {
             <svg>
               <use href="src/img/icons.svg#icon-warning"></use>
             </svg>
+            <p>${message}</p>
+        </div>
+    `;
+    this._clearHtml();
+    this._parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+
+  renderMessage(message = this._message) {
+    const markup = `
+        <div class="message">
+            <div>
+              <svg>
+                <use href="src/img/icons.svg#icon-smile"></use>
+              </svg>
+            </div>
             <p>${message}</p>
         </div>
     `;

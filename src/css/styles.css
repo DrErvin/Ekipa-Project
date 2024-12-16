@@ -179,6 +179,21 @@ body {
   height: 2rem;
   fill: var(--color-ternary);
 }
+.message {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.message svg {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--color-primary);
+}
+.message p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text, #333);
+}
 
 /* ////////////////////////////////// */
 /* ////////////////////////////////// */
