@@ -98,7 +98,7 @@ const controlAddRecipe = async function (newOpportunity) {
     OpportunitiesView.render(model.state.opportunity);
 
     // Success message
-    // publishOpportunityView.renderMessage();
+    publishOpportunityView.renderMessage();
 
     // Render bookmark view
     // bookmarksView.render(model.state.bookmarks);

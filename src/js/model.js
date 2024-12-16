@@ -45,7 +45,7 @@ export const loadOpportunity = async function (id) {
     console.log(typeof id);
 
     // Find the opportunity with the specified ID
-    const result = data.find((opportunity) => opportunity.id === +id);
+    const result = data.find((opportunity) => +opportunity.id === +id);
     console.log(result);
     if (!result) throw new Error(`Opportunity with ID ${id} not found`);
 
@@ -158,12 +158,12 @@ export const uploadOpportunity = async function (newOpportunity) {
 
     // Create opportunity object
     const opportunity = {
-      id: new Date().toISOString(), // Generate a unique ID for now
+      id: Date.now(), // Timestamp-based numeric ID
       type: newOpportunity.type,
       fieldOfStudy: newOpportunity.fieldOfStudy,
       title: newOpportunity.title,
       location: newOpportunity.location,
-      opportunityDescription: newOpportunity.description,
+      description: newOpportunity.description,
       qualificationsAndRequirements, // Processed field
       benefits, // Processed field
       tags,
@@ -172,15 +172,22 @@ export const uploadOpportunity = async function (newOpportunity) {
       contactPerson: newOpportunity.contactPerson,
       contactPersonEmail: newOpportunity.contactPersonEmail,
       experienceRequired, // Processed field
-      deadline: newOpportunity.endingDate,
+      endingDate: newOpportunity.endingDate,
     };
 
-    // If real API was used we could now upload an get a response
+    // If real API was used we could now upload and get a response
     // const data = await AJAX(`${API_URL}?key=${KEY}`, opportunity);
     // state.opportunity = createOpportunityObject(data);
 
+    // Send data to server
+    const response = await AJAX(
+      'http://localhost:3000/opportunities',
+      opportunity
+    );
+    console.log('Uploaded Opportunity:', response);
+
     // Add to existing data
-    state.opportunity = createOpportunityObject([opportunity]);
+    state.opportunity = createOpportunityObject([response]);
     // state.opportunity = createOpportunityObject(data);
 
     // Simulate saving to data.json (adjust for real server if necessary)

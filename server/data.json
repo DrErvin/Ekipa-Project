@@ -12,7 +12,11 @@
       "Proficiency in JavaScript and React",
       "Strong problem-solving and communication skills"
     ],
-    "tags": ["JavaScript", "React", "CSS"],
+    "tags": [
+      "JavaScript",
+      "React",
+      "CSS"
+    ],
     "experienceRequired": "Junior",
     "engagementType": "Full-time",
     "workArrangement": "Remote",
@@ -39,7 +43,11 @@
       "Understanding of data visualization tools",
       "Strong analytical skills and problem-solving ability"
     ],
-    "tags": ["Python", "ML", "Big Data"],
+    "tags": [
+      "Python",
+      "ML",
+      "Big Data"
+    ],
     "experienceRequired": "Intern",
     "engagementType": "Part-time",
     "workArrangement": "Hybrid",
@@ -66,7 +74,11 @@
       "Knowledge of networking protocols",
       "Ability to work independently on research projects"
     ],
-    "tags": ["IoT", "Smart Cities", "5G"],
+    "tags": [
+      "IoT",
+      "Smart Cities",
+      "5G"
+    ],
     "experienceRequired": "Not required",
     "engagementType": "Flexible",
     "workArrangement": "Remote",
@@ -93,7 +105,11 @@
       "Strong writing and communication skills",
       "Creativity and adaptability in marketing strategies"
     ],
-    "tags": ["SEO", "Content Marketing", "Google Analytics"],
+    "tags": [
+      "SEO",
+      "Content Marketing",
+      "Google Analytics"
+    ],
     "experienceRequired": "Junior",
     "engagementType": "Part-time",
     "workArrangement": "On-site",
@@ -120,8 +136,15 @@
       "Experience with SQL and database optimization",
       "Understanding of cloud services (e.g., AWS, Azure)"
     ],
-    "tags": ["Node.js", "SQL", "API Development"],
-    "experienceRequired": ["Medior", "Senior"],
+    "tags": [
+      "Node.js",
+      "SQL",
+      "API Development"
+    ],
+    "experienceRequired": [
+      "Medior",
+      "Senior"
+    ],
     "engagementType": "Full-time",
     "workArrangement": "Hybrid",
     "endingDate": "2025-02-20",
@@ -147,7 +170,11 @@
       "Interest in user experience design",
       "Creative thinking for AR solutions"
     ],
-    "tags": ["AR", "Unity", "UX Design"],
+    "tags": [
+      "AR",
+      "Unity",
+      "UX Design"
+    ],
     "experienceRequired": "Intermediate",
     "engagementType": "Project-based",
     "workArrangement": "Remote",
@@ -174,7 +201,11 @@
       "Knowledge of Python and R programming",
       "Familiarity with genome analysis tools"
     ],
-    "tags": ["Bioinformatics", "Python", "R"],
+    "tags": [
+      "Bioinformatics",
+      "Python",
+      "R"
+    ],
     "experienceRequired": "Senior",
     "engagementType": "Full-time",
     "workArrangement": "Hybrid",
@@ -201,7 +232,11 @@
       "Interest in automation technologies",
       "Ability to collaborate in team environments"
     ],
-    "tags": ["Robotics", "CAD", "Automation"],
+    "tags": [
+      "Robotics",
+      "CAD",
+      "Automation"
+    ],
     "experienceRequired": "Intern",
     "engagementType": "Part-time",
     "workArrangement": "On-site",
@@ -228,7 +263,11 @@
       "Interest in machine learning applications",
       "Strong analytical skills"
     ],
-    "tags": ["Ethical AI", "Data Privacy", "Machine Learning"],
+    "tags": [
+      "Ethical AI",
+      "Data Privacy",
+      "Machine Learning"
+    ],
     "experienceRequired": "N/A",
     "engagementType": "Part-time",
     "workArrangement": "Remote",
@@ -255,7 +294,11 @@
       "Interest in wireless technologies",
       "Strong research skills"
     ],
-    "tags": ["Wireless", "Charging", "Electronics"],
+    "tags": [
+      "Wireless",
+      "Charging",
+      "Electronics"
+    ],
     "experienceRequired": "N/A",
     "engagementType": "Flexible",
     "workArrangement": "Remote",
@@ -282,7 +325,11 @@
       "Strong coding skills",
       "Willingness to collaborate on open source projects"
     ],
-    "tags": ["Open Source", "Git", "Telecom"],
+    "tags": [
+      "Open Source",
+      "Git",
+      "Telecom"
+    ],
     "experienceRequired": "Intermediate",
     "engagementType": "Project-based",
     "workArrangement": "Remote",
@@ -309,8 +356,15 @@
       "Experience with data pipelines",
       "Ability to optimize ML models"
     ],
-    "tags": ["Machine Learning", "TensorFlow", "Data Pipelines"],
-    "experienceRequired": ["Medior", "Senior"],
+    "tags": [
+      "Machine Learning",
+      "TensorFlow",
+      "Data Pipelines"
+    ],
+    "experienceRequired": [
+      "Medior",
+      "Senior"
+    ],
     "engagementType": "Full-time",
     "workArrangement": "Hybrid",
     "endingDate": "2025-03-10",
@@ -336,7 +390,11 @@
       "Experience with robotics hardware",
       "Ability to read and interpret technical diagrams"
     ],
-    "tags": ["Automation", "Robotics", "System Design"],
+    "tags": [
+      "Automation",
+      "Robotics",
+      "System Design"
+    ],
     "experienceRequired": "Intern",
     "engagementType": "Part-time",
     "workArrangement": "On-site",
@@ -363,7 +421,11 @@
       "Strong understanding of UX principles",
       "Experience in creating interactive prototypes"
     ],
-    "tags": ["UI/UX", "Design Systems", "Prototyping"],
+    "tags": [
+      "UI/UX",
+      "Design Systems",
+      "Prototyping"
+    ],
     "experienceRequired": "N/A",
     "engagementType": "Part-time",
     "workArrangement": "Remote",
@@ -376,5 +438,237 @@
     "employeeInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "contactPerson": "Olivia White",
     "contactPersonEmail": "olivia.white@telekom.com"
+  },
+  {
+    "id": 1734374646181,
+    "type": "Internship",
+    "fieldOfStudy": "Computer Sciences and Engineering",
+    "title": "asdasd",
+    "location": "Mostar",
+    "description": "Ovo je pravi poso",
+    "qualificationsAndRequirements": [
+      "asdasd",
+      "asdasd",
+      "asdasd",
+      "asdasd"
+    ],
+    "benefits": [
+      "asdasd",
+      "asdasd",
+      "asdasd",
+      "asdasd"
+    ],
+    "tags": [
+      "Python",
+      "Linux"
+    ],
+    "engagementType": "part Time",
+    "workArrangement": "On site",
+    "contactPerson": "Jane doe",
+    "contactPersonEmail": "jane@gmail.com",
+    "experienceRequired": [
+      "Senior"
+    ],
+    "endingDate": "2024-12-19"
+  },
+  {
+    "id": 1734374727721,
+    "type": "Thesis Topic",
+    "fieldOfStudy": "Computer Sciences and Engineering",
+    "title": "asdasd",
+    "location": "asdasd",
+    "description": "asdasd",
+    "qualificationsAndRequirements": [
+      "asdasd"
+    ],
+    "benefits": [
+      "asd"
+    ],
+    "tags": [
+      "asdasd"
+    ],
+    "engagementType": "asda",
+    "workArrangement": "sdasd",
+    "contactPerson": "asd",
+    "contactPersonEmail": "jane@gmail.com",
+    "experienceRequired": [
+      "asd"
+    ],
+    "endingDate": "2024-12-18"
+  },
+  {
+    "id": 1734374805312,
+    "type": "Internship",
+    "fieldOfStudy": "Software Engineering",
+    "title": "asdas",
+    "location": "asdasd",
+    "description": "asdas",
+    "qualificationsAndRequirements": [
+      "asd"
+    ],
+    "benefits": [
+      "asdas"
+    ],
+    "tags": [
+      "asdads"
+    ],
+    "engagementType": "asdasd",
+    "workArrangement": "asdas",
+    "contactPerson": "Jane doe",
+    "contactPersonEmail": "jane@gmail.com",
+    "experienceRequired": [
+      "asdasd"
+    ],
+    "endingDate": "2024-12-18"
+  },
+  {
+    "id": 1734375480136,
+    "type": "Thesis Topic",
+    "fieldOfStudy": "Software Engineering",
+    "title": "ads",
+    "location": "ads",
+    "description": "asdad",
+    "qualificationsAndRequirements": [
+      "asd"
+    ],
+    "benefits": [
+      "asd"
+    ],
+    "tags": [
+      "asd"
+    ],
+    "engagementType": "asd",
+    "workArrangement": "asd",
+    "contactPerson": "asd",
+    "contactPersonEmail": "jane@gmail.com",
+    "experienceRequired": [
+      "asd"
+    ],
+    "endingDate": "2024-12-25"
+  },
+  {
+    "id": 1734375513263,
+    "type": "Internship",
+    "fieldOfStudy": "Software Engineering",
+    "title": "asd",
+    "location": "asd",
+    "description": "asda",
+    "qualificationsAndRequirements": [
+      "asdas"
+    ],
+    "benefits": [
+      "asd"
+    ],
+    "tags": [
+      "asd"
+    ],
+    "engagementType": "asd",
+    "workArrangement": "ads",
+    "contactPerson": "Jane doe",
+    "contactPersonEmail": "jane@gmail.com",
+    "experienceRequired": [
+      "asd"
+    ],
+    "endingDate": "2024-12-18"
+  },
+  {
+    "id": 1734375636749,
+    "type": "Internship",
+    "fieldOfStudy": "Computer Sciences and Engineering",
+    "title": "asdas",
+    "location": "asd",
+    "description": "asd",
+    "qualificationsAndRequirements": [
+      "asd"
+    ],
+    "benefits": [
+      "asd"
+    ],
+    "tags": [
+      "asd"
+    ],
+    "engagementType": "asd",
+    "workArrangement": "asd",
+    "contactPerson": "asd",
+    "contactPersonEmail": "asd@gmail.com",
+    "experienceRequired": [
+      "asd"
+    ],
+    "endingDate": "2024-12-25"
+  },
+  {
+    "id": 1734375669781,
+    "type": "Internship",
+    "fieldOfStudy": "Software Engineering",
+    "title": "asd",
+    "location": "asd",
+    "description": "asd",
+    "qualificationsAndRequirements": [
+      "asd"
+    ],
+    "benefits": [
+      "asd"
+    ],
+    "tags": [
+      "asd"
+    ],
+    "engagementType": "asd",
+    "workArrangement": "asd",
+    "contactPerson": "asd",
+    "contactPersonEmail": "asd@gmail.com",
+    "experienceRequired": [
+      "asd"
+    ],
+    "endingDate": "2024-12-18"
+  },
+  {
+    "id": 1734375725766,
+    "type": "Mentorship",
+    "fieldOfStudy": "Architecture",
+    "title": "asdasd",
+    "location": "asd",
+    "description": "asd",
+    "qualificationsAndRequirements": [
+      "asdasd"
+    ],
+    "benefits": [
+      "asd"
+    ],
+    "tags": [
+      "asd"
+    ],
+    "engagementType": "asd",
+    "workArrangement": "asd",
+    "contactPerson": "asd",
+    "contactPersonEmail": "asd@gmail.com",
+    "experienceRequired": [
+      "asd"
+    ],
+    "endingDate": "2024-12-18"
+  },
+  {
+    "id": 1734375780808,
+    "type": "Thesis Topic",
+    "fieldOfStudy": "Computer Sciences and Engineering",
+    "title": "asd",
+    "location": "aaasd",
+    "description": "asd",
+    "qualificationsAndRequirements": [
+      "asd"
+    ],
+    "benefits": [
+      "asd"
+    ],
+    "tags": [
+      "asd"
+    ],
+    "engagementType": "asd",
+    "workArrangement": "asd",
+    "contactPerson": "asd",
+    "contactPersonEmail": "asd@gmail.com",
+    "experienceRequired": [
+      "asdasd"
+    ],
+    "endingDate": "2024-12-19"
   }
 ]
