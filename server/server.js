@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { readFile, writeFile } = require('fs');
+const path = require('path');
 
 const app = express();
 const PORT = 3000; // Choose a port number
@@ -9,8 +10,7 @@ app.use(cors());
 app.use(express.json()); // Use express.json() for parsing JSON bodies
 
 // File path to the JSON data
-const DATA_FILE = './server/data.json'; // Update path to match your project structure
-
+const DATA_FILE = path.join(__dirname, 'data.json');
 // Default route for '/'
 app.get('/', (req, res) => {
   res.send('Welcome to the API. Use /opportunities to fetch data.');
