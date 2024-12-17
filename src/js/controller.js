@@ -95,16 +95,16 @@ const controlAddRecipe = async function (newOpportunity) {
     console.log(model.state.opportunity);
 
     // Render opportunity
-    OpportunitiesView.render(model.state.opportunity);
+    // OpportunitiesView.render(model.state.opportunity);
 
     // Success message
-    publishOpportunityView.renderMessage();
+    // publishOpportunityView.renderMessage();
 
     // Render bookmark view
     // bookmarksView.render(model.state.bookmarks);
 
     // Change ID in URL
-    window.history.pushState(null, '', `#${model.state.opportunity.id}`);
+    // window.history.pushState(null, '', `#${model.state.opportunity.id}`);
     // window.history.back() // Automatically goes back to last page
 
     // Close form window

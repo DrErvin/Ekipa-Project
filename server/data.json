@@ -440,234 +440,552 @@
     "contactPersonEmail": "olivia.white@telekom.com"
   },
   {
-    "id": 1734374646181,
+    "id": 1734435406956,
     "type": "Internship",
-    "fieldOfStudy": "Computer Sciences and Engineering",
-    "title": "asdasd",
-    "location": "Mostar",
-    "description": "Ovo je pravi poso",
+    "fieldOfStudy": "Software Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
     "qualificationsAndRequirements": [
-      "asdasd",
-      "asdasd",
-      "asdasd",
-      "asdasd"
+      "TEST23"
     ],
     "benefits": [
-      "asdasd",
-      "asdasd",
-      "asdasd",
-      "asdasd"
+      "TEST23"
     ],
     "tags": [
-      "Python",
-      "Linux"
+      "TEST23"
     ],
-    "engagementType": "part Time",
-    "workArrangement": "On site",
-    "contactPerson": "Jane doe",
-    "contactPersonEmail": "jane@gmail.com",
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
     "experienceRequired": [
-      "Senior"
+      "TEST23"
     ],
     "endingDate": "2024-12-19"
   },
   {
-    "id": 1734374727721,
-    "type": "Thesis Topic",
+    "id": 1734435445014,
+    "type": "Internship",
+    "fieldOfStudy": "Software Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-19"
+  },
+  {
+    "id": 1734436781718,
+    "type": "Internship",
+    "fieldOfStudy": "Software Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-19"
+  },
+  {
+    "id": 1734436798750,
+    "type": "Internship",
+    "fieldOfStudy": "Software Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-19"
+  },
+  {
+    "id": 1734436857276,
+    "type": "Job Offer",
     "fieldOfStudy": "Computer Sciences and Engineering",
-    "title": "asdasd",
-    "location": "asdasd",
-    "description": "asdasd",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
     "qualificationsAndRequirements": [
-      "asdasd"
+      "TEST23"
     ],
     "benefits": [
-      "asd"
+      "TEST23"
     ],
     "tags": [
-      "asdasd"
+      "TEST23"
     ],
-    "engagementType": "asda",
-    "workArrangement": "sdasd",
-    "contactPerson": "asd",
-    "contactPersonEmail": "jane@gmail.com",
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
     "experienceRequired": [
-      "asd"
+      "TEST23"
     ],
-    "endingDate": "2024-12-18"
+    "endingDate": "2024-12-20"
   },
   {
-    "id": 1734374805312,
-    "type": "Internship",
-    "fieldOfStudy": "Software Engineering",
-    "title": "asdas",
-    "location": "asdasd",
-    "description": "asdas",
-    "qualificationsAndRequirements": [
-      "asd"
-    ],
-    "benefits": [
-      "asdas"
-    ],
-    "tags": [
-      "asdads"
-    ],
-    "engagementType": "asdasd",
-    "workArrangement": "asdas",
-    "contactPerson": "Jane doe",
-    "contactPersonEmail": "jane@gmail.com",
-    "experienceRequired": [
-      "asdasd"
-    ],
-    "endingDate": "2024-12-18"
-  },
-  {
-    "id": 1734375480136,
-    "type": "Thesis Topic",
-    "fieldOfStudy": "Software Engineering",
-    "title": "ads",
-    "location": "ads",
-    "description": "asdad",
-    "qualificationsAndRequirements": [
-      "asd"
-    ],
-    "benefits": [
-      "asd"
-    ],
-    "tags": [
-      "asd"
-    ],
-    "engagementType": "asd",
-    "workArrangement": "asd",
-    "contactPerson": "asd",
-    "contactPersonEmail": "jane@gmail.com",
-    "experienceRequired": [
-      "asd"
-    ],
-    "endingDate": "2024-12-25"
-  },
-  {
-    "id": 1734375513263,
-    "type": "Internship",
-    "fieldOfStudy": "Software Engineering",
-    "title": "asd",
-    "location": "asd",
-    "description": "asda",
-    "qualificationsAndRequirements": [
-      "asdas"
-    ],
-    "benefits": [
-      "asd"
-    ],
-    "tags": [
-      "asd"
-    ],
-    "engagementType": "asd",
-    "workArrangement": "ads",
-    "contactPerson": "Jane doe",
-    "contactPersonEmail": "jane@gmail.com",
-    "experienceRequired": [
-      "asd"
-    ],
-    "endingDate": "2024-12-18"
-  },
-  {
-    "id": 1734375636749,
-    "type": "Internship",
-    "fieldOfStudy": "Computer Sciences and Engineering",
-    "title": "asdas",
-    "location": "asd",
-    "description": "asd",
-    "qualificationsAndRequirements": [
-      "asd"
-    ],
-    "benefits": [
-      "asd"
-    ],
-    "tags": [
-      "asd"
-    ],
-    "engagementType": "asd",
-    "workArrangement": "asd",
-    "contactPerson": "asd",
-    "contactPersonEmail": "asd@gmail.com",
-    "experienceRequired": [
-      "asd"
-    ],
-    "endingDate": "2024-12-25"
-  },
-  {
-    "id": 1734375669781,
-    "type": "Internship",
-    "fieldOfStudy": "Software Engineering",
-    "title": "asd",
-    "location": "asd",
-    "description": "asd",
-    "qualificationsAndRequirements": [
-      "asd"
-    ],
-    "benefits": [
-      "asd"
-    ],
-    "tags": [
-      "asd"
-    ],
-    "engagementType": "asd",
-    "workArrangement": "asd",
-    "contactPerson": "asd",
-    "contactPersonEmail": "asd@gmail.com",
-    "experienceRequired": [
-      "asd"
-    ],
-    "endingDate": "2024-12-18"
-  },
-  {
-    "id": 1734375725766,
+    "id": 1734436930994,
     "type": "Mentorship",
-    "fieldOfStudy": "Architecture",
-    "title": "asdasd",
-    "location": "asd",
-    "description": "asd",
+    "fieldOfStudy": "Computer Sciences and Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
     "qualificationsAndRequirements": [
-      "asdasd"
+      "TEST23"
     ],
     "benefits": [
-      "asd"
+      "TEST23"
     ],
     "tags": [
-      "asd"
+      "TEST23"
     ],
-    "engagementType": "asd",
-    "workArrangement": "asd",
-    "contactPerson": "asd",
-    "contactPersonEmail": "asd@gmail.com",
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
     "experienceRequired": [
-      "asd"
+      "TEST23"
+    ],
+    "endingDate": "2024-12-20"
+  },
+  {
+    "id": 1734437013384,
+    "type": "Internship",
+    "fieldOfStudy": "Computer Sciences and Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-19"
+  },
+  {
+    "id": 1734437041222,
+    "type": "Mentorship",
+    "fieldOfStudy": "Computer Sciences and Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
     ],
     "endingDate": "2024-12-18"
   },
   {
-    "id": 1734375780808,
-    "type": "Thesis Topic",
+    "id": 1734437078062,
+    "type": "Internship",
     "fieldOfStudy": "Computer Sciences and Engineering",
-    "title": "asd",
-    "location": "aaasd",
-    "description": "asd",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
     "qualificationsAndRequirements": [
-      "asd"
+      "TEST23"
     ],
     "benefits": [
-      "asd"
+      "TEST23"
     ],
     "tags": [
-      "asd"
+      "TEST23"
     ],
-    "engagementType": "asd",
-    "workArrangement": "asd",
-    "contactPerson": "asd",
-    "contactPersonEmail": "asd@gmail.com",
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
     "experienceRequired": [
-      "asdasd"
+      "TEST23"
+    ],
+    "endingDate": "2024-12-19"
+  },
+  {
+    "id": 1734437297743,
+    "type": "Internship",
+    "fieldOfStudy": "Artificial Intelligence and Data Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-18"
+  },
+  {
+    "id": 1734437336521,
+    "type": "Internship",
+    "fieldOfStudy": "Computer Sciences and Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-26"
+  },
+  {
+    "id": 1734439288182,
+    "type": "Internship",
+    "fieldOfStudy": "Computer Sciences and Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-19"
+  },
+  {
+    "id": 1734439390856,
+    "type": "Internship",
+    "fieldOfStudy": "Artificial Intelligence and Data Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-27"
+  },
+  {
+    "id": 1734439467475,
+    "type": "Internship",
+    "fieldOfStudy": "Software Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-18"
+  },
+  {
+    "id": 1734439476869,
+    "type": "Job Offer",
+    "fieldOfStudy": "Architecture",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-20"
+  },
+  {
+    "id": 1734439964005,
+    "type": "Internship",
+    "fieldOfStudy": "Software Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-19"
+  },
+  {
+    "id": 1734439984741,
+    "type": "Job Offer",
+    "fieldOfStudy": "Software Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-19"
+  },
+  {
+    "id": 1734440797349,
+    "type": "Thesis Topic",
+    "fieldOfStudy": "Software Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-19"
+  },
+  {
+    "id": 1734440826597,
+    "type": "Thesis Topic",
+    "fieldOfStudy": "Computer Sciences and Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-19"
+  },
+  {
+    "id": 1734441073443,
+    "type": "Internship",
+    "fieldOfStudy": "Artificial Intelligence and Data Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-19"
+  },
+  {
+    "id": 1734441157457,
+    "type": "Mentorship",
+    "fieldOfStudy": "Computer Sciences and Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
+    ],
+    "endingDate": "2024-12-18"
+  },
+  {
+    "id": 1734441530267,
+    "type": "Internship",
+    "fieldOfStudy": "Artificial Intelligence and Data Engineering",
+    "title": "TEST23",
+    "location": "TEST23",
+    "description": "TEST23",
+    "qualificationsAndRequirements": [
+      "TEST23"
+    ],
+    "benefits": [
+      "TEST23"
+    ],
+    "tags": [
+      "TEST23"
+    ],
+    "engagementType": "TEST23",
+    "workArrangement": "TEST23",
+    "contactPerson": "TEST23",
+    "contactPersonEmail": "TEST23@gmail.com",
+    "experienceRequired": [
+      "TEST23"
     ],
     "endingDate": "2024-12-19"
   }

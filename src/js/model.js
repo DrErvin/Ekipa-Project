@@ -180,11 +180,8 @@ export const uploadOpportunity = async function (newOpportunity) {
     // state.opportunity = createOpportunityObject(data);
 
     // Send data to server
-    const response = await AJAX(
-      'http://localhost:3000/opportunities',
-      opportunity
-    );
-    console.log('Uploaded Opportunity:', response);
+    const response = await AJAX(`${API_URL}`, opportunity);
+    console.log('Server Response:', response);
 
     // Add to existing data
     state.opportunity = createOpportunityObject([response]);

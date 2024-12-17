@@ -29,26 +29,48 @@ app.get('/opportunities', (req, res) => {
 
 // POST endpoint to add a new opportunity
 app.post('/opportunities', (req, res) => {
+  // Read the current data from the file
   readFile(DATA_FILE, 'utf8', (err, data) => {
     if (err) {
       console.error('Error reading file:', err);
-      return res.status(500).send('Error reading data');
+      return res
+        .status(500)
+        .json({ status: 'error', message: 'Error reading data file.' });
     }
 
-    const opportunities = JSON.parse(data);
-    const newOpportunity = req.body;
+    try {
+      const opportunities = JSON.parse(data);
+      const newOpportunity = req.body;
 
-    // Add the new opportunity to the array
-    opportunities.push(newOpportunity);
+      // Add the new opportunity to the array
+      opportunities.push(newOpportunity);
 
-    // Write updated data back to file
-    writeFile(DATA_FILE, JSON.stringify(opportunities, null, 2), (writeErr) => {
-      if (writeErr) {
-        console.error('Error writing file:', writeErr);
-        return res.status(500).send('Error saving data');
-      }
-      res.status(201).json(newOpportunity);
-    });
+      // Write the updated opportunities array back to the file
+      writeFile(
+        DATA_FILE,
+        JSON.stringify(opportunities, null, 2),
+        (writeErr) => {
+          if (writeErr) {
+            console.error('Error writing file:', writeErr);
+            return res.status(500).json({
+              status: 'error',
+              message: 'Error saving opportunity data.',
+            });
+          }
+
+          // Send a success response with the added opportunity
+          res.status(201).json({
+            status: 'success',
+            data: newOpportunity,
+          });
+        }
+      );
+    } catch (parseErr) {
+      console.error('Error parsing JSON:', parseErr);
+      res
+        .status(500)
+        .json({ status: 'error', message: 'Error parsing data file.' });
+    }
   });
 });
 
