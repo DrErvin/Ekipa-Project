@@ -184,11 +184,11 @@ export const uploadOpportunity = async function (newOpportunity) {
     console.log('Server Response:', response);
 
     // Add to existing data
-    state.opportunity = createOpportunityObject([response]);
+    state.opportunity = createOpportunityObject([response.data]);
     // state.opportunity = createOpportunityObject(data);
 
     // Simulate saving to data.json (adjust for real server if necessary)
-    console.log('Opportunity Uploaded:', opportunity);
+    console.log('Opportunity Uploaded:', state.opportunity);
   } catch (err) {
     throw err;
   }

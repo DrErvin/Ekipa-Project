@@ -2,7 +2,7 @@ import View from './View.js';
 
 class PublishOpportunityView extends View {
   _parentElement = document.querySelector('.upload');
-  _message = 'Recipe was successfully uploaded :)';
+  _message = 'Opportunity was successfully uploaded :)';
 
   _window = document.querySelector('.publish-opportunity-window');
   _overlay = document.querySelector('.overlay');
