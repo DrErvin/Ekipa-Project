@@ -6,14 +6,14 @@ class ResultView extends View {
   _errorMessage = 'No opportunities found for your query! Please try again';
   _message = '';
 
-  #targetSections = [
+  #sectionsToShow = [
     document.querySelector('.opportunities-list'),
     document.querySelector('.intro-section'),
   ];
 
   toggleInit() {
     // this.#toggleSections();
-    this.toggleSections(this.#targetSections);
+    this.toggleSections(this.#sectionsToShow);
   }
 
   _generateMarkup() {

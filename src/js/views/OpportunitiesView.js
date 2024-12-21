@@ -8,7 +8,7 @@ class opportunitiesView extends View {
   _errorMessage = 'We could not find that Opportunity. Please try another one!';
   _message = '';
 
-  #targetSection = document.querySelector('.details-opportunity');
+  #sectionToShow = document.querySelector('.details-opportunity');
 
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach((ev) =>
@@ -25,7 +25,7 @@ class opportunitiesView extends View {
 
   toggleInit() {
     // this.#toggleSections();
-    this.toggleSections([this.#targetSection]);
+    this.toggleSections([this.#sectionToShow]);
   }
 
   _generateMarkup() {
