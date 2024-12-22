@@ -1,0 +1,32 @@
+/* base.css */
+:root {
+  --color-primary: #e20074;
+  --color-secondary: hsl(194, 52%, 90%);
+  --color-ternary: white;
+  --color-primary-darker: #c00063;
+  --color-primary-darker-hard: #a90057;
+  --color-secondary-darker: #ffbb00;
+  --color-primary-opacity: #5ec5763a;
+  --color-secondary-opacity: #ffcd0331;
+}
+
+/* Global Styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  /* color: #333; */
+}
+
+/* Main Layout Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.hidden {
+  display: none;
+  /* visibility: hidden;
+  opacity: 0; */
+}
