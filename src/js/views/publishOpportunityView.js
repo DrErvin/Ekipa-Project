@@ -16,8 +16,8 @@ class PublishOpportunityView extends View {
   }
 
   toggleWindow() {
-    this._overlay.classList.toggle('hiddenOpp');
-    this._window.classList.toggle('hiddenOpp');
+    this._overlay.classList.toggle('hidden-oppacity');
+    this._window.classList.toggle('hidden-oppacity');
   }
 
   _addHandlerShowWindow() {

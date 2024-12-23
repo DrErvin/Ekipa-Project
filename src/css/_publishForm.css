@@ -1,12 +1,12 @@
 @import url('./_base.css');
 
 /* Publish Opportunity Form Styling */
-.publish-opportunity-window.hiddenOpp {
+.publish-opportunity-window.hidden-oppacity {
   visibility: hidden;
   opacity: 0;
 }
 
-.overlay.hiddenOpp {
+.overlay.hidden-oppacity {
   visibility: hidden;
   opacity: 0;
 }

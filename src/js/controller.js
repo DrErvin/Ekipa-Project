@@ -5,7 +5,7 @@ import SearchView from './views/SearchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import IntroView from './views/IntroView.js';
-import OpportunitiesView from './views/OpportunitiesView.js';
+import OpportunitiesView from './views/opportunitiesView.js';
 import publishOpportunityView from './views/publishOpportunityView.js';
 
 console.log(RES_PER_PAGE);
@@ -85,7 +85,7 @@ const controlPagination = function (goToPage) {
   paginationView.render(model.state.search);
 };
 
-const controlAddRecipe = async function (newOpportunity) {
+const controlAddOpportunity = async function (newOpportunity) {
   try {
     // Show loading spinner
     publishOpportunityView.renderSpinner();
@@ -123,7 +123,7 @@ const init = function () {
   SearchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   OpportunitiesView.addHandlerRender(controlOpportunities);
-  publishOpportunityView.addHandlerUpload(controlAddRecipe);
+  publishOpportunityView.addHandlerUpload(controlAddOpportunity);
   // controlOpportunities();
 };
 init();
