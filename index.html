@@ -399,7 +399,7 @@
         <label for="password">Password</label>
         <input id="password" required type="password" placeholder="Enter your password" />
 
-        <button class="btn login__btn" type="submit">
+        <button class="login__btn" type="submit">
           <svg>
             <use href="src/img/icons.svg#icon-login"></use>
           </svg>
@@ -408,7 +408,52 @@
       </div>
 
       <div class="login__footer">
-        <p>Don't have an account? <a href="#" id="signUpLink">Sign Up</a></p>
+        <!-- <p>Don't have an account? <a href="#" id="signUpLink">Sign Up</a></p> -->
+        <p>Don't have an account? <button class="show__signup__btn" id="openSignUpForm" type="button">
+            Sign Up
+          </button></p>
+
+      </div>
+    </form>
+  </div>
+
+  <div class="overlay hidden-oppacity"></div>
+  <div class="signup-form-window hidden-oppacity">
+    <button class="btn--close-modal">&times;</button>
+
+    <!-- Sign-Up Form -->
+    <form class="signup-form">
+      <div class="signup__column">
+        <h3 class="signup__heading">Sign Up</h3>
+
+        <div class="disclaimer">
+          <p>We will use your data to enhance your user journey on our platform by simplifying the application
+            process.
+          </p>
+        </div>
+
+        <label for="user-type">User Type</label>
+        <select id="user-type" required>
+          <option value="" disabled selected>Select User Type</option>
+          <option>Student</option>
+          <option>Deutsche Telekom</option>
+        </select>
+
+        <label for="name">Name and Surname</label>
+        <input id="name" required type="text" placeholder="Enter your name and surname" />
+
+        <label for="email">Email <span class="note">please use your university or company email address</span></label>
+        <input id="email" required type="email" placeholder="Enter your email" />
+
+        <label for="password">Password</label>
+        <input id="password" required type="password" placeholder="Enter your password" />
+
+        <button class="btn signup__btn" type="submit">
+          <svg>
+            <use href="src/img/icons.svg#icon-signup"></use>
+          </svg>
+          <span>Sign Up</span>
+        </button>
       </div>
     </form>
   </div>

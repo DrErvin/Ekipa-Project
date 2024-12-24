@@ -1,5 +1,9 @@
 /* Publish Opportunity Form Styling */
-.publish-opportunity-window.hidden-oppacity {
+.hidden-oppacity {
+  visibility: hidden;
+  opacity: 0;
+}
+/* .publish-opportunity-window.hidden-oppacity {
   visibility: hidden;
   opacity: 0;
 }
@@ -7,7 +11,7 @@
 .overlay.hidden-oppacity {
   visibility: hidden;
   opacity: 0;
-}
+} */
 
 .publish-opportunity-window {
   position: fixed;

@@ -1,5 +1,5 @@
 /* Login Form Styling */
-.login-form-window.hidden-oppacity {
+/* .login-form-window.hidden-oppacity {
   visibility: hidden;
   opacity: 0;
 }
@@ -7,7 +7,7 @@
 .overlay.hidden-oppacity {
   visibility: hidden;
   opacity: 0;
-}
+} */
 
 .login-form-window {
   position: fixed;
@@ -27,7 +27,7 @@
   transition: all 0.5s;
 }
 
-.btn--close-modal {
+/* .btn--close-modal {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -52,7 +52,7 @@
   backdrop-filter: blur(4px);
   z-index: 100;
   transition: all 0.5s;
-}
+} */
 
 .login-form {
   display: flex;
@@ -145,13 +145,19 @@
   text-align: center;
 }
 
-.login__footer a {
+.show__signup__btn {
+  background: none;
+  border: none;
   color: var(--color-primary);
-  text-decoration: none;
+  font-size: 1rem;
   font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0;
 }
 
-.login__footer a:hover {
+.show__signup__btn:hover {
+  color: var(--color-primary-darker);
   text-decoration: underline;
 }
 
@@ -171,74 +177,74 @@
   }
 
   .login-form label {
-    font-size: 0.8rem; /* Smaller labels */
+    font-size: 0.8rem;
   }
 
   .login-form input {
-    font-size: 0.8rem; /* Smaller input font */
+    font-size: 0.8rem;
   }
 
   .login__btn {
-    font-size: 0.9rem; /* Slightly reduced button text size */
+    font-size: 0.9rem;
   }
 
   .login__btn svg {
     width: 1.6rem;
-    height: 1.6rem; /* Reduced icon size */
+    height: 1.6rem;
   }
 
-  .btn--close-modal {
-    font-size: 1.2rem; /* Slightly smaller close button font */
-  }
+  /* .btn--close-modal {
+    font-size: 1.2rem; 
+  } */
 
   .login__footer {
     font-size: 0.8rem;
   }
 
-  .login__footer a {
-    font-size: 0.8rem; /* Reduced footer link font */
+  .show__signup__btn {
+    font-size: 0.8rem;
   }
 
   .message p {
-    font-size: 0.9rem; /* Smaller font for messages */
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
   .login__heading {
-    font-size: 1rem; /* Smaller heading font */
+    font-size: 1rem;
   }
 
   .login-form label {
-    font-size: 0.7rem; /* Smaller labels */
+    font-size: 0.7rem;
   }
 
   .login-form input {
-    font-size: 0.7rem; /* Smaller input font */
+    font-size: 0.7rem;
   }
 
   .login__btn {
-    font-size: 0.8rem; /* Reduced button text size */
+    font-size: 0.8rem;
   }
 
   .login__btn svg {
     width: 1.4rem;
-    height: 1.4rem; /* Smaller icon size */
+    height: 1.4rem;
   }
 
-  .btn--close-modal {
-    font-size: 1rem; /* Further reduced close button font */
-  }
+  /* .btn--close-modal {
+    font-size: 1rem;
+  } */
 
   .login__footer {
     font-size: 0.7rem;
   }
 
-  .login__footer a {
-    font-size: 0.7rem; /* Reduced footer link font */
+  .show__signup__btn {
+    font-size: 0.7rem;
   }
 
   .message p {
-    font-size: 0.8rem; /* Smaller font for messages */
+    font-size: 0.8rem;
   }
 }

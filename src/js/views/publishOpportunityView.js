@@ -29,7 +29,12 @@ class PublishOpportunityView extends View {
     this._overlay.addEventListener('click', this.toggleWindow.bind(this));
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') this.toggleWindow();
+      if (
+        e.key === 'Escape' &&
+        !this._overlay.classList.contains('hidden-oppacity') &&
+        !this._window.classList.contains('hidden-oppacity')
+      )
+        this.toggleWindow();
     });
   }
 
