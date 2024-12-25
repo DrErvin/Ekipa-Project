@@ -112,7 +112,7 @@ const controlPublishOpportunity = async function (newOpportunity) {
 
     // Close form window
     setTimeout(function () {
-      publishView.toggleWindow();
+      if (!publishView.isManuallyClosed()) publishView.toggleWindow();
     }, MODAL_CLOSE_SEC * 1000);
   } catch (err) {
     console.error('💥', err);
@@ -136,16 +136,29 @@ const controlLogIn = async function () {
     console.log('Login successful:', model.state.user);
 
     // Update the login button text
-    loginView.updateLoginButton();
+    if (model.isLoggedIn()) loginView.updateLoginButton();
 
     // Show success message
     loginView.renderMessage();
 
     // Close the login form
-    // loginView.toggleWindow();
+    setTimeout(function () {
+      if (!loginView.isManuallyClosed()) loginView.toggleWindow();
+    }, MODAL_CLOSE_SEC * 1000);
   } catch (err) {
     console.error('💥', err);
     loginView.renderError(err.message);
+  }
+};
+
+const controlLogInState = function () {
+  // Load user from local storage
+  model.loadUserFromLocalStorage();
+
+  // If user is logged in, update UI
+  if (model.isLoggedIn()) {
+    loginView.updateLoginButton();
+    console.log('User restored from session:', model.state.user);
   }
 };
 
@@ -155,6 +168,7 @@ const init = function () {
   opportunitiesView.addHandlerRender(controlOpportunities);
   publishView.addHandlerUpload(controlPublishOpportunity);
   loginView.addHandlerLogin(controlLogIn);
+  controlLogInState();
   // controlOpportunities();
 };
 init();

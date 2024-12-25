@@ -214,6 +214,8 @@ export const verifyLogin = async function (data) {
       state.user.accountType = account.id.startsWith('s-')
         ? 'student'
         : 'Telekom';
+
+      saveUserToLocalStorage();
     }
 
     // Return the account if found, otherwise return null
@@ -221,4 +223,21 @@ export const verifyLogin = async function (data) {
   } catch (err) {
     throw err;
   }
+};
+
+const saveUserToLocalStorage = function () {
+  localStorage.setItem('loggedInUser', JSON.stringify(state.user));
+};
+
+export const loadUserFromLocalStorage = function () {
+  const storedUser = localStorage.getItem('loggedInUser');
+  if (storedUser) {
+    const parsedUser = JSON.parse(storedUser);
+    state.user.id = parsedUser.id;
+    state.user.accountType = parsedUser.accountType;
+  }
+};
+
+export const isLoggedIn = function () {
+  return state.user.id;
 };

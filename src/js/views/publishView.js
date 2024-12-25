@@ -38,6 +38,10 @@ class publishView extends View {
     });
   }
 
+  isManuallyClosed() {
+    return this._window.classList.contains('hidden-oppacity');
+  }
+
   addHandlerUpload(handler) {
     this._parentElement.addEventListener('submit', function (e) {
       e.preventDefault();

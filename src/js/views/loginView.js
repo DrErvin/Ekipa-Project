@@ -23,7 +23,11 @@ class loginView extends View {
   }
 
   _addHandlerShowWindow() {
-    this._btnOpen.addEventListener('click', this.toggleWindow.bind(this));
+    this._btnOpen.addEventListener('click', (_) => {
+      if (this._btnOpen.textContent.trim() === 'Log In/Sign Up') {
+        this.toggleWindow();
+      }
+    });
   }
 
   _addHandlerHideWindow() {
@@ -49,6 +53,10 @@ class loginView extends View {
   updateLoginButton() {
     // const text = isLoggedIn ? 'Log Out' : 'Log In/Sign Up';
     this._btnLogIn.textContent = 'Log Out';
+  }
+
+  isManuallyClosed() {
+    return this._window.classList.contains('hidden-oppacity');
   }
 
   addHandlerLogin(handler) {
