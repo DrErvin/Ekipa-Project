@@ -10,6 +10,10 @@ export const state = {
     page: 1,
     resultsPerPage: RES_PER_PAGE,
   },
+  user: {
+    id: null,
+    accountType: null, // 'student' or 'Telekom'
+  },
 };
 
 const createOpportunityObject = function (data) {
@@ -40,7 +44,7 @@ const createOpportunityObject = function (data) {
 export const loadOpportunity = async function (id) {
   try {
     // const data = await AJAX(`${API_URL}${id}?key=${KEY}`);
-    const data = await AJAX(`${API_URL}`);
+    const data = await AJAX(`${API_URL}/opportunities`);
     console.log(data);
     console.log(typeof id);
 
@@ -73,7 +77,7 @@ export const loadSearchResults = async function (query) {
     state.search.query = query;
 
     // Fetch the JSON data from the local file
-    const data = await AJAX(`${API_URL}`);
+    const data = await AJAX(`${API_URL}/opportunities`);
     // If was a real API, we would use something like this
     //  const data = await AJAX(`${API_URL}?${queryString}`);
     console.log('Check for data in loadSearchResults', data);
@@ -180,7 +184,7 @@ export const uploadOpportunity = async function (newOpportunity) {
     // state.opportunity = createOpportunityObject(data);
 
     // Send data to server
-    const response = await AJAX(`${API_URL}`, opportunity);
+    const response = await AJAX(`${API_URL}/opportunities`, opportunity);
     console.log('Server Response:', response);
 
     // Add to existing data
@@ -189,6 +193,31 @@ export const uploadOpportunity = async function (newOpportunity) {
 
     // Simulate saving to data.json (adjust for real server if necessary)
     console.log('Opportunity Uploaded:', state.opportunity);
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const verifyLogin = async function (data) {
+  try {
+    // Fetch all accounts from the API
+    const accounts = await AJAX(`${API_URL}/accounts`);
+
+    // Find the account with matching email and password
+    const account = accounts.find(
+      (acc) => acc.email === data.email && acc.password === data.password
+    );
+
+    // Update the state if the account is valid
+    if (account) {
+      state.user.id = account.id;
+      state.user.accountType = account.id.startsWith('s-')
+        ? 'student'
+        : 'Telekom';
+    }
+
+    // Return the account if found, otherwise return null
+    return account || null;
   } catch (err) {
     throw err;
   }

@@ -186,9 +186,9 @@
   }
 
   .btn--close-modal {
-    top: 5px; /* Adjust the close button position */
-    right: 10px;
-    font-size: 1.2rem; /* Slightly smaller for smaller screens */
+    top: 9px; /* Adjust the close button position */
+    right: 13px;
+    font-size: 1.3rem; /* Slightly smaller for smaller screens */
   }
 
   .publish-opportunity-window input,

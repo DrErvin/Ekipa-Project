@@ -5,8 +5,9 @@ import SearchView from './views/SearchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import IntroView from './views/IntroView.js';
-import OpportunitiesView from './views/opportunitiesView.js';
-import publishOpportunityView from './views/publishOpportunityView.js';
+import opportunitiesView from './views/opportunitiesView.js';
+import publishView from './views/publishView.js';
+import loginView from './views/loginView.js';
 
 console.log(RES_PER_PAGE);
 
@@ -17,11 +18,11 @@ const controlOpportunities = async function () {
     if (!id) return;
 
     // 0) Scroll the viewport to the top and render the loading spinner
-    OpportunitiesView.scrollUp();
-    OpportunitiesView.renderSpinner();
+    opportunitiesView.scrollUp();
+    opportunitiesView.renderSpinner();
 
     // 1) Toggle sections visibility
-    OpportunitiesView.toggleInit();
+    opportunitiesView.toggleInit();
 
     // 0) Update results view to mark selected search result
     // resultsView.update(model.getSearchResultsPage());
@@ -34,10 +35,10 @@ const controlOpportunities = async function () {
     await model.loadOpportunity(id);
 
     // 3) Rendering opportunity
-    OpportunitiesView.render(model.state.opportunity);
+    opportunitiesView.render(model.state.opportunity);
   } catch (err) {
     console.error(err);
-    OpportunitiesView.renderError();
+    opportunitiesView.renderError();
   }
 };
 
@@ -85,22 +86,22 @@ const controlPagination = function (goToPage) {
   paginationView.render(model.state.search);
 };
 
-const controlAddOpportunity = async function (newOpportunity) {
+const controlPublishOpportunity = async function (newOpportunity) {
   try {
     // Show loading spinner
-    publishOpportunityView.renderSpinner();
+    publishView.renderSpinner();
 
     // Upload the new opportunity data
     await model.uploadOpportunity(newOpportunity);
     console.log(model.state.opportunity);
 
     // Render opportunity
-    OpportunitiesView.scrollUp();
-    OpportunitiesView.toggleInit();
-    OpportunitiesView.render(model.state.opportunity);
+    opportunitiesView.scrollUp();
+    opportunitiesView.toggleInit();
+    opportunitiesView.render(model.state.opportunity);
 
     // Success message
-    publishOpportunityView.renderMessage();
+    publishView.renderMessage();
 
     // Render bookmark view
     // bookmarksView.render(model.state.bookmarks);
@@ -111,19 +112,49 @@ const controlAddOpportunity = async function (newOpportunity) {
 
     // Close form window
     setTimeout(function () {
-      publishOpportunityView.toggleWindow();
+      publishView.toggleWindow();
     }, MODAL_CLOSE_SEC * 1000);
   } catch (err) {
     console.error('💥', err);
-    publishOpportunityView.renderError(err.message);
+    publishView.renderError(err.message);
+  }
+};
+
+const controlLogIn = async function () {
+  try {
+    // Get login data from the login form
+    const data = loginView.getLoginData();
+
+    // Verify login credentials using the model
+    const account = await model.verifyLogin(data);
+    if (!account) {
+      alert('Invalid email or password');
+      return;
+    }
+
+    // Log success and user details
+    console.log('Login successful:', model.state.user);
+
+    // Update the login button text
+    loginView.updateLoginButton();
+
+    // Show success message
+    loginView.renderMessage();
+
+    // Close the login form
+    // loginView.toggleWindow();
+  } catch (err) {
+    console.error('💥', err);
+    loginView.renderError(err.message);
   }
 };
 
 const init = function () {
   SearchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
-  OpportunitiesView.addHandlerRender(controlOpportunities);
-  publishOpportunityView.addHandlerUpload(controlAddOpportunity);
+  opportunitiesView.addHandlerRender(controlOpportunities);
+  publishView.addHandlerUpload(controlPublishOpportunity);
+  loginView.addHandlerLogin(controlLogIn);
   // controlOpportunities();
 };
 init();

@@ -1,13 +1,13 @@
 import View from './View.js';
 
-class PublishOpportunityView extends View {
+class publishView extends View {
   _parentElement = document.querySelector('.upload');
   _message = 'Opportunity was successfully uploaded :)';
 
   _window = document.querySelector('.publish-opportunity-window');
-  _overlay = document.querySelector('.overlay');
+  _overlay = document.querySelector('.overlay--publish');
   _btnOpen = document.querySelector('#publishOpportunities');
-  _btnClose = document.querySelector('.btn--close-modal');
+  _btnClose = document.querySelector('.upload-btn--close-modal');
 
   constructor() {
     super();
@@ -51,4 +51,4 @@ class PublishOpportunityView extends View {
   _generateMarkup() {}
 }
 
-export default new PublishOpportunityView();
+export default new publishView();
