@@ -231,13 +231,71 @@ const saveUserToLocalStorage = function () {
 
 export const loadUserFromLocalStorage = function () {
   const storedUser = localStorage.getItem('loggedInUser');
-  if (storedUser) {
-    const parsedUser = JSON.parse(storedUser);
-    state.user.id = parsedUser.id;
-    state.user.accountType = parsedUser.accountType;
-  }
+  if (!storedUser) return;
+
+  const parsedUser = JSON.parse(storedUser);
+  state.user.id = parsedUser.id;
+  state.user.accountType = parsedUser.accountType;
+
+  // if (storedUser) {
+  //   const parsedUser = JSON.parse(storedUser);
+  //   state.user.id = parsedUser.id;
+  //   state.user.accountType = parsedUser.accountType;
+  // }
 };
 
 export const isLoggedIn = function () {
   return state.user.id;
 };
+
+export const getUserDetails = async function () {
+  try {
+    // Ensure user ID is available in the global state
+    if (!state.user.id) return null;
+
+    // Fetch account data from the API
+    const accounts = await AJAX(`${API_URL}/accounts`);
+
+    // Find the user by ID
+    const user = accounts.find((acc) => acc.id === state.user.id);
+    return user || null;
+  } catch (err) {
+    console.error('Error fetching user details:', err);
+    throw err;
+  }
+};
+
+export const clearState = function () {
+  try {
+    // Clear user state
+    state.user.id = null;
+    state.user.accountType = null;
+
+    console.log('User state cleared.');
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const clearLocalStorage = function () {
+  try {
+    // Clear local storage
+    localStorage.removeItem('loggedInUser');
+
+    console.log('Local storage cleared.');
+  } catch (err) {
+    throw err;
+  }
+};
+
+// export const clearHistory = function () {
+//   try {
+//     // Clear browser history
+//     window.history.pushState(null, '', '/');
+
+//     console.log('Browser history cleared.');
+//   } catch (err) {
+//     console.error('Error clearing history:', err);
+//     throw err;
+//   }
+// };

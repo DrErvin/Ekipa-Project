@@ -8,7 +8,7 @@ class loginView extends View {
   _overlay = document.querySelector('.overlay--login');
   _btnOpen = document.querySelector('#logInSignUp');
   _btnClose = document.querySelector('.login-btn--close-modal');
-  _btnLogIn = document.querySelector('#logInSignUp');
+  // _btnLogIn = document.querySelector('#logInSignUp');
 
   constructor() {
     super();
@@ -17,6 +17,7 @@ class loginView extends View {
   }
 
   toggleWindow() {
+    this._clearHtml();
     this._overlay.classList.toggle('hidden-oppacity');
     this._window.classList.toggle('hidden-oppacity');
     console.log('loginView toggle func was called');
@@ -50,9 +51,9 @@ class loginView extends View {
     return { email, password };
   }
 
-  updateLoginButton() {
+  updateLoginButton(isLoggedIn) {
     // const text = isLoggedIn ? 'Log Out' : 'Log In/Sign Up';
-    this._btnLogIn.textContent = 'Log Out';
+    this._btnOpen.textContent = isLoggedIn ? 'Log Out' : 'Log In/Sign Up';
   }
 
   isManuallyClosed() {

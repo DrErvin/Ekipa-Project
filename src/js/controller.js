@@ -8,6 +8,7 @@ import IntroView from './views/IntroView.js';
 import opportunitiesView from './views/opportunitiesView.js';
 import publishView from './views/publishView.js';
 import loginView from './views/loginView.js';
+import logoutView from './views/logoutView.js';
 
 console.log(RES_PER_PAGE);
 
@@ -114,6 +115,9 @@ const controlPublishOpportunity = async function (newOpportunity) {
     setTimeout(function () {
       if (!publishView.isManuallyClosed()) publishView.toggleWindow();
     }, MODAL_CLOSE_SEC * 1000);
+
+    // Reset the form when it closes
+    publishView.resetForm();
   } catch (err) {
     console.error('💥', err);
     publishView.renderError(err.message);
@@ -136,7 +140,11 @@ const controlLogIn = async function () {
     console.log('Login successful:', model.state.user);
 
     // Update the login button text
-    if (model.isLoggedIn()) loginView.updateLoginButton();
+    loginView.updateLoginButton(model.isLoggedIn());
+
+    // Update log out form with user name and surname
+    const userData = await model.getUserDetails();
+    logoutView.updateUserNameSurname(userData);
 
     // Show success message
     loginView.renderMessage();
@@ -151,14 +159,47 @@ const controlLogIn = async function () {
   }
 };
 
-const controlLogInState = function () {
-  // Load user from local storage
-  model.loadUserFromLocalStorage();
+const controlLogInState = async function () {
+  try {
+    // Load user from local storage
+    model.loadUserFromLocalStorage();
 
-  // If user is logged in, update UI
-  if (model.isLoggedIn()) {
-    loginView.updateLoginButton();
+    // If user is logged in, update UI
+    loginView.updateLoginButton(model.isLoggedIn());
+
+    // Update log out form with user name and surname
+    const userData = await model.getUserDetails();
+    logoutView.updateUserNameSurname(userData);
+
     console.log('User restored from session:', model.state.user);
+  } catch (err) {
+    console.error('💥', err);
+    logoutView.renderError(err.message);
+    loginView.renderError(err.message);
+  }
+};
+
+const controlLogOut = async function () {
+  try {
+    // Clear global state
+    model.clearState();
+
+    // Clear local storage
+    model.clearLocalStorage();
+
+    // Update the login/signup button text
+    loginView.updateLoginButton();
+
+    // Show success message
+    logoutView.renderMessage();
+
+    // Close the login form
+    setTimeout(function () {
+      if (!logoutView.isManuallyClosed()) logoutView.toggleWindow();
+    }, MODAL_CLOSE_SEC * 1000);
+  } catch (err) {
+    console.error('💥', err);
+    logoutView.renderError(err.message);
   }
 };
 
@@ -167,8 +208,9 @@ const init = function () {
   paginationView.addHandlerClick(controlPagination);
   opportunitiesView.addHandlerRender(controlOpportunities);
   publishView.addHandlerUpload(controlPublishOpportunity);
-  loginView.addHandlerLogin(controlLogIn);
   controlLogInState();
+  loginView.addHandlerLogin(controlLogIn);
+  logoutView.addHandlerLogout(controlLogOut);
   // controlOpportunities();
 };
 init();

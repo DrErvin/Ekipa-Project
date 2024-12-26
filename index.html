@@ -417,6 +417,25 @@
     </form>
   </div>
 
+  <div class="overlay overlay--logout hidden-oppacity"></div>
+  <div class="logout-form-window hidden-oppacity">
+    <button class="btn--close-modal logout-btn--close-modal">&times;</button>
+    <form class="logout-form">
+      <div class="logout__column">
+        <h3 class="logout__heading">Log Out</h3>
+        <p class="logout__message">
+          You are currently logged in as <span id="logoutUserName">Name Surname</span>. Do you want to log out?
+        </p>
+        <button class="btn logout__btn" type="submit">
+          <svg>
+            <use href="src/img/icons.svg#icon-logout"></use>
+          </svg>
+          <span>Log Out</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
   <div class="overlay overlay--signup hidden-oppacity"></div>
   <div class="signup-form-window hidden-oppacity">
     <button class="btn--close-modal signup-btn--close-modal">&times;</button>
