@@ -149,6 +149,9 @@ const controlLogIn = async function () {
     // Show success message
     loginView.renderMessage();
 
+    // Restore the original form HTML after renderMesssage clears it
+    loginView.restoreOriginalHtml();
+
     // Close the login form
     setTimeout(function () {
       if (!loginView.isManuallyClosed()) loginView.toggleWindow();
@@ -192,6 +195,9 @@ const controlLogOut = async function () {
 
     // Show success message
     logoutView.renderMessage();
+
+    // Restore the original form HTML after renderMesssage clears it
+    logoutView.restoreOriginalHtml();
 
     // Close the login form
     setTimeout(function () {

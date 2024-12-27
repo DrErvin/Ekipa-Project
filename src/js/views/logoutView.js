@@ -18,7 +18,6 @@ class logoutView extends View {
   toggleWindow() {
     this._overlay.classList.toggle('hidden-oppacity');
     this._window.classList.toggle('hidden-oppacity');
-    console.log('logoutView toggle func was called');
   }
 
   _addHandlerShowWindow() {

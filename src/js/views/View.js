@@ -3,6 +3,7 @@
 
 export default class View {
   _data;
+  _originalHtml;
 
   /**
    * Render the received object to the DOM
@@ -28,7 +29,27 @@ export default class View {
   }
 
   _clearHtml() {
+    this._saveOriginalHtml();
+
     this._parentElement.innerHTML = '';
+  }
+
+  _saveOriginalHtml() {
+    if (this._originalHtml) return;
+
+    this._originalHtml = this._parentElement.innerHTML;
+  }
+
+  restoreOriginalHtml() {
+    if (!this._originalHtml) return;
+
+    // Wait for the transition to end before restoring HTML
+    const onTransitionEnd = () => {
+      this._parentElement.innerHTML = this._originalHtml;
+      this._window.removeEventListener('transitionend', onTransitionEnd);
+    };
+
+    this._window.addEventListener('transitionend', onTransitionEnd);
   }
 
   scrollUp() {
