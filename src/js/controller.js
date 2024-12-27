@@ -9,6 +9,7 @@ import opportunitiesView from './views/opportunitiesView.js';
 import publishView from './views/publishView.js';
 import loginView from './views/loginView.js';
 import logoutView from './views/logoutView.js';
+import signupView from './views/signupView.js';
 
 console.log(RES_PER_PAGE);
 
@@ -209,6 +210,27 @@ const controlLogOut = async function () {
   }
 };
 
+const controlSignup = async function () {
+  try {
+    setTimeout(function () {
+      if (!signupView.isManuallyClosed()) signupView.toggleWindow();
+    }, MODAL_CLOSE_SEC * 1000);
+  } catch (err) {
+    console.error('💥', err);
+    signupView.renderError(err.message);
+  }
+};
+
+const controlSignupWindow = function () {
+  // Close the login form if it is open
+  if (!loginView.isManuallyClosed()) {
+    loginView.toggleWindow();
+  }
+
+  // Open the signup form
+  signupView.toggleWindow();
+};
+
 const init = function () {
   SearchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
@@ -217,6 +239,7 @@ const init = function () {
   controlLogInState();
   loginView.addHandlerLogin(controlLogIn);
   logoutView.addHandlerLogout(controlLogOut);
+  signupView.addHandlerShowWindow(controlSignupWindow);
   // controlOpportunities();
 };
 init();
