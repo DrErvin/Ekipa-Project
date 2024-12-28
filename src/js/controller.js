@@ -105,6 +105,9 @@ const controlPublishOpportunity = async function (newOpportunity) {
     // Success message
     publishView.renderMessage();
 
+    // Restore the original form HTML after renderMesssage clears it
+    publishView.restoreOriginalHtml();
+
     // Render bookmark view
     // bookmarksView.render(model.state.bookmarks);
 
@@ -116,9 +119,6 @@ const controlPublishOpportunity = async function (newOpportunity) {
     setTimeout(function () {
       if (!publishView.isManuallyClosed()) publishView.toggleWindow();
     }, MODAL_CLOSE_SEC * 1000);
-
-    // Reset the form when it closes
-    publishView.resetForm();
   } catch (err) {
     console.error('💥', err);
     publishView.renderError(err.message);
@@ -210,8 +210,30 @@ const controlLogOut = async function () {
   }
 };
 
-const controlSignup = async function () {
+const controlSignup = async function (newAccount) {
   try {
+    // Show loading spinner
+    signupView.renderSpinner();
+
+    // Upload the new opportunity data
+    // await model.uploadOpportunity(newOpportunity);
+    // console.log(model.state.opportunity);
+    await model.uploadAccount(newAccount);
+    console.log(newAccount);
+
+    // Update the login button text
+    loginView.updateLoginButton(model.isLoggedIn());
+
+    // Update log out form with user name and surname
+    const userData = await model.getUserDetails();
+    logoutView.updateUserNameSurname(userData);
+
+    // Success message
+    signupView.renderMessage();
+
+    // Restore the original form HTML after renderMesssage clears it
+    signupView.restoreOriginalHtml();
+
     setTimeout(function () {
       if (!signupView.isManuallyClosed()) signupView.toggleWindow();
     }, MODAL_CLOSE_SEC * 1000);
@@ -221,14 +243,26 @@ const controlSignup = async function () {
   }
 };
 
-const controlSignupWindow = function () {
+const controlSignupWindow = async function () {
   // Close the login form if it is open
-  if (!loginView.isManuallyClosed()) {
-    loginView.toggleWindow();
-  }
+  if (!loginView.isManuallyClosed()) loginView.toggleWindow();
 
   // Open the signup form
   signupView.toggleWindow();
+
+  // Preload university domains
+  await model.preloadUniversityDomains();
+};
+
+const controlValidateEmail = async function (email) {
+  try {
+    const isValid = await model.validateEmail(email);
+
+    return isValid; // Return validation status to be used in the view
+  } catch (err) {
+    console.error('💥', err);
+    signupView.renderError(err.message);
+  }
 };
 
 const init = function () {
@@ -240,6 +274,8 @@ const init = function () {
   loginView.addHandlerLogin(controlLogIn);
   logoutView.addHandlerLogout(controlLogOut);
   signupView.addHandlerShowWindow(controlSignupWindow);
+  signupView.addHandlerUpload(controlSignup);
+  signupView.addHandlerValidation(controlValidateEmail);
   // controlOpportunities();
 };
 init();

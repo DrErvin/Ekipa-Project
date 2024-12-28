@@ -459,14 +459,15 @@
         </select> -->
 
         <label for="name">Name and Surname</label>
-        <input id="name" required type="text" placeholder="Enter your name and surname" />
+        <input id="name" name="nameAndSurname" required type="text" placeholder="Enter your name and surname" />
 
         <label for="signUpEmail">Email <span class="note">please use your university or company email
             address</span></label>
-        <input id="signUpEmail" required type="email" placeholder="Enter your email" />
+        <input id="signUpEmail" name="email" required type="email" placeholder="Enter your email" />
+        <p class="signup__emailError hidden">*Invalid email domain. Please use your university or Telekom email.</p>
 
         <label for="signUpPassword">Password</label>
-        <input id="signUpPassword" required type="password" placeholder="Enter your password" />
+        <input id="signUpPassword" name="password" required type="password" placeholder="Enter your password" />
 
         <button class="btn signup__btn" type="submit">
           <svg>

@@ -1,4 +1,9 @@
-import { RES_PER_PAGE, API_URL, EMPLOYEE_INFO } from './config.js';
+import {
+  RES_PER_PAGE,
+  API_URL,
+  EMPLOYEE_INFO,
+  UNIVERSITY_API_URL,
+} from './config.js';
 import { AJAX } from './helpers.js';
 import { calculateRemainingDays } from './helpers.js';
 
@@ -10,10 +15,8 @@ export const state = {
     page: 1,
     resultsPerPage: RES_PER_PAGE,
   },
-  user: {
-    id: null,
-    accountType: null, // 'student' or 'Telekom'
-  },
+  user: {},
+  universityDomainsCache: [],
 };
 
 const createOpportunityObject = function (data) {
@@ -38,6 +41,20 @@ const createOpportunityObject = function (data) {
     employeeInfo: opportunity.employeeInfo || EMPLOYEE_INFO, // Default value
     contactPerson: opportunity.contactPerson || 'Not specified',
     contactPersonEmail: opportunity.contactPersonEmail || 'Not provided',
+  };
+};
+
+const createUserObject = function (account) {
+  return {
+    id: account.id,
+    accountType: account.id.startsWith('s-') ? 'student' : 'Telekom',
+    // id: user.id,
+    // nameAndSurname: user.name_and_surname || '',
+    // email: user.email || '',
+    // password: user.password || '', // Avoid using plaintext passwords; ensure they're hashed in a real application
+    // accountType: user.account_type || '',
+    // universityName: user.university_name || '',
+    // universityLocation: user.university_location || '',
   };
 };
 
@@ -187,13 +204,13 @@ export const uploadOpportunity = async function (newOpportunity) {
     const response = await AJAX(`${API_URL}/opportunities`, opportunity);
     console.log('Server Response:', response);
 
-    // Add to existing data
+    // Add to global state
     state.opportunity = createOpportunityObject([response.data]);
     // state.opportunity = createOpportunityObject(data);
 
-    // Simulate saving to data.json (adjust for real server if necessary)
     console.log('Opportunity Uploaded:', state.opportunity);
   } catch (err) {
+    console.error('Error with uploading opportunity:', err);
     throw err;
   }
 };
@@ -210,17 +227,25 @@ export const verifyLogin = async function (data) {
 
     // Update the state if the account is valid
     if (account) {
-      state.user.id = account.id;
-      state.user.accountType = account.id.startsWith('s-')
-        ? 'student'
-        : 'Telekom';
+      state.user = createUserObject(account);
 
       saveUserToLocalStorage();
     }
 
+    // // Update the state if the account is valid
+    // if (account) {
+    //   state.user.id = account.id;
+    //   state.user.accountType = account.id.startsWith('s-')
+    //     ? 'student'
+    //     : 'Telekom';
+
+    //   saveUserToLocalStorage();
+    // }
+
     // Return the account if found, otherwise return null
     return account || null;
   } catch (err) {
+    console.error('Error with verifiying login:', err);
     throw err;
   }
 };
@@ -268,11 +293,13 @@ export const getUserDetails = async function () {
 export const clearState = function () {
   try {
     // Clear user state
-    state.user.id = null;
-    state.user.accountType = null;
+    // state.user.id = null;
+    // state.user.accountType = null;
+    state.user = {};
 
     console.log('User state cleared.');
   } catch (err) {
+    console.error('Error clearing the global state:', err);
     throw err;
   }
 };
@@ -284,6 +311,7 @@ export const clearLocalStorage = function () {
 
     console.log('Local storage cleared.');
   } catch (err) {
+    console.error('Error clearing local storage:', err);
     throw err;
   }
 };
@@ -299,3 +327,81 @@ export const clearLocalStorage = function () {
 //     throw err;
 //   }
 // };
+
+export const uploadAccount = async function (newAccount) {
+  try {
+    // Prepare account object
+    const account = {
+      id:
+        newAccount.accountType === 'student'
+          ? `s-${Date.now()}`
+          : `t-${Date.now()}`,
+      name_and_surname: newAccount.nameAndSurname,
+      email: newAccount.email,
+      password: newAccount.password,
+      account_type: newAccount.accountType || '',
+      university_name: newAccount.universityName || '',
+      university_location: newAccount.universityLocation || '',
+    };
+
+    // Upload to the API
+    const response = await AJAX(`${API_URL}/accounts`, account);
+    console.log('Account Uploaded:', response);
+
+    // Add to global state
+    state.user = createUserObject(response.data);
+    console.log('User Added to Global State:', state.user);
+
+    saveUserToLocalStorage();
+  } catch (err) {
+    console.error('Error uploading account:', err);
+    throw err;
+  }
+};
+
+export const preloadUniversityDomains = async function () {
+  try {
+    // Fetch university data from the API
+    const universities = await AJAX(`${UNIVERSITY_API_URL}/search`);
+
+    // Cache all university domains
+    state.universityDomainsCache = universities.flatMap((uni) => uni.domains);
+    console.log('University domains preloaded:', state.universityDomainsCache);
+  } catch (err) {
+    console.error('Error preloading university domains:', err);
+    throw err;
+  }
+};
+
+export const validateEmail = async function (email) {
+  try {
+    // console.log('email to validate: ', email);
+
+    // Ensure email contains an '@' before proceeding
+    if (!email.includes('@')) {
+      // console.log('Invalid email format: Missing @ symbol.');
+      return false;
+    }
+
+    // Extract the domain from the email
+    const emailDomain = email.split('@')[1];
+
+    // Normalize the domain by progressively removing subdomains
+    const domainParts = emailDomain.split('.');
+
+    // Check progressively from the full domain to subdomains
+    const isValidDomain = domainParts.some((_, index) => {
+      const normalizedDomain = domainParts.slice(index).join('.');
+      return (
+        state.universityDomainsCache.includes(normalizedDomain) ||
+        ['telekom.com'].includes(normalizedDomain)
+      );
+    });
+
+    // console.log(isValidDomain ? 'Valid domain found' : 'Invalid domain');
+    return isValidDomain; // Return true if a valid domain is found
+  } catch (err) {
+    console.error('Error validating email:', err);
+    throw err;
+  }
+};
