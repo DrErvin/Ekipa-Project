@@ -26,7 +26,7 @@ const createOpportunityObject = function (data) {
     type: opportunity.type || 'Unknown Type',
     fieldOfStudy: opportunity.fieldOfStudy || 'General',
     title: opportunity.title || 'Untitled Opportunity',
-    company: opportunity.company || 'Deutsche Telekom', // Default value
+    company: opportunity.company || 'Deutsche Telekom',
     location: opportunity.location || 'Not specified',
     opportunityDescription:
       opportunity.description || 'Description not available',
@@ -38,7 +38,7 @@ const createOpportunityObject = function (data) {
     deadline:
       calculateRemainingDays(opportunity.endingDate) || 'No deadline provided',
     benefits: opportunity.benefits || [],
-    employeeInfo: opportunity.employeeInfo || EMPLOYEE_INFO, // Default value
+    employeeInfo: opportunity.employeeInfo || EMPLOYEE_INFO,
     contactPerson: opportunity.contactPerson || 'Not specified',
     contactPersonEmail: opportunity.contactPersonEmail || 'Not provided',
   };
@@ -340,6 +340,10 @@ export const preloadUniversityDomains = async function () {
     console.error('Error preloading university domains:', err);
     throw err;
   }
+};
+
+export const areUniversitiesCached = function () {
+  return state.universityDomainsCache.length > 0;
 };
 
 export const validateEmail = async function (email) {

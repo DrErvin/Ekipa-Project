@@ -223,7 +223,7 @@ const controlSignup = async function (newAccount) {
     // await model.uploadOpportunity(newOpportunity);
     // console.log(model.state.opportunity);
     await model.uploadAccount(newAccount);
-    console.log(newAccount);
+    // console.log(newAccount);
 
     // Update the login button text
     loginView.updateLoginButton(model.isLoggedIn());
@@ -248,14 +248,21 @@ const controlSignup = async function (newAccount) {
 };
 
 const controlSignupWindow = async function () {
-  // Close the login form if it is open
-  if (!loginView.isManuallyClosed()) loginView.toggleWindow();
+  try {
+    // Close the login form if it is open
+    if (!loginView.isManuallyClosed()) loginView.toggleWindow();
 
-  // Open the signup form
-  signupView.toggleWindow();
+    // Open the signup form
+    signupView.toggleWindow();
 
-  // Preload university domains
-  await model.preloadUniversityDomains();
+    if (model.areUniversitiesCached()) return;
+
+    // Preload university domains
+    await model.preloadUniversityDomains();
+  } catch (err) {
+    console.error('💥', err);
+    signupView.renderError(err.message);
+  }
 };
 
 const controlValidateEmail = async function (email) {

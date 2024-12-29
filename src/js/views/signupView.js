@@ -26,8 +26,6 @@ class signupView extends View {
   }
 
   toggleValidationError(show = false) {
-    console.log('State of show: ', show);
-    console.log(this._validationError);
     this._validationError.classList.toggle('hidden', !show);
     // this._submitButton.disabled = show; // Disable submit button if there is an error
   }
@@ -90,7 +88,7 @@ class signupView extends View {
 
         const dataArr = [...new FormData(this._parentElement)];
         const data = Object.fromEntries(dataArr);
-        console.log(data);
+        // console.log(data);
         handler(data);
       }.bind(this)
     );
