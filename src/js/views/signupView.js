@@ -21,11 +21,24 @@ class signupView extends View {
   toggleWindow() {
     this._overlay.classList.toggle('hidden-oppacity');
     this._window.classList.toggle('hidden-oppacity');
+
+    // Refresh the _validationError reference when toggling the window
   }
 
   toggleValidationError(show = false) {
+    console.log('State of show: ', show);
+    console.log(this._validationError);
     this._validationError.classList.toggle('hidden', !show);
-    this._submitButton.disabled = show; // Disable submit button if there is an error
+    // this._submitButton.disabled = show; // Disable submit button if there is an error
+  }
+
+  isManuallyClosed() {
+    return this._window.classList.contains('hidden-oppacity');
+  }
+
+  resetValidation() {
+    this._isEmailValid = false;
+    this.toggleValidationError(false);
   }
 
   _addHandlerHideWindow() {
@@ -42,10 +55,6 @@ class signupView extends View {
     });
   }
 
-  isManuallyClosed() {
-    return this._window.classList.contains('hidden-oppacity');
-  }
-
   addHandlerShowWindow(handler) {
     // this._btnOpen.addEventListener('click', this.toggleWindow.bind(this));
     this._btnOpen.addEventListener('click', function () {
@@ -60,6 +69,9 @@ class signupView extends View {
       async function (e) {
         const email = e.target.value;
         this._isEmailValid = await handler(email);
+
+        // Refresh the _validationError reference when opening the second time
+        this._validationError = document.querySelector('.signup__emailError');
         this.toggleValidationError(!this._isEmailValid);
       }.bind(this)
     );

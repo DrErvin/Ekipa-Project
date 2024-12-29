@@ -191,6 +191,10 @@ const controlLogOut = async function () {
     // Clear local storage
     model.clearLocalStorage();
 
+    // Reset signup form validation state
+    signupView.resetValidation();
+    signupView.addHandlerValidation(controlValidateEmail);
+
     // Update the login/signup button text
     loginView.updateLoginButton();
 

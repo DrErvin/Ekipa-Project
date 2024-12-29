@@ -328,37 +328,6 @@ export const clearLocalStorage = function () {
 //   }
 // };
 
-export const uploadAccount = async function (newAccount) {
-  try {
-    // Prepare account object
-    const account = {
-      id:
-        newAccount.accountType === 'student'
-          ? `s-${Date.now()}`
-          : `t-${Date.now()}`,
-      name_and_surname: newAccount.nameAndSurname,
-      email: newAccount.email,
-      password: newAccount.password,
-      account_type: newAccount.accountType || '',
-      university_name: newAccount.universityName || '',
-      university_location: newAccount.universityLocation || '',
-    };
-
-    // Upload to the API
-    const response = await AJAX(`${API_URL}/accounts`, account);
-    console.log('Account Uploaded:', response);
-
-    // Add to global state
-    state.user = createUserObject(response.data);
-    console.log('User Added to Global State:', state.user);
-
-    saveUserToLocalStorage();
-  } catch (err) {
-    console.error('Error uploading account:', err);
-    throw err;
-  }
-};
-
 export const preloadUniversityDomains = async function () {
   try {
     // Fetch university data from the API
@@ -375,11 +344,11 @@ export const preloadUniversityDomains = async function () {
 
 export const validateEmail = async function (email) {
   try {
-    // console.log('email to validate: ', email);
+    console.log('email to validate: ', email);
 
     // Ensure email contains an '@' before proceeding
     if (!email.includes('@')) {
-      // console.log('Invalid email format: Missing @ symbol.');
+      console.log('Invalid email format: Missing @ symbol.');
       return false;
     }
 
@@ -398,10 +367,83 @@ export const validateEmail = async function (email) {
       );
     });
 
-    // console.log(isValidDomain ? 'Valid domain found' : 'Invalid domain');
+    console.log(isValidDomain ? 'Valid domain found' : 'Invalid domain');
     return isValidDomain; // Return true if a valid domain is found
   } catch (err) {
     console.error('Error validating email:', err);
+    throw err;
+  }
+};
+
+export const generateUserInfo = async function (email) {
+  try {
+    // Extract the domain from the email
+    const emailDomain = email.split('@')[1];
+
+    // Normalize the domain by progressively removing subdomains
+    const domainParts = emailDomain.split('.');
+    const normalizedDomain = domainParts.slice(-2).join('.');
+
+    // Determine if it's a Telekom or university domain
+    const isTelekomDomain = normalizedDomain === 'telekom.com';
+    const idPrefix = isTelekomDomain ? 't-' : 's-';
+    const accountType = isTelekomDomain ? 'Telekom' : 'student';
+
+    // Default user object
+    const userInfo = {
+      id: `${idPrefix}${Date.now()}`, // Unique ID
+      email,
+      accountType,
+      universityName: null,
+      universityLocation: null,
+    };
+
+    if (isTelekomDomain) return userInfo;
+
+    // Fetch university details only if it's a university domain
+    // if (!isTelekomDomain) {
+    const universities = await AJAX(`${UNIVERSITY_API_URL}/search`);
+    const university = universities.find((uni) =>
+      uni.domains.some((domain) => emailDomain.endsWith(domain))
+    );
+
+    if (!university) return userInfo;
+    // if (university) {
+    userInfo.universityName = university.name;
+    userInfo.universityLocation = university.country;
+    // }
+    // }
+
+    return userInfo;
+  } catch (err) {
+    console.error('Error generating user info:', err);
+    throw err;
+  }
+};
+
+export const uploadAccount = async function (newAccount) {
+  try {
+    // Generate user info based on the email
+    const userInfo = await generateUserInfo(newAccount.email);
+
+    // Prepare account object
+    const account = {
+      ...userInfo, // Use generated user info
+      name_and_surname: newAccount.nameAndSurname,
+      password: newAccount.password,
+    };
+
+    // Upload to the API
+    const response = await AJAX(`${API_URL}/accounts`, account);
+    console.log('Account Uploaded:', response);
+
+    // Add to global state
+    state.user = createUserObject(response.data);
+    console.log('User Added to Global State:', state.user);
+
+    saveUserToLocalStorage();
+  } catch (err) {
+    console.error('Error uploading account:', err);
     throw err;
   }
 };
