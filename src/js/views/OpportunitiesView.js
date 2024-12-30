@@ -79,7 +79,7 @@ class opportunitiesView extends View {
 
         <!-- Apply Now Button -->
         <div class="apply-button">
-          <a href="#" class="apply-now-btn">Apply Now</a>
+          <button class="apply-now-btn" id="apply-top-btn" type="button">Apply Now</button>
         </div>
 
         <!-- Opportunity Description Section -->
@@ -134,7 +134,7 @@ class opportunitiesView extends View {
 
         <!-- Apply Now Button at the End -->
         <div class="apply-button">
-          <a href="#" class="apply-now-btn">Apply Now</a>
+          <button class="apply-now-btn" id="apply-bottom-btn" type="button">Apply Now</button>
         </div>
       </div>
     `;

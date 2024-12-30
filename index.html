@@ -480,6 +480,34 @@
     </form>
   </div>
 
+  <div class="overlay overlay--apply hidden-oppacity"></div>
+  <div class="apply-form-window hidden-oppacity">
+    <button class="btn--close-modal apply-btn--close-modal">&times;</button>
+    <form class="apply-form">
+      <div class="apply__column">
+        <h3 class="apply__heading">Apply Now</h3>
+
+        <div class="disclaimer">
+          <p>Your information is auto-generated based on your email. After applying, you will receive a confirmation
+            email
+            with your details.</p>
+        </div>
+
+        <label for="cvUpload">Upload Your CV (optional)</label>
+        <input id="cvUpload" name="cvUpload" type="file" accept=".pdf, .doc, .docx" />
+
+        <p class="apply__note">*Only PDF, DOC, and DOCX files are accepted.</p>
+
+        <button class="btn apply__btn" type="submit">
+          <svg>
+            <use href="src/img/icons.svg#icon-apply"></use>
+          </svg>
+          <span>Apply</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
 </body>
 
 </html>

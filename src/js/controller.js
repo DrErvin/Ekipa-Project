@@ -10,6 +10,7 @@ import publishView from './views/publishView.js';
 import loginView from './views/loginView.js';
 import logoutView from './views/logoutView.js';
 import signupView from './views/signupView.js';
+import applyView from './views/applyView.js';
 
 console.log(RES_PER_PAGE);
 
@@ -38,6 +39,9 @@ const controlOpportunities = async function () {
 
     // 3) Rendering opportunity
     opportunitiesView.render(model.state.opportunity);
+
+    // 4) Attach event listeners for Apply Now buttons
+    applyView.addHandlerShowWindow();
   } catch (err) {
     console.error(err);
     opportunitiesView.renderError();
@@ -276,6 +280,35 @@ const controlValidateEmail = async function (email) {
   }
 };
 
+const controlApplication = async function () {
+  try {
+    // Show loading spinner
+    applyView.renderSpinner();
+
+    const userId = model.state.user.id;
+    const opportunityId = model.state.opportunity.id;
+
+    // Prepare data for submission
+    const applicationData = { userId, opportunityId };
+
+    // Submit data to the backend
+    await model.submitApplication(applicationData);
+
+    // Success message
+    applyView.renderMessage();
+
+    // Restore the original form HTML after renderMesssage clears it
+    applyView.restoreOriginalHtml();
+
+    setTimeout(function () {
+      if (!applyView.isManuallyClosed()) applyView.toggleWindow();
+    }, MODAL_CLOSE_SEC * 1000);
+  } catch (err) {
+    console.error('💥', err);
+    applyView.renderError(err.message);
+  }
+};
+
 const init = function () {
   SearchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
@@ -287,6 +320,7 @@ const init = function () {
   signupView.addHandlerShowWindow(controlSignupWindow);
   signupView.addHandlerUpload(controlSignup);
   signupView.addHandlerValidation(controlValidateEmail);
+  applyView.addHandlerApply(controlApplication);
   // controlOpportunities();
 };
 init();

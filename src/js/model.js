@@ -451,3 +451,17 @@ export const uploadAccount = async function (newAccount) {
     throw err;
   }
 };
+
+export const submitApplication = async function (applicationData) {
+  try {
+    console.log(applicationData);
+    const response = await AJAX(
+      `${API_URL}/api/send-application-email`,
+      applicationData
+    );
+    console.log('Application submitted successfully:', response);
+  } catch (err) {
+    console.error('Error submitting application:', err);
+    throw err;
+  }
+};
