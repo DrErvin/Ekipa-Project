@@ -6,7 +6,7 @@ class applyView extends View {
 
   _window = document.querySelector('.apply-form-window');
   _overlay = document.querySelector('.overlay--apply');
-
+  _buttonsContainer = document.querySelector('.details-opportunity');
   _btnClose = document.querySelector('.apply-btn--close-modal');
 
   constructor() {
@@ -19,26 +19,25 @@ class applyView extends View {
     this._window.classList.toggle('hidden-oppacity');
   }
 
-  addHandlerShowWindow() {
-    // Attach event listeners dynamically when opportunities are rendered
-    const topBtn = document.querySelector('#apply-top-btn');
-    const bottomBtn = document.querySelector('#apply-bottom-btn');
-
-    if (topBtn) {
-      topBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        console.log('Top Apply Now Button Clicked');
-        this.toggleWindow();
-      });
+  addHandlerShowWindow(checkUserPermission) {
+    // Attach event listener to the specific parent container
+    if (!this._buttonsContainer) {
+      return;
     }
 
-    if (bottomBtn) {
-      bottomBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        console.log('Bottom Apply Now Button Clicked');
-        this.toggleWindow();
-      });
-    }
+    this._buttonsContainer.addEventListener('click', (event) => {
+      const btn = event.target.closest('.apply-now-btn');
+      if (!btn) return;
+
+      event.preventDefault();
+
+      if (!checkUserPermission()) {
+        alert('You must be logged in as a student to apply.');
+        return;
+      }
+
+      this.toggleWindow();
+    });
   }
 
   _addHandlerHideWindow() {
