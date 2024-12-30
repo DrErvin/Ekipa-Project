@@ -72,7 +72,9 @@ class applyView extends View {
   addHandlerApply(handler) {
     this._parentElement.addEventListener('submit', function (e) {
       e.preventDefault();
-      handler();
+
+      const formData = new FormData(this);
+      handler(formData);
     });
   }
 

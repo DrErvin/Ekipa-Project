@@ -280,19 +280,20 @@ const controlValidateEmail = async function (email) {
   }
 };
 
-const controlApplication = async function () {
+const controlApplication = async function (formData) {
   try {
     // Show loading spinner
     applyView.renderSpinner();
 
-    const userId = model.state.user.id;
-    const opportunityId = model.state.opportunity.id;
+    // Append userId and opportunityId from the global state
+    formData.append('userId', model.state.user.id);
+    formData.append('opportunityId', model.state.opportunity.id);
 
     // Prepare data for submission
-    const applicationData = { userId, opportunityId };
+    // const applicationData = { userId, opportunityId };
 
     // Submit data to the backend
-    await model.submitApplication(applicationData);
+    await model.submitApplication(formData);
 
     // Success message
     applyView.renderMessage();

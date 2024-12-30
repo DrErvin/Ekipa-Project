@@ -28,6 +28,23 @@ export const AJAX = async function (url, uploadData = undefined) {
   }
 };
 
+export const sendFormData = async function (url, formData) {
+  try {
+    const fetchPro = fetch(url, {
+      method: 'POST',
+      body: formData,
+    });
+
+    const res = await fetchPro;
+    const data = await res.json();
+
+    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
 export const calculateRemainingDays = (endingDate) => {
   const currentDate = new Date();
   const targetDate = new Date(endingDate);

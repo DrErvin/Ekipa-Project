@@ -4,7 +4,7 @@ import {
   EMPLOYEE_INFO,
   UNIVERSITY_API_URL,
 } from './config.js';
-import { AJAX } from './helpers.js';
+import { AJAX, sendFormData } from './helpers.js';
 import { calculateRemainingDays } from './helpers.js';
 
 export const state = {
@@ -63,11 +63,11 @@ export const loadOpportunity = async function (id) {
     // const data = await AJAX(`${API_URL}${id}?key=${KEY}`);
     const data = await AJAX(`${API_URL}/opportunities`);
     console.log(data);
-    console.log(typeof id);
+    // console.log(typeof id);
 
     // Find the opportunity with the specified ID
     const result = data.find((opportunity) => +opportunity.id === +id);
-    console.log(result);
+    // console.log(result);
     if (!result) throw new Error(`Opportunity with ID ${id} not found`);
 
     state.opportunity = createOpportunityObject([result]);
@@ -452,14 +452,18 @@ export const uploadAccount = async function (newAccount) {
   }
 };
 
-export const submitApplication = async function (applicationData) {
+export const submitApplication = async function (formData) {
   try {
-    console.log(applicationData);
-    const response = await AJAX(
+    // console.log('Submitting application data:', formData);
+
+    // Send FormData to the backend
+    const response = await sendFormData(
       `${API_URL}/api/send-application-email`,
-      applicationData
+      formData
     );
+
     console.log('Application submitted successfully:', response);
+    return response;
   } catch (err) {
     console.error('Error submitting application:', err);
     throw err;
