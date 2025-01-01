@@ -10,6 +10,7 @@ module.exports = {
     actionTimeout: 10000,
     ignoreHTTPSErrors: true,
     baseURL: 'http://127.0.0.1:8080', // Update this to match your frontend's local server URL
+    screenshot: 'only-on-failure',
   },
   projects: [
     {
