@@ -8,7 +8,8 @@ class SearchPage {
     this.keywordInput = 'input[placeholder="Title or Keyword"]';
     this.searchButton = '.btn-search';
     this.resultsContainer = '.container-opp-list';
-    this.introSection = '.intro-section'; // Selector for the intro section
+    this.introSection = '.intro-section';
+    this.errorMessage = '.error'; // Selector for error message
   }
 
   async navigate() {
@@ -16,11 +17,19 @@ class SearchPage {
   }
 
   async performSearch(location, keyword) {
-    console.log('Filling search inputs');
-    await this.page.fill(this.locationInput, location);
-    await this.page.fill(this.keywordInput, keyword);
-    console.log('Clicking search button');
+    await this.page.fill(this.locationInput, location || '');
+    await this.page.fill(this.keywordInput, keyword || '');
     await this.page.click(this.searchButton);
+  }
+
+  async verifyNoResults() {
+    // Wait for the error message to appear
+    const error = await this.page.locator(this.errorMessage);
+    await error.waitFor({ state: 'visible' });
+
+    // Verify the error message is correct
+    const errorText = await error.innerText();
+    expect(errorText).toContain('No opportunities found for your query!');
   }
 
   async verifySearchResults(location, keyword) {
