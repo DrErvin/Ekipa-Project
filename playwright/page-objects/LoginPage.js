@@ -31,6 +31,10 @@ class LoginPage {
     );
     await expect(this.page.locator(this.loginButton)).toHaveText('Log Out');
   }
+
+  async checkSessionPersistence() {
+    await expect(this.page.locator(this.loginButton)).toHaveText('Log Out');
+  }
 }
 
 module.exports = LoginPage;

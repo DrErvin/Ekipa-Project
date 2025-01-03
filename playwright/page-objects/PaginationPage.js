@@ -8,6 +8,7 @@ class PaginationPage {
     this.prevButton = '.pagination__btn--prev';
     this.nextButton = '.pagination__btn--next';
     this.resultsContainer = '.container-opp-list';
+    this.homeButton = '#homeBtn';
   }
 
   async navigate() {
@@ -51,6 +52,15 @@ class PaginationPage {
   async verifyLastPage() {
     const nextButtonExists = await this.page.locator(this.nextButton).count();
     expect(nextButtonExists).toBe(0); // No "Next" button on the last page
+  }
+
+  async clickHomeButton() {
+    await this.page.click(this.homeButton);
+  }
+
+  async verifyPaginationReset() {
+    const nextPageExists = await this.page.locator(this.nextButton).count();
+    expect(nextPageExists).toBe(1); // Ensure the "Next" button is available
   }
 }
 
