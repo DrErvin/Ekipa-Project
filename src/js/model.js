@@ -391,15 +391,15 @@ export const generateUserInfo = async function (email) {
     // Determine if it's a Telekom or university domain
     const isTelekomDomain = normalizedDomain === 'telekom.com';
     const idPrefix = isTelekomDomain ? 't-' : 's-';
-    const accountType = isTelekomDomain ? 'Telekom' : 'student';
+    const account_type = isTelekomDomain ? 'Telekom' : 'student';
 
     // Default user object
     const userInfo = {
       id: `${idPrefix}${Date.now()}`, // Unique ID
       email,
-      accountType,
-      universityName: null,
-      universityLocation: null,
+      account_type,
+      university_name: null,
+      university_location: null,
     };
 
     if (isTelekomDomain) return userInfo;
@@ -413,8 +413,8 @@ export const generateUserInfo = async function (email) {
 
     if (!university) return userInfo;
     // if (university) {
-    userInfo.universityName = university.name;
-    userInfo.universityLocation = university.country;
+    userInfo.university_name = university.name;
+    userInfo.university_location = university.country;
     // }
     // }
 
