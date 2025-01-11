@@ -26,11 +26,17 @@
 
 .newsletter input {
   padding: 10px;
-  width: 280px;
+  width: 250px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-right: 10px;
+  font-size: 0.9rem;
   /* flex: 1 1 100%; */
+}
+
+.newsletter input:focus {
+  border: 1px solid var(--color-primary);
+  outline: none;
 }
 
 .newsletter button {
@@ -41,6 +47,7 @@
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 0.9rem;
 }
 
 .newsletter button:hover {
@@ -50,22 +57,23 @@
 /* Custom Select Dropdown Styling */
 .select-field {
   position: relative;
-  width: 200px;
+  width: 250px;
   margin-right: 10px;
+  font-size: 0.9rem;
 }
 
 .newsletter select {
   width: 100%;
   padding: 10px;
-  padding-right: 30px;
+  /* padding-right: 30px; */
   border-radius: 5px;
   border: 1px solid #ccc;
-  appearance: none;
+  /* appearance: none; */
   background-color: white;
   color: #666;
 }
 
-.select-field::after {
+/* .select-field::after {
   content: '▼';
   position: absolute;
   top: 50%;
@@ -73,7 +81,7 @@
   transform: translateY(-50%);
   color: #666;
   pointer-events: none;
-}
+} */
 
 .newsletter select:focus {
   border: 1px solid var(--color-primary);
@@ -92,6 +100,12 @@
 
   .newsletter p {
     font-size: 0.95rem;
+  }
+
+  .newsletter select,
+  .newsletter input,
+  .newsletter button {
+    font-size: 0.85rem;
   }
 
   .select-field,
@@ -126,8 +140,14 @@
 
   .newsletter button {
     width: 100%;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     padding: 8px;
+  }
+
+  .newsletter select,
+  .newsletter input,
+  .newsletter button {
+    font-size: 0.8rem;
   }
 }
 
@@ -145,7 +165,7 @@
   .newsletter input,
   .newsletter select,
   .newsletter button {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     padding: 8px;
     width: 100%;
   }
