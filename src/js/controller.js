@@ -310,14 +310,14 @@ const controlApplication = async function (formData) {
   }
 };
 
-const checkUserPermission = function () {
+const checkUserPermission = function (requiredType) {
   const user = model.state.user;
 
   // Check if user is logged in
   if (!user.id) return false;
 
   // Check if user is a student
-  return user.accountType === 'student';
+  return user.accountType === requiredType;
 };
 
 const init = function () {
@@ -325,6 +325,7 @@ const init = function () {
   paginationView.addHandlerClick(controlPagination);
   opportunitiesView.addHandlerRender(controlOpportunities);
   publishView.addHandlerUpload(controlPublishOpportunity);
+  publishView.addHandlerShowWindow(checkUserPermission);
   controlLogInState();
   loginView.addHandlerLogin(controlLogIn);
   logoutView.addHandlerLogout(controlLogOut);

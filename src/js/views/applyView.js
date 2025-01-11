@@ -20,18 +20,17 @@ class applyView extends View {
   }
 
   addHandlerShowWindow(checkUserPermission) {
-    // Attach event listener to the specific parent container
     if (!this._buttonsContainer) {
       return;
     }
 
-    this._buttonsContainer.addEventListener('click', (event) => {
-      const btn = event.target.closest('.apply-now-btn');
+    this._buttonsContainer.addEventListener('click', (e) => {
+      const btn = e.target.closest('.apply-now-btn');
       if (!btn) return;
 
-      event.preventDefault();
+      e.preventDefault();
 
-      if (!checkUserPermission()) {
+      if (!checkUserPermission('student')) {
         alert('You must be logged in as a student to apply.');
         return;
       }

@@ -11,7 +11,7 @@ class publishView extends View {
 
   constructor() {
     super();
-    this._addHandlerShowWindow();
+    // this._addHandlerShowWindow();
     this._addHandlerHideWindow();
   }
 
@@ -20,8 +20,17 @@ class publishView extends View {
     this._window.classList.toggle('hidden-oppacity');
   }
 
-  _addHandlerShowWindow() {
-    this._btnOpen.addEventListener('click', this.toggleWindow.bind(this));
+  addHandlerShowWindow(checkUserPermission) {
+    this._btnOpen.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (!checkUserPermission('Telekom')) {
+        alert('You must be logged in as a Telekom user to apply.');
+        return;
+      }
+
+      this.toggleWindow();
+    });
   }
 
   _addHandlerHideWindow() {
