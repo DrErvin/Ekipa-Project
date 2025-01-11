@@ -1,6 +1,6 @@
 import View from './View.js';
 
-class PreviewView extends View {
+class previewView extends View {
   _parentElement = '';
 
   _generateMarkup() {
@@ -54,4 +54,4 @@ class PreviewView extends View {
   }
 }
 
-export default new PreviewView();
+export default new previewView();

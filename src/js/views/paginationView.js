@@ -1,6 +1,6 @@
 import View from './View.js';
 
-class PaginationView extends View {
+class paginationView extends View {
   _parentElement = document.querySelector('.pagination');
 
   addHandlerClick(handler) {
@@ -74,4 +74,4 @@ class PaginationView extends View {
   }
 }
 
-export default new PaginationView();
+export default new paginationView();

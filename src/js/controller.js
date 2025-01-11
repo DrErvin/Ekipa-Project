@@ -4,7 +4,7 @@ import * as model from './model.js';
 import SearchView from './views/SearchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
-import IntroView from './views/IntroView.js';
+import introView from './views/introView.js';
 import opportunitiesView from './views/opportunitiesView.js';
 import publishView from './views/publishView.js';
 import loginView from './views/loginView.js';
@@ -68,7 +68,7 @@ const controlSearchResults = async function () {
     console.log(query);
 
     // 3) Render intro-section with query data
-    IntroView.render(query);
+    introView.render(query);
 
     // 4) Load search results
     await model.loadSearchResults(query);

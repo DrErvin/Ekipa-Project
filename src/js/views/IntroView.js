@@ -1,6 +1,6 @@
 import View from './View.js';
 
-class IntroView extends View {
+class introView extends View {
   _parentElement = document.querySelector('.intro-section');
 
   /**
@@ -32,4 +32,4 @@ class IntroView extends View {
   }
 }
 
-export default new IntroView();
+export default new introView();

@@ -1,7 +1,7 @@
 import View from './View.js';
 import previewView from './previewView.js';
 
-class ResultView extends View {
+class resultsView extends View {
   _parentElement = document.querySelector('.container-opp-list');
   _errorMessage = 'No opportunities found for your query! Please try again';
   _message = '';
@@ -23,4 +23,4 @@ class ResultView extends View {
   }
 }
 
-export default new ResultView();
+export default new resultsView();
