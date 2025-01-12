@@ -80,6 +80,7 @@ const controlSearchResults = async function () {
     paginationView.render(model.state.search);
   } catch (err) {
     console.error(err);
+    resultsView.renderError();
   }
 };
 
