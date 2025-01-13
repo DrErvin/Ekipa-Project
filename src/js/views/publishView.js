@@ -20,11 +20,11 @@ class publishView extends View {
     this._window.classList.toggle('hidden-oppacity');
   }
 
-  addHandlerShowWindow(checkUserPermission) {
+  addHandlerShowWindow(isLoggedIn) {
     this._btnOpen.addEventListener('click', (e) => {
       e.preventDefault();
 
-      if (!checkUserPermission('Telekom')) {
+      if (!isLoggedIn('Telekom')) {
         alert('You must be logged in as a Telekom user to apply.');
         return;
       }

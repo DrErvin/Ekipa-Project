@@ -19,7 +19,7 @@ class applyView extends View {
     this._window.classList.toggle('hidden-oppacity');
   }
 
-  addHandlerShowWindow(checkUserPermission) {
+  addHandlerShowWindow(isLoggedIn) {
     if (!this._buttonsContainer) {
       return;
     }
@@ -30,7 +30,7 @@ class applyView extends View {
 
       e.preventDefault();
 
-      if (!checkUserPermission('student')) {
+      if (!isLoggedIn('student')) {
         alert('You must be logged in as a student to apply.');
         return;
       }

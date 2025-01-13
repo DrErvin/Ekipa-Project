@@ -269,8 +269,19 @@ export const loadUserFromLocalStorage = function () {
   // }
 };
 
-export const isLoggedIn = function () {
-  return state.user.id;
+export const isLoggedIn = function (requiredType = null) {
+  const user = state.user;
+
+  // Check if the user is logged in
+  if (!user.id) return false;
+
+  // If a specific account type is required, check against it
+  if (requiredType && user.accountType !== requiredType) {
+    return false;
+  }
+
+  // Return true if no specific account type is required, or if the type matches
+  return true;
 };
 
 export const getUserDetails = async function () {

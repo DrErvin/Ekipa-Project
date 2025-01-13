@@ -41,7 +41,7 @@ const controlOpportunities = async function () {
     opportunitiesView.render(model.state.opportunity);
 
     // 4) Attach event listeners for Apply Now buttons
-    applyView.addHandlerShowWindow(checkUserPermission);
+    applyView.addHandlerShowWindow(model.isLoggedIn);
   } catch (err) {
     console.error(err);
     opportunitiesView.renderError();
@@ -311,22 +311,22 @@ const controlApplication = async function (formData) {
   }
 };
 
-const checkUserPermission = function (requiredType) {
-  const user = model.state.user;
+// const checkUserPermission = function (requiredType) {
+//   const user = model.state.user;
 
-  // Check if user is logged in
-  if (!user.id) return false;
+//   // Check if user is logged in
+//   if (!user.id) return false;
 
-  // Check if user is a student
-  return user.accountType === requiredType;
-};
+//   // Check if user is a student
+//   return user.accountType === requiredType;
+// };
 
 const init = function () {
   SearchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   opportunitiesView.addHandlerRender(controlOpportunities);
   publishView.addHandlerUpload(controlPublishOpportunity);
-  publishView.addHandlerShowWindow(checkUserPermission);
+  publishView.addHandlerShowWindow(model.isLoggedIn);
   controlLogInState();
   loginView.addHandlerLogin(controlLogIn);
   logoutView.addHandlerLogout(controlLogOut);
