@@ -9,7 +9,7 @@ class opportunitiesView extends View {
   _message = '';
 
   #sectionToShow = document.querySelector('.details-opportunity');
-
+  #telekomPermission = null;
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach((ev) =>
       window.addEventListener(ev, handler)
@@ -26,6 +26,34 @@ class opportunitiesView extends View {
   toggleInit() {
     // this.#toggleSections();
     this.toggleSections([this.#sectionToShow]);
+  }
+
+  addHandlerPermission(isLoggedIn) {
+    this.#telekomPermission = isLoggedIn('Telekom');
+  }
+
+  updateButtons(isLoggedIn) {
+    if (this.#sectionToShow.classList.contains('hidden')) return;
+
+    // Update the Telekom permission status
+    this.#telekomPermission = isLoggedIn('Telekom');
+
+    // Re-render the opportunity details with the updated buttons
+    this.render(this._data);
+  }
+
+  addHandlerDownloadPDF(handler) {
+    this._parentElement.addEventListener('click', (e) => {
+      if (!this.#telekomPermission) return;
+      console.log('Telekom Permission:', this.#telekomPermission);
+
+      const btn = e.target.closest('#download-pdf-btn');
+      if (!btn) return;
+
+      e.preventDefault();
+      console.log('Calling handler');
+      handler();
+    });
   }
 
   _generateMarkup() {
@@ -77,10 +105,11 @@ class opportunitiesView extends View {
           </div>
         </div>
 
-        <!-- Apply Now Button -->
-        <div class="apply-button">
-          <button class="apply-now-btn" id="apply-top-btn" type="button">Apply Now</button>
-        </div>
+        ${
+          this.#telekomPermission
+            ? this._generateDownloadPDFButton()
+            : this._generateApplyButton()
+        }
 
         <!-- Opportunity Description Section -->
         <div class="opportunity-section">
@@ -132,10 +161,30 @@ class opportunitiesView extends View {
           </div>
         </div>
 
-        <!-- Apply Now Button at the End -->
-        <div class="apply-button">
-          <button class="apply-now-btn" id="apply-bottom-btn" type="button">Apply Now</button>
-        </div>
+        ${
+          this.#telekomPermission
+            ? this._generateDownloadPDFButton()
+            : this._generateApplyButton()
+        }
+
+      </div>
+    `;
+  }
+
+  _generateApplyButton() {
+    return `
+      <!-- Apply Now Button -->
+      <div class="apply-button">
+        <button class="apply-now-btn" type="button">Apply Now</button>
+      </div>
+    `;
+  }
+
+  _generateDownloadPDFButton() {
+    return `
+      <!-- Download PDF Button -->
+      <div class="download-button">
+        <button id="download-pdf-btn" type="button">Download as PDF</button>
       </div>
     `;
   }

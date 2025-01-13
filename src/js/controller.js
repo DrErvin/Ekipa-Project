@@ -34,14 +34,18 @@ const controlOpportunities = async function () {
     // bookmarksView.update(model.state.bookmarks);
 
     // 2) Loading recipe
-    // await model.loadRecipe(id);
     await model.loadOpportunity(id);
 
-    // 3) Rendering opportunity
+    // 3) Attach isLoggedIn function to the markup method
+    opportunitiesView.addHandlerPermission(model.isLoggedIn);
+
+    // 4) Rendering opportunity
     opportunitiesView.render(model.state.opportunity);
 
-    // 4) Attach event listeners for Apply Now buttons
+    // 5) Attach event listeners for Apply Now buttons
     applyView.addHandlerShowWindow(model.isLoggedIn);
+
+    opportunitiesView.addHandlerDownloadPDF(controlDownloadPDF);
   } catch (err) {
     console.error(err);
     opportunitiesView.renderError();
@@ -158,6 +162,9 @@ const controlLogIn = async function () {
     // Restore the original form HTML after renderMesssage clears it
     loginView.restoreOriginalHtml();
 
+    // Update the buttons in opportunitiesView after login
+    opportunitiesView.updateButtons(model.isLoggedIn);
+
     // Close the login form
     setTimeout(function () {
       if (!loginView.isManuallyClosed()) loginView.toggleWindow();
@@ -208,6 +215,9 @@ const controlLogOut = async function () {
 
     // Restore the original form HTML after renderMesssage clears it
     logoutView.restoreOriginalHtml();
+
+    // Update the buttons in opportunitiesView after logout
+    opportunitiesView.updateButtons(model.isLoggedIn);
 
     // Close the login form
     setTimeout(function () {
@@ -320,6 +330,37 @@ const controlApplication = async function (formData) {
 //   // Check if user is a student
 //   return user.accountType === requiredType;
 // };
+
+const controlDownloadPDF = function () {
+  const opportunity = model.state.opportunity;
+
+  // Create the PDF content as plain text or formatted string
+  const pdfContent = `
+    Opportunity Details
+    ===================
+    
+    Title: ${opportunity.title}
+    Type: ${opportunity.type}
+    Location: ${opportunity.location}
+    Description: ${opportunity.opportunityDescription}
+    Experience Required: ${opportunity.experience}
+    Engagement Type: ${opportunity.engagementType}
+    Deadline: ${opportunity.deadline}
+  `;
+
+  // Create a Blob with the correct MIME type for PDF
+  const blob = new Blob([pdfContent], { type: 'application/pdf' });
+
+  // Create a hidden link element
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = `${opportunity.title}.pdf`;
+
+  // Append the link to the body, trigger the download, then remove the link
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
 const init = function () {
   SearchView.addHandlerSearch(controlSearchResults);

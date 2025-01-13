@@ -205,6 +205,25 @@
   padding: 3px;
 }
 
+.download-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#download-pdf-btn {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+#download-pdf-btn:hover {
+  background-color: var(--color-primary-darker);
+}
+
 /* ////////////////////////////////// */
 /* ////////////////////////////////// */
 /* Responsive Styling */
@@ -231,6 +250,11 @@
   }
 
   .apply-now-btn {
+    font-size: 1.1rem;
+    padding: 8px 16px;
+  }
+
+  #download-pdf-btn {
     font-size: 1.1rem;
     padding: 8px 16px;
   }
@@ -270,6 +294,11 @@
 
   .opportunity-section h2 {
     font-size: 1.5rem;
+  }
+
+  #download-pdf-btn {
+    font-size: 1rem;
+    padding: 8px 14px;
   }
 }
 
@@ -314,5 +343,10 @@
 
   .opportunity-info div {
     margin-bottom: 10px;
+  }
+
+  #download-pdf-btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
   }
 }
