@@ -125,6 +125,11 @@ const controlPublishOpportunity = async function (newOpportunity) {
     window.history.pushState(null, '', `#${model.state.opportunity.id}`);
     // window.history.back() // Automatically goes back to last page
 
+    // Update the buttons in opportunitiesView after login
+    opportunitiesView.updateButtons(model.isLoggedIn);
+
+    opportunitiesView.addHandlerDownloadPDF(controlDownloadPDF);
+
     // Close form window
     setTimeout(function () {
       if (!publishView.isManuallyClosed()) publishView.toggleWindow();
