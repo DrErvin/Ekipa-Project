@@ -11,6 +11,7 @@ import loginView from './views/loginView.js';
 import logoutView from './views/logoutView.js';
 import signupView from './views/signupView.js';
 import applyView from './views/applyView.js';
+import PDFView from './views/PDFView.js';
 
 console.log(RES_PER_PAGE);
 
@@ -334,32 +335,7 @@ const controlApplication = async function (formData) {
 const controlDownloadPDF = function () {
   const opportunity = model.state.opportunity;
 
-  // Create the PDF content as plain text or formatted string
-  const pdfContent = `
-    Opportunity Details
-    ===================
-    
-    Title: ${opportunity.title}
-    Type: ${opportunity.type}
-    Location: ${opportunity.location}
-    Description: ${opportunity.opportunityDescription}
-    Experience Required: ${opportunity.experience}
-    Engagement Type: ${opportunity.engagementType}
-    Deadline: ${opportunity.deadline}
-  `;
-
-  // Create a Blob with the correct MIME type for PDF
-  const blob = new Blob([pdfContent], { type: 'application/pdf' });
-
-  // Create a hidden link element
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = `${opportunity.title}.pdf`;
-
-  // Append the link to the body, trigger the download, then remove the link
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  PDFView.generatePDF(opportunity);
 };
 
 const init = function () {

@@ -6,7 +6,7 @@ class previewView extends View {
   _generateMarkup() {
     return `
         <div class="opportunity-card">
-          <img src="src/img/logo2.jpg" alt="Telekom logo" class="card-logo" />
+          <img src="img/logo2.jpg" alt="Telekom logo" class="card-logo" />
           <div class="card-info">
             <h3 class="card-type">${this._data.type || 'N/A'}</h3>
             <h2 class="card-title">${
@@ -17,7 +17,7 @@ class previewView extends View {
             <div class="card-detail-item">
               <div class="card-detail-label">
                 <svg class="card-icon">
-                    <use href="src/img/icons.svg#icon-location-marker"></use>
+                    <use href="img/icons.svg#icon-location-marker"></use>
                   </svg>
                 <span>Location</span>
               </div>
@@ -26,7 +26,7 @@ class previewView extends View {
             <div class="card-detail-item">
               <div class="card-detail-label">
                 <svg class="card-icon">
-                    <use href="src/img/icons.svg#icon-experience"></use>
+                    <use href="img/icons.svg#icon-experience"></use>
                   </svg>
                 <span>Experience</span>
               </div>
@@ -39,7 +39,7 @@ class previewView extends View {
             <div class="card-detail-item last-item">
               <div class="card-detail-label">
                  <svg class="card-icon">
-                    <use href="src/img/icons.svg#icon-deadline"></use>
+                    <use href="img/icons.svg#icon-deadline"></use>
                   </svg>
                 <span>Deadline</span>
               </div>

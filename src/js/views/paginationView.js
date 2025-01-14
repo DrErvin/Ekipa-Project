@@ -29,7 +29,7 @@ class paginationView extends View {
         curPage + 1
       }" class="pagination-btn pagination__btn--next">
             <svg class="pagination-icon">
-              <use href="src/img/icons.svg#icon-arrow-right"></use>
+              <use href="img/icons.svg#icon-arrow-right"></use>
             </svg>
             <span>Page ${curPage + 1}</span>
         </button>
@@ -42,7 +42,7 @@ class paginationView extends View {
           curPage - 1
         }" class="pagination-btn pagination__btn--prev">
             <svg class="pagination-icon">
-              <use href="src/img/icons.svg#icon-arrow-left"></use>
+              <use href="img/icons.svg#icon-arrow-left"></use>
             </svg>
             <span>Page ${curPage - 1}</span>
         </button>
@@ -55,7 +55,7 @@ class paginationView extends View {
           curPage - 1
         }" class="pagination-btn pagination__btn--prev">
             <svg class="pagination-icon">
-              <use href="src/img/icons.svg#icon-arrow-left"></use>
+              <use href="img/icons.svg#icon-arrow-left"></use>
             </svg>
             <span>Page ${curPage - 1}</span>
         </button>
@@ -63,7 +63,7 @@ class paginationView extends View {
           curPage + 1
         }" class="pagination-btn pagination__btn--next">
             <svg class="pagination-icon">
-              <use href="src/img/icons.svg#icon-arrow-right"></use>
+              <use href="img/icons.svg#icon-arrow-right"></use>
             </svg>
             <span>Page ${curPage + 1}</span>
         </button>

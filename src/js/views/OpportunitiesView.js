@@ -44,11 +44,11 @@ class opportunitiesView extends View {
 
   addHandlerDownloadPDF(handler) {
     this._parentElement.addEventListener('click', (e) => {
-      if (!this.#telekomPermission) return;
-      console.log('Telekom Permission:', this.#telekomPermission);
-
       const btn = e.target.closest('#download-pdf-btn');
       if (!btn) return;
+
+      if (!this.#telekomPermission) return;
+      console.log('Telekom Permission:', this.#telekomPermission);
 
       e.preventDefault();
       console.log('Calling handler');
@@ -60,14 +60,14 @@ class opportunitiesView extends View {
     return `
       <div class="container details-container">
         <div class="details-header">
-          <img src="src/img/logo.jpg" alt="Company Logo" class="company-logo" />
+          <img src="img/logo.jpg" alt="Company Logo" class="company-logo" />
           <h1 class="opportunity-title">${
             this._data.title || 'Untitled Opportunity'
           }</h1>
           <p class="opportunity-type">${this._data.type || 'N/A'}</p>
           <p class="opportunity-location">
             <svg class="icon-opport-header">
-              <use href="src/img/icons.svg#icon-location-marker"></use>
+              <use href="img/icons.svg#icon-location-marker"></use>
             </svg>
             ${this._data.location || 'Not specified'}
           </p>
@@ -83,7 +83,7 @@ class opportunitiesView extends View {
         <div class="opportunity-info">
           <div class="opportunity-experience">
             <svg class="icon-opport-header">
-              <use href="src/img/icons.svg#icon-experience"></use>
+              <use href="img/icons.svg#icon-experience"></use>
             </svg>
             <p><strong>Experience:</strong> ${
               this._data.experience || 'N/A'
@@ -91,7 +91,7 @@ class opportunitiesView extends View {
           </div>
           <div class="opportunity-engagement">
             <svg class="icon-opport-header">
-              <use href="src/img/icons.svg#icon-engagement"></use>
+              <use href="img/icons.svg#icon-engagement"></use>
             </svg>
             <p><strong>Engagement:</strong> ${
               this._data.engagementType || 'N/A'
@@ -99,7 +99,7 @@ class opportunitiesView extends View {
           </div>
           <div class="opportunity-deadline">
             <svg class="icon-opport-header">
-              <use href="src/img/icons.svg#icon-deadline"></use>
+              <use href="img/icons.svg#icon-deadline"></use>
             </svg>
             <p><strong>Deadline:</strong> ${this._data.deadline || 'N/A'}</p>
           </div>
@@ -149,7 +149,7 @@ class opportunitiesView extends View {
         <div class="contact-person-section">
           <h2>Contact Person</h2>
           <div class="contact-person-details">
-            <img src="src/img/LoveMagenta.jpeg" alt="Contact Person" class="contact-person-image" />
+            <img src="img/LoveMagenta.jpeg" alt="Contact Person" class="contact-person-image" />
             <div class="contact-person-info">
               <p><strong>Name:</strong> ${this._data.contactPerson || 'N/A'}</p>
               <p><strong>Email:</strong> 

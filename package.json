@@ -4,7 +4,8 @@
   "description": "This is the frontend project for the Ekipa-Student Platform. The platform connects students with various opportunities like internships, jobs, and mentorships from Deutsche Telekom.",
   "main": "index.js",
   "scripts": {
-    "start": "npx live-server --watch=\"index.html,src\""
+    "start": "vite",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/DrErvin/Ekipa-Project/issues"
   },
-  "homepage": "https://github.com/DrErvin/Ekipa-Project#readme"
+  "homepage": "https://github.com/DrErvin/Ekipa-Project#readme",
+  "dependencies": {
+    "jspdf": "^2.5.2"
+  },
+  "devDependencies": {
+    "vite": "^6.0.7"
+  }
 }
