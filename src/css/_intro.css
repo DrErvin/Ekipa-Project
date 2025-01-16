@@ -10,11 +10,13 @@
 .intro-title {
   font-size: 2.5rem;
   color: #333;
+  font-weight: 800;
 }
 
 .intro-text {
   font-size: 1.2rem;
   color: #666;
+  font-weight: 500;
 }
 
 /* ////////////////////////////////// */

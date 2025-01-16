@@ -9,12 +9,14 @@
 
 .newsletter h2 {
   font-size: 1.8rem;
+  font-weight: 800;
   color: var(--color-primary-darker);
 }
 
 .newsletter p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #666;
+  font-weight: 500;
 }
 
 .newsletter form {
@@ -25,12 +27,13 @@
 }
 
 .newsletter input {
+  font-family: 'TeleNeoWeb', sans-serif;
   padding: 10px;
   width: 250px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-right: 10px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   /* flex: 1 1 100%; */
 }
 
@@ -40,6 +43,7 @@
 }
 
 .newsletter button {
+  font-family: 'TeleNeoWeb', sans-serif;
   padding: 10px 20px;
   background-color: var(--color-primary);
   color: #fff;
@@ -47,7 +51,7 @@
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .newsletter button:hover {
@@ -59,10 +63,11 @@
   position: relative;
   width: 250px;
   margin-right: 10px;
-  font-size: 0.9rem;
 }
 
 .newsletter select {
+  font-family: 'TeleNeoWeb', sans-serif;
+  font-size: 1rem;
   width: 100%;
   padding: 10px;
   /* padding-right: 30px; */

@@ -14,7 +14,7 @@
   font-family: 'TeleNeoWeb';
   src: url('/fonts/TeleNeoWeb-Regular.woff2') format('woff2'),
     url('/fonts/TeleNeoWeb-Regular.woff') format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -22,7 +22,31 @@
   font-family: 'TeleNeoWeb';
   src: url('/fonts/TeleNeoWeb-Bold.woff2') format('woff2'),
     url('/fonts/TeleNeoWeb-Bold.woff') format('woff');
-  font-weight: bold;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TeleNeoWeb';
+  src: url('/fonts/TeleNeoWeb-ExtraBold.woff2') format('woff2'),
+    url('/fonts/TeleNeoWeb-ExtraBold.woff') format('woff');
+  font-weight: 800; /* ExtraBold weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TeleNeoWeb';
+  src: url('/fonts/TeleNeoWeb-Medium.woff2') format('woff2'),
+    url('/fonts/TeleNeoWeb-Medium.woff') format('woff');
+  font-weight: 500; /* Medium weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TeleNeoWeb';
+  src: url('/fonts/TeleNeoWeb-Ultra.woff2') format('woff2'),
+    url('/fonts/TeleNeoWeb-Ultra.woff') format('woff');
+  font-weight: 900; /* Ultra weight */
   font-style: normal;
 }
 
