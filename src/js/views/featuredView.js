@@ -4,25 +4,9 @@ class FeaturedOpportunitiesView extends View {
   _parentElement = document.querySelector('.opportunities-grid');
   _errorMessage = 'No featured opportunities found. Please try again later!';
 
-  render(data) {
-    this._data = data;
-    console.log('Rendering Featured Opportunities:', this._data); // Debug log
-    const markup = this._generateMarkup();
-    this._clear();
-    this._parentElement.insertAdjacentHTML('afterbegin', markup);
-  }
-
-  renderError() {
-    this._clear();
-    this._parentElement.insertAdjacentHTML(
-      'afterbegin',
-      `<p>${this._errorMessage}</p>`
-    );
-  }
-
-  _clear() {
-    this._parentElement.innerHTML = '';
-  }
+  addHandlerFeatured = function (handler) {
+    window.addEventListener('load', handler);
+  };
 
   _generateMarkup() {
     return this._data
