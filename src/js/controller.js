@@ -1,3 +1,4 @@
+// filepath: /c:/Users/Jasir/Ekipaproject/Ekipa-Project/src/js/controller.js
 import { RES_PER_PAGE } from './config.js';
 import { MODAL_CLOSE_SEC } from './config.js';
 import * as model from './model.js';
@@ -12,7 +13,29 @@ import logoutView from './views/logoutView.js';
 import signupView from './views/signupView.js';
 import applyView from './views/applyView.js';
 import PDFView from './views/PDFView.js';
+import featuredOpportunitiesView from './views/FeaturedOpportunitiesView.js';
+import { fetchFeaturedOpportunities } from './model.js';
 
+const controlFeaturedOpportunities = async function () {
+  try {
+    // Fetch data from the server
+    const data = await fetchFeaturedOpportunities();
+    console.log('Fetched Featured Opportunities:', data); // Debug log
+
+    // Render the opportunities
+    featuredOpportunitiesView.render(data);
+  } catch (err) {
+    featuredOpportunitiesView.renderError();
+    console.error(err);
+  }
+};
+
+// Initialize the rendering process
+const initFeaturedOpportunities = function () {
+  window.addEventListener('load', controlFeaturedOpportunities);
+};
+
+initFeaturedOpportunities();
 console.log(RES_PER_PAGE);
 
 const controlOpportunities = async function () {
@@ -52,7 +75,6 @@ const controlOpportunities = async function () {
     opportunitiesView.renderError();
   }
 };
-
 // A handler function to process the search query
 const controlSearchResults = async function () {
   try {
