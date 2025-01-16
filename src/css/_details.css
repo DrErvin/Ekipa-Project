@@ -33,18 +33,21 @@
   font-size: 2.5rem;
   color: var(--color-primary);
   margin-bottom: 0;
+  font-weight: 800;
 }
 
 .opportunity-type,
 .opportunity-tags {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: #666;
   margin-bottom: 0;
 }
 
 /* Adjust location font and position */
 .opportunity-location {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  font-weight: 500;
   color: #666;
   display: flex;
   align-items: center;
@@ -61,7 +64,6 @@
 .opportunity-tags span {
   color: var(--color-primary);
   margin-right: 10px;
-  font-weight: bold;
 }
 
 /* Job Information Section (Position, Engagement, Deadline, Location) */
@@ -79,6 +81,7 @@
   align-items: center;
   min-width: 250px;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 .icon-opport-header {
@@ -109,6 +112,8 @@
 } */
 
 .apply-now-btn {
+  font-family: 'TeleNeoWeb';
+  font-weight: 700;
   background-color: var(--color-primary);
   color: white;
   padding: 10px 20px;
@@ -133,11 +138,17 @@
 }
 
 .opportunity-section h2 {
+  font-size: 1.7rem;
   color: var(--color-primary);
   margin-bottom: 10px;
 }
 
+.opportunity-section p {
+  font-size: 1.2rem;
+}
+
 .opportunity-section ul {
+  font-size: 1.2rem;
   list-style-type: disc;
   padding-left: 20px;
   /* color: #666; */
@@ -176,7 +187,7 @@
 
 .contact-person-info {
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.2rem;
   /* color: #666; */
 }
 
@@ -211,6 +222,8 @@
 }
 
 #download-pdf-btn {
+  font-family: 'TeleNeoWeb';
+  font-weight: 700;
   background-color: var(--color-primary);
   color: white;
   padding: 10px 20px;

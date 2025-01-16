@@ -32,13 +32,13 @@
 }
 
 .card-type {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #888;
   margin: 0;
 }
 
 .card-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #333;
   margin: 5px 0 0;
@@ -70,8 +70,9 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 0.9rem;
-  color: #888;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
 }
 
 .card-detail-label img {
@@ -86,9 +87,9 @@
 }
 
 .card-detail-item p {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #555;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
   margin: 0;
   padding-top: 2px;
   word-wrap: break-word;
@@ -99,13 +100,16 @@
 }
 
 .card-btn {
+  font-family: 'TeleNeoWeb';
+  font-size: 1.1rem;
+  font-weight: 700;
   padding: 10px 20px;
   background-color: var(--color-primary);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
+
   margin-left: auto;
 }
 
