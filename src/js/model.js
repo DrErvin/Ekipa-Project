@@ -488,7 +488,9 @@ export const fetchFeaturedOpportunities = async function () {
     const data = await res.json();
 
     // Filter opportunities to only include those that are featured
-    const featuredOpportunities = data.filter(opportunity => opportunity.featured === true);
+    const featuredOpportunities = data.filter(
+      (opportunity) => opportunity.featured === true
+    );
     return featuredOpportunities; // Return only featured opportunities
   } catch (err) {
     throw err;
