@@ -46,7 +46,9 @@
       </ul>
       <!-- Buttons (Post a Listing and Log In/Sign Up) -->
       <div class="nav__buttons">
-        <button class="nav__button" id="publishOpportunities">Publish Opportunities</button>
+        <button class="nav__button" id="publishOpportunities">
+          Publish Opportunities
+        </button>
         <button class="nav__button" id="logInSignUp">Log In/Sign Up</button>
       </div>
     </nav>
@@ -57,10 +59,12 @@
     <!-- Main Content with Search Form and Intro Text -->
     <section class="intro-section">
       <div class="container">
-        <h1 class="intro-title">Headstart your career with Deutsche Telekom</h1>
+        <h1 class="intro-title">
+          Headstart your career with Deutsche Telekom
+        </h1>
         <p class="intro-text">
-          Search from thousands of student opportunities in multiple sectors and
-          locations.
+          Search from thousands of student opportunities in multiple sectors
+          and locations.
         </p>
       </div>
     </section>
@@ -73,7 +77,9 @@
             <input type="text" placeholder="Location" />
             <input type="text" placeholder="Title or Keyword" />
             <select name="field-of-study" class="dropdown" id="field-of-study">
-              <option value="" disabled selected>Select Field of Study</option>
+              <option value="" disabled selected>
+                Select Field of Study
+              </option>
               <option>Architecture</option>
               <option>Software Engineering</option>
               <option>Computer Sciences and Engineering</option>
@@ -113,9 +119,22 @@
     <section class="opportunities-list hidden">
       <div class="container">
         <h2>Available Opportunities</h2>
+        <!-- Featured opportunities Section -->
+        <section class="featured-opportunity">
+          <div class="container">
+            <h2>Featured Opportunities</h2>
+            <div class="opportunities-grid">
+              <!-- Opportunities will be dynamically inserted here -->
+            </div>
+          </div>
+        </section>
+        <!-- Opportunities List Section -->
+        <section class="opportunities-list hidden">
+          <div class="container">
+            <h2>Available Opportunities</h2>
 
-        <div class="container-opp-list">
-          <!-- <div class="opportunity-card">
+            <div class="container-opp-list">
+              <!-- <div class="opportunity-card">
             <img src="src/img/logo2.jpg" alt="Telekom logo" class="card-logo" />
             <div class="card-info">
               <h3 class="card-type">Job Offer</h3>
@@ -154,10 +173,10 @@
               <button class="card-btn">View Opportunity</button>
             </a>
           </div> -->
-        </div>
+            </div>
 
-        <div class="pagination">
-          <!-- <button class="pagination-btn pagination__btn--prev">
+            <div class="pagination">
+              <!-- <button class="pagination-btn pagination__btn--prev">
             <svg class="pagination-icon">
               <use href="src/img/icons.svg#icon-arrow-left"></use>
             </svg>
@@ -169,18 +188,16 @@
             </svg>
             <span>Page 3</span>
           </button> -->
-        </div>
-
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
 
-  </div>
-
-  <!-- Opportunity Details Section (initially hidden) style="display: none;" -->
-  <div id="opportunity-details-section" class="">
-    <!-- Main Details Section -->
-    <section class="details-opportunity hidden">
-      <!--<div class="container details-container">
+      <!-- Opportunity Details Section (initially hidden) style="display: none;" -->
+      <div id="opportunity-details-section" class="">
+        <!-- Main Details Section -->
+        <section class="details-opportunity hidden">
+          <!--<div class="container details-container">
         <div class="details-header">
           <img src="src/img/logo.jpg" alt="Company Logo" class="company-logo" />
           <h1 class="opportunity-title">Operations Manager</h1>
@@ -265,239 +282,262 @@
         <div class="apply-button">
           <a href="#" class="apply-now-btn">Apply Now</a>
         </div>-->
-    </section>
-
-  </div>
-
-  <!-- Newsletter Subscription Section -->
-  <section class="newsletter">
-    <h2>Top IT jobs in your inbox</h2>
-    <p>
-      Subscribe to the Telekom Portal newsletter, and we'll send you the latest
-      opportunities in your selected category once a week.
-    </p>
-    <form action="#">
-      <div class="select-field">
-        <select name="field-of-interest" required>
-          <option value="" disabled selected>Choose a field...</option>
-          <option value="Architecture">Architecture</option>
-          <option value="Software Engineering">Software Engineering</option>
-          <option value="Computer Sciences and Engineering">Computer Sciences and Engineering</option>
-          <option value="Artificial Intelligence and Data Engineering">Artificial Intelligence and Data Engineering
-          </option>
-          <option value="Genetics and Bioengineering">Genetics and Bioengineering</option>
-          <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
-          <option value="Mechanical Engineering">Mechanical Engineering</option>
-          <option value="Visual Arts and Visual Communications Design">Visual Arts and Visual Communications Design
-          </option>
-          <option value="Media and Communication">Media and Communication</option>
-        </select>
+        </section>
       </div>
 
-      <input type="email" placeholder="Your email address..." required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </section>
-
-  <!-- Footer Section -->
-  <footer class="main-footer">
-    <div class="container">
-      <p>&copy; 2025 Deutsche Telekom Student Platfrom. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <div class="overlay overlay--publish hidden-oppacity"></div>
-  <div class="publish-opportunity-window hidden-oppacity">
-    <button class="btn--close-modal upload-btn--close-modal">&times;</button>
-    <form class="upload">
-      <div class="upload__column">
-        <h3 class="upload__heading">Opportunity Details</h3>
-        <label>Type</label>
-        <select required name="type">
-          <option value="" disabled selected>Select Type</option>
-          <option>Job Offer</option>
-          <option>Internship</option>
-          <option>Thesis Topic</option>
-          <option>Mentorship</option>
-          <option>Extra Curriculum Project</option>
-        </select>
-        <label>Field of Study</label>
-        <select required name="fieldOfStudy">
-          <option value="" disabled selected>Select Field of Study</option>
-          <option>Architecture</option>
-          <option>Software Engineering</option>
-          <option>Computer Sciences and Engineering</option>
-          <option>Artificial Intelligence and Data Engineering</option>
-          <option>Genetics and Bioengineering</option>
-          <option>Electrical and Electronics Engineering</option>
-          <option>Mechanical Engineering</option>
-          <option>Visual Arts and Visual Communications Design</option>
-          <option>Media and Communication</option>
-        </select>
-        <label>Title</label>
-        <input value="TEST23" required name="title" type="text" placeholder="E.g., Frontend Developer" />
-        <label>Location</label>
-        <input value="TEST23" required name="location" type="text" placeholder="E.g., Berlin" />
-        <label>Job Description</label>
-        <textarea required name="description" placeholder="Add a brief description...">TEST23</textarea>
-        <label>Qualifications & Requirements</label>
-        <textarea required name="qualificationsAndRequirements"
-          placeholder="Semicolon-separated qualifications">TEST23</textarea>
-        <label>Benefits</label>
-        <textarea required name="benefits" placeholder="Semicolon-separated benefits">TEST23</textarea>
-      </div>
-
-      <div class="upload__column">
-        <h3 class="upload__heading">Additional Details</h3>
-        <label>Tags</label>
-        <input value="TEST23" required name="tags" type="text" placeholder="Comma-separated, e.g., JavaScript,React" />
-        <label>Engagement Type</label>
-        <input value="TEST23" required name="engagementType" type="text" placeholder="E.g., Full-time, Part-time" />
-        <label>Work Arrangement</label>
-        <input value="TEST23" required name="workArrangement" type="text" placeholder="E.g., Remote, On-site" />
-        <label>Contact Person </label>
-        <input value="TEST23" required name="contactPerson" type="text" placeholder="E.g., Jane Doe" />
-        <label>Contact Email <span class="note">This email will be the recipient address for all
-            applications</span></label>
-        <input value="TEST23@gmail.com" required name="contactPersonEmail" type="email"
-          placeholder="E.g., jane.doe@example.com" />
-        <label>Experience Required</label>
-        <input value="TEST23" name="experienceRequired" type="text"
-          placeholder="Comma-separated, e.g., Junior, Senior" />
-        <label>Deadline</label>
-        <input required name="endingDate" type="date" />
-      </div>
-
-      <button class="btn upload__btn" type="submit">
-        <svg>
-          <use href="img/icons.svg#icon-upload-cloud"></use>
-        </svg>
-        <span>Publish Opportunity</span>
-      </button>
-    </form>
-  </div>
-
-  <div class="overlay overlay--login hidden-oppacity"></div>
-  <div class="login-form-window hidden-oppacity">
-    <button class="btn--close-modal login-btn--close-modal">&times;</button>
-    <form class="login-form">
-      <div class="login__column">
-        <h3 class="login__heading">Log In</h3>
-        <label for="loginEmail">Email</label>
-        <input id="loginEmail" required type="email" placeholder="Enter your email" />
-
-        <label for="loginPassword">Password</label>
-        <input id="loginPassword" required type="password" placeholder="Enter your password" />
-
-        <button class="login__btn" type="submit">
-          <svg>
-            <use href="img/icons.svg#icon-login"></use>
-          </svg>
-          <span>Log In</span>
-        </button>
-      </div>
-
-      <div class="login__footer">
-        <!-- <p>Don't have an account? <a href="#" id="signUpLink">Sign Up</a></p> -->
-        <p>Don't have an account? <button class="show__signup__btn" id="openSignUpForm" type="button">
-            Sign Up
-          </button></p>
-
-      </div>
-    </form>
-  </div>
-
-  <div class="overlay overlay--logout hidden-oppacity"></div>
-  <div class="logout-form-window hidden-oppacity">
-    <button class="btn--close-modal logout-btn--close-modal">&times;</button>
-    <form class="logout-form">
-      <div class="logout__column">
-        <h3 class="logout__heading">Log Out</h3>
-        <p class="logout__message">
-          You are currently logged in as <span id="logoutUserName">Name Surname</span>. Do you want to log out?
+      <!-- Newsletter Subscription Section -->
+      <section class="newsletter">
+        <h2>Top IT jobs in your inbox</h2>
+        <p>
+          Subscribe to the Telekom Portal newsletter, and we'll send you the
+          latest opportunities in your selected category once a week.
         </p>
-        <button class="btn logout__btn" type="submit">
-          <svg>
-            <use href="img/icons.svg#icon-logout"></use>
-          </svg>
-          <span>Log Out</span>
-        </button>
-      </div>
-    </form>
-  </div>
+        <form action="#">
+          <div class="select-field">
+            <select name="field-of-interest" required>
+              <option value="" disabled selected>Choose a field...</option>
+              <option value="Architecture">Architecture</option>
+              <option value="Software Engineering">Software Engineering</option>
+              <option value="Computer Sciences and Engineering">
+                Computer Sciences and Engineering
+              </option>
+              <option value="Artificial Intelligence and Data Engineering">
+                Artificial Intelligence and Data Engineering
+              </option>
+              <option value="Genetics and Bioengineering">
+                Genetics and Bioengineering
+              </option>
+              <option value="Electrical and Electronics Engineering">
+                Electrical and Electronics Engineering
+              </option>
+              <option value="Mechanical Engineering">
+                Mechanical Engineering
+              </option>
+              <option value="Visual Arts and Visual Communications Design">
+                Visual Arts and Visual Communications Design
+              </option>
+              <option value="Media and Communication">
+                Media and Communication
+              </option>
+            </select>
+          </div>
 
-  <div class="overlay overlay--signup hidden-oppacity"></div>
-  <div class="signup-form-window hidden-oppacity">
-    <button class="btn--close-modal signup-btn--close-modal">&times;</button>
+          <input type="email" placeholder="Your email address..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
 
-    <!-- Sign-Up Form -->
-    <form class="signup-form">
-      <div class="signup__column">
-        <h3 class="signup__heading">Sign Up</h3>
-
-        <div class="disclaimer">
-          <p>We use your data to enhance your user journey on our platform by simplifying the application
-            process.
-          </p>
+      <!-- Footer Section -->
+      <footer class="main-footer">
+        <div class="container">
+          <p>&copy; 2024 Job Portal. All Rights Reserved.</p>
         </div>
+      </footer>
 
-        <!-- <label for="user-type">User Type</label>
+      <div class="overlay overlay--publish hidden-oppacity"></div>
+      <div class="publish-opportunity-window hidden-oppacity">
+        <button class="btn--close-modal upload-btn--close-modal">&times;</button>
+        <form class="upload">
+          <div class="upload__column">
+            <h3 class="upload__heading">Opportunity Details</h3>
+            <label>Type</label>
+            <select required name="type">
+              <option value="" disabled selected>Select Type</option>
+              <option>Job Offer</option>
+              <option>Internship</option>
+              <option>Thesis Topic</option>
+              <option>Mentorship</option>
+              <option>Extra Curriculum Project</option>
+            </select>
+            <label>Field of Study</label>
+            <select required name="fieldOfStudy">
+              <option value="" disabled selected>Select Field of Study</option>
+              <option>Architecture</option>
+              <option>Software Engineering</option>
+              <option>Computer Sciences and Engineering</option>
+              <option>Artificial Intelligence and Data Engineering</option>
+              <option>Genetics and Bioengineering</option>
+              <option>Electrical and Electronics Engineering</option>
+              <option>Mechanical Engineering</option>
+              <option>Visual Arts and Visual Communications Design</option>
+              <option>Media and Communication</option>
+            </select>
+            <label>Title</label>
+            <input value="TEST23" required name="title" type="text" placeholder="E.g., Frontend Developer" />
+            <label>Location</label>
+            <input value="TEST23" required name="location" type="text" placeholder="E.g., Berlin" />
+            <label>Job Description</label>
+            <textarea required name="description" placeholder="Add a brief description...">
+              TEST23</textarea>
+            <label>Qualifications & Requirements</label>
+            <textarea required name="qualificationsAndRequirements" placeholder="Semicolon-separated qualifications">
+              TEST23</textarea>
+            <label>Benefits</label>
+            <textarea required name="benefits" placeholder="Semicolon-separated benefits">
+              TEST23</textarea>
+          </div>
+
+          <div class="upload__column">
+            <h3 class="upload__heading">Additional Details</h3>
+            <label>Tags</label>
+            <input value="TEST23" required name="tags" type="text"
+              placeholder="Comma-separated, e.g., JavaScript,React" />
+            <label>Engagement Type</label>
+            <input value="TEST23" required name="engagementType" type="text" placeholder="E.g., Full-time, Part-time" />
+            <label>Work Arrangement</label>
+            <input value="TEST23" required name="workArrangement" type="text" placeholder="E.g., Remote, On-site" />
+            <label>Contact Person </label>
+            <input value="TEST23" required name="contactPerson" type="text" placeholder="E.g., Jane Doe" />
+            <label>Contact Email
+              <span class="note">This email will be the recipient address for all
+                applications</span></label>
+            <input value="TEST23@gmail.com" required name="contactPersonEmail" type="email"
+              placeholder="E.g., jane.doe@example.com" />
+            <label>Experience Required</label>
+            <input value="TEST23" name="experienceRequired" type="text"
+              placeholder="Comma-separated, e.g., Junior, Senior" />
+            <label>Deadline</label>
+            <input required name="endingDate" type="date" />
+          </div>
+
+          <button class="btn upload__btn" type="submit">
+            <svg>
+              <use href="img/icons.svg#icon-upload-cloud"></use>
+            </svg>
+            <span>Publish Opportunity</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="overlay overlay--login hidden-oppacity"></div>
+      <div class="login-form-window hidden-oppacity">
+        <button class="btn--close-modal login-btn--close-modal">&times;</button>
+        <form class="login-form">
+          <div class="login__column">
+            <h3 class="login__heading">Log In</h3>
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" required type="email" placeholder="Enter your email" />
+
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" required type="password" placeholder="Enter your password" />
+
+            <button class="login__btn" type="submit">
+              <svg>
+                <use href="img/icons.svg#icon-login"></use>
+              </svg>
+              <span>Log In</span>
+            </button>
+          </div>
+
+          <div class="login__footer">
+            <!-- <p>Don't have an account? <a href="#" id="signUpLink">Sign Up</a></p> -->
+            <p>
+              Don't have an account?
+              <button class="show__signup__btn" id="openSignUpForm" type="button">
+                Sign Up
+              </button>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="overlay overlay--logout hidden-oppacity"></div>
+      <div class="logout-form-window hidden-oppacity">
+        <button class="btn--close-modal logout-btn--close-modal">&times;</button>
+        <form class="logout-form">
+          <div class="logout__column">
+            <h3 class="logout__heading">Log Out</h3>
+            <p class="logout__message">
+              You are currently logged in as
+              <span id="logoutUserName">Name Surname</span>. Do you want to log
+              out?
+            </p>
+            <button class="btn logout__btn" type="submit">
+              <svg>
+                <use href="img/icons.svg#icon-logout"></use>
+              </svg>
+              <span>Log Out</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="overlay overlay--signup hidden-oppacity"></div>
+      <div class="signup-form-window hidden-oppacity">
+        <button class="btn--close-modal signup-btn--close-modal">&times;</button>
+
+        <!-- Sign-Up Form -->
+        <form class="signup-form">
+          <div class="signup__column">
+            <h3 class="signup__heading">Sign Up</h3>
+
+            <div class="disclaimer">
+              <p>
+                We use your data to enhance your user journey on our platform by
+                simplifying the application process.
+              </p>
+            </div>
+
+            <!-- <label for="user-type">User Type</label>
         <select id="user-type" required>
           <option value="" disabled selected>Select User Type</option>
           <option>Student</option>
           <option>Deutsche Telekom</option>
         </select> -->
 
-        <label for="name">Name and Surname</label>
-        <input id="name" name="nameAndSurname" required type="text" placeholder="Enter your name and surname" />
+            <label for="name">Name and Surname</label>
+            <input id="name" name="nameAndSurname" required type="text" placeholder="Enter your name and surname" />
 
-        <label for="signUpEmail">Email <span class="note">please use your university or company email
-            address</span></label>
-        <input id="signUpEmail" name="email" required type="email" placeholder="Enter your email" />
-        <p class="signup__emailError hidden">*Invalid email domain. Please use your university or Telekom
-          email.</p>
+            <label for="signUpEmail">Email
+              <span class="note">please use your university or company email address</span></label>
+            <input id="signUpEmail" name="email" required type="email" placeholder="Enter your email" />
+            <p class="signup__emailError hidden">
+              *Invalid email domain. Please use your university or Telekom email.
+            </p>
 
-        <label for="signUpPassword">Password</label>
-        <input id="signUpPassword" name="password" required type="password" placeholder="Enter your password" />
+            <label for="signUpPassword">Password</label>
+            <input id="signUpPassword" name="password" required type="password" placeholder="Enter your password" />
 
-        <button class="btn signup__btn" type="submit">
-          <svg>
-            <use href="img/icons.svg#icon-signup"></use>
-          </svg>
-          <span>Sign Up</span>
-        </button>
+            <button class="btn signup__btn" type="submit">
+              <svg>
+                <use href="img/icons.svg#icon-signup"></use>
+              </svg>
+              <span>Sign Up</span>
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
 
-  <div class="overlay overlay--apply hidden-oppacity"></div>
-  <div class="apply-form-window hidden-oppacity">
-    <button class="btn--close-modal apply-btn--close-modal">&times;</button>
-    <form class="apply-form">
-      <div class="apply__column">
-        <h3 class="apply__heading">Apply Now</h3>
+      <div class="overlay overlay--apply hidden-oppacity"></div>
+      <div class="apply-form-window hidden-oppacity">
+        <button class="btn--close-modal apply-btn--close-modal">&times;</button>
+        <form class="apply-form">
+          <div class="apply__column">
+            <h3 class="apply__heading">Apply Now</h3>
 
-        <div class="disclaimer">
-          <p>Your information is auto-generated based on your email. After applying, you will receive a confirmation
-            email
-            with your details.</p>
-        </div>
+            <div class="disclaimer">
+              <p>
+                Your information is auto-generated based on your email. After
+                applying, you will receive a confirmation email with your details.
+              </p>
+            </div>
 
-        <label for="cvUpload">Upload Your CV (optional)</label>
-        <input id="cvUpload" name="cvUpload" type="file" accept=".pdf, .doc, .docx" />
+            <label for="cvUpload">Upload Your CV (optional)</label>
+            <input id="cvUpload" name="cvUpload" type="file" accept=".pdf, .doc, .docx" />
 
-        <p class="apply__note">*Only PDF, DOC, and DOCX files are accepted.</p>
+            <p class="apply__note">
+              *Only PDF, DOC, and DOCX files are accepted.
+            </p>
 
-        <button class="btn apply__btn" type="submit">
-          <svg>
-            <use href="img/icons.svg#icon-apply"></use>
-          </svg>
-          <span>Apply</span>
-        </button>
+            <button class="btn apply__btn" type="submit">
+              <svg>
+                <use href="img/icons.svg#icon-apply"></use>
+              </svg>
+              <span>Apply</span>
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
-
 </body>
 
 </html>

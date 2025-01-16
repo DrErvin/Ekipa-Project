@@ -13,30 +13,29 @@ import logoutView from './views/logoutView.js';
 import signupView from './views/signupView.js';
 import applyView from './views/applyView.js';
 import PDFView from './views/PDFView.js';
-import featuredOpportunitiesView from './views/FeaturedOpportunitiesView.js';
-import { fetchFeaturedOpportunities } from './model.js';
+import featuredView from './views/featuredView.js';
 
 const controlFeaturedOpportunities = async function () {
   try {
     // Fetch data from the server
-    const data = await fetchFeaturedOpportunities();
+    const data = await model.fetchFeaturedOpportunities();
     console.log('Fetched Featured Opportunities:', data); // Debug log
 
     // Render the opportunities
-    featuredOpportunitiesView.render(data);
+    featuredView.render(data);
   } catch (err) {
-    featuredOpportunitiesView.renderError();
+    featuredView.renderError();
     console.error(err);
   }
 };
 
 // Initialize the rendering process
-const initFeaturedOpportunities = function () {
-  window.addEventListener('load', controlFeaturedOpportunities);
-};
+//const initFeaturedOpportunities = function () {
+//window.addEventListener('load', controlFeaturedOpportunities);
+//};
 
-initFeaturedOpportunities();
-console.log(RES_PER_PAGE);
+//initFeaturedOpportunities();
+//console.log(RES_PER_PAGE);
 
 const controlOpportunities = async function () {
   try {
@@ -378,6 +377,7 @@ const init = function () {
   signupView.addHandlerUpload(controlSignup);
   signupView.addHandlerValidation(controlValidateEmail);
   applyView.addHandlerApply(controlApplication);
+  featuredView.addHandlerFeatured(controlFeaturedOpportunities);
   // controlOpportunities();
 };
 init();
