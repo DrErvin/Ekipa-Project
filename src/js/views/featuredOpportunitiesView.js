@@ -14,7 +14,10 @@ class FeaturedOpportunitiesView extends View {
 
   renderError() {
     this._clear();
-    this._parentElement.insertAdjacentHTML('afterbegin', `<p>${this._errorMessage}</p>`);
+    this._parentElement.insertAdjacentHTML(
+      'afterbegin',
+      `<p>${this._errorMessage}</p>`
+    );
   }
 
   _clear() {
@@ -27,7 +30,9 @@ class FeaturedOpportunitiesView extends View {
         (opportunity) => `
         <div class="opportunity-item">
           <h3>${opportunity.title || 'Untitled Opportunity'}</h3>
-          <p>${opportunity.company || 'Unknown Company'} - ${opportunity.location || 'Location not specified'}</p>
+          <p>${opportunity.type || 'Unknown Type'} - ${
+          opportunity.location || 'Location not specified'
+        }</p>
           <a href="#${opportunity.id}" class="view-opportunity-btn">
             View Opportunity
           </a>
