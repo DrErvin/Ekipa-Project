@@ -39,13 +39,16 @@ class PDFView {
       ? opportunity.tags
       : [opportunity.tags];
 
+    const today = new Date();
+    const formattedToday = today.toLocaleDateString();
+
     doc.setFontSize(14);
     const headerInfo = [
       `Type: ${opportunity.type}`,
       `Location: ${opportunity.location}`,
       `Experience: ${experienceList.join(', ')}`,
       `Engagement: ${opportunity.engagementType}`,
-      `Deadline: ${opportunity.deadline}`,
+      `Deadline: ${opportunity.deadline} from ${formattedToday}`,
       `Tags: ${tagsList.join(', ')}`,
     ];
 
