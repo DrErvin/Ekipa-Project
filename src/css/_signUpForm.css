@@ -10,7 +10,8 @@
 }
 
 .disclaimer p {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
   color: #666;
   margin: 0;
 }
@@ -47,7 +48,7 @@
 }
 
 .signup-form label {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: var(--color-primary-darker);
   margin-bottom: 5px;
@@ -57,7 +58,7 @@
 .signup-form select {
   width: 100%;
   padding: 10px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #666;
@@ -73,6 +74,7 @@
 }
 
 .signup__btn {
+  font-family: 'TeleNeoWeb', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +85,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: bold;
   text-transform: uppercase;
   /* margin-top: 15px; */
@@ -95,13 +97,13 @@
 }
 
 .signup__btn svg {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.7rem;
+  height: 1.7rem;
   fill: var(--color-ternary);
 }
 
 .note {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #666;
   font-style: italic;
   font-weight: normal;

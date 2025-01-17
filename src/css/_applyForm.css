@@ -32,7 +32,7 @@
 }
 
 .apply-form label {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: var(--color-primary-darker);
   margin-bottom: 5px;
@@ -41,7 +41,7 @@
 .apply-form input[type='file'] {
   width: 100%;
   padding: 10px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #666;
@@ -55,6 +55,7 @@
 }
 
 .apply__btn {
+  font-family: 'TeleNeoWeb', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,7 +66,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: bold;
   text-transform: uppercase;
   margin: 15px auto 0;
@@ -76,13 +77,13 @@
 }
 
 .apply__btn svg {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.7rem;
+  height: 1.7rem;
   fill: var(--color-ternary);
 }
 
 .apply__note {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #666;
   font-style: italic;
   font-weight: normal;
