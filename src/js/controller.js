@@ -17,8 +17,10 @@ import featuredView from './views/featuredView.js';
 
 const controlFeaturedOpportunities = async function () {
   try {
+    featuredView.renderSpinner();
+
     // Fetch data from the server
-    const data = await model.fetchFeaturedOpportunities();
+    const data = await model.fetchFeatured();
     console.log('Fetched Featured Opportunities:', data); // Debug log
 
     // Render the opportunities
@@ -29,12 +31,6 @@ const controlFeaturedOpportunities = async function () {
   }
 };
 
-// Initialize the rendering process
-//const initFeaturedOpportunities = function () {
-//window.addEventListener('load', controlFeaturedOpportunities);
-//};
-
-//initFeaturedOpportunities();
 //console.log(RES_PER_PAGE);
 
 const controlOpportunities = async function () {
@@ -365,6 +361,7 @@ const controlDownloadPDF = function () {
 };
 
 const init = function () {
+  featuredView.addHandlerFeatured(controlFeaturedOpportunities);
   SearchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   opportunitiesView.addHandlerRender(controlOpportunities);
@@ -377,7 +374,6 @@ const init = function () {
   signupView.addHandlerUpload(controlSignup);
   signupView.addHandlerValidation(controlValidateEmail);
   applyView.addHandlerApply(controlApplication);
-  featuredView.addHandlerFeatured(controlFeaturedOpportunities);
   // controlOpportunities();
 };
 init();

@@ -481,11 +481,13 @@ export const submitApplication = async function (formData) {
   }
 };
 
-export const fetchFeaturedOpportunities = async function () {
+export const fetchFeatured = async function () {
   try {
-    const res = await fetch(`${API_URL}/opportunities`);
-    if (!res.ok) throw new Error('Failed to fetch opportunities');
-    const data = await res.json();
+    // const res = await fetch(`${API_URL}/opportunities`);
+    // if (!res.ok) throw new Error('Failed to fetch opportunities');
+    // const data = await res.json();
+
+    const data = await AJAX(`${API_URL}/opportunities`);
 
     // Filter opportunities to only include those that are featured
     const featuredOpportunities = data.filter(
