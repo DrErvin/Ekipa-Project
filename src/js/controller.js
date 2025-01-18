@@ -2,6 +2,7 @@
 import { RES_PER_PAGE } from './config.js';
 import { MODAL_CLOSE_SEC } from './config.js';
 import * as model from './model.js';
+import featuredView from './views/featuredView.js';
 import SearchView from './views/SearchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
@@ -13,7 +14,6 @@ import logoutView from './views/logoutView.js';
 import signupView from './views/signupView.js';
 import applyView from './views/applyView.js';
 import PDFView from './views/PDFView.js';
-import featuredView from './views/featuredView.js';
 
 const controlFeaturedOpportunities = async function () {
   try {
@@ -358,6 +358,11 @@ const controlDownloadPDF = function () {
   const opportunity = model.state.opportunity;
 
   PDFView.generatePDF(opportunity);
+};
+
+const controlAdminDashboard = function () {
+  adminView.scrollUp();
+  adminView.updateAdminButton();
 };
 
 const init = function () {
