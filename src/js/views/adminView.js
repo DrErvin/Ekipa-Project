@@ -6,9 +6,8 @@ class adminView extends View {
     'We could not load the admin dashboard. Please try another time!';
   _message = '';
 
-  _btnShow = document.querySelector('#publishOpportunities');
+  _btnShow = document.querySelector('#admin-btn');
   #sectionToShow = this._parentElement;
-  #telekomPermission = null;
 
   constructor() {
     super();
@@ -16,31 +15,24 @@ class adminView extends View {
     // this._addHandlerHideWindow();
   }
 
-  toggleInit() {
+  #showSection() {
     // this.#toggleSections();
     this.toggleSections([this.#sectionToShow]);
   }
 
-  addHandlerShowSection(isLoggedIn, handler) {
+  addHandlerShowSection(isLoggedIn) {
     this._btnShow.addEventListener('click', (e) => {
       e.preventDefault();
 
       if (!isLoggedIn('Telekom')) {
-        alert('You must be logged in as a Telekom user to apply.');
+        alert(
+          'You must be logged in as a Telekom user to access Admin Dashboard.'
+        );
         return;
       }
 
-      if (this._btnShow.textContent.trim() === 'Admin Dashboard') {
-        this.toggleInit();
-        handler();
-      }
+      this.#showSection();
     });
-  }
-
-  updateAdminButton() {
-    this._btnShow.textContent = this._parentElement.classList.contains('hidden')
-      ? 'Admin Dashboard'
-      : 'Publish Opportunities';
   }
 }
 export default new adminView();

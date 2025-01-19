@@ -25,7 +25,7 @@ class publishView extends View {
       e.preventDefault();
 
       if (!isLoggedIn('Telekom')) {
-        alert('You must be logged in as a Telekom user to apply.');
+        alert('You must be logged in as a Telekom user to publish.');
         return;
       }
 

@@ -14,6 +14,7 @@ import logoutView from './views/logoutView.js';
 import signupView from './views/signupView.js';
 import applyView from './views/applyView.js';
 import PDFView from './views/PDFView.js';
+import adminView from './views/adminView.js';
 
 const controlFeaturedOpportunities = async function () {
   try {
@@ -360,10 +361,7 @@ const controlDownloadPDF = function () {
   PDFView.generatePDF(opportunity);
 };
 
-const controlAdminDashboard = function () {
-  adminView.scrollUp();
-  adminView.updateAdminButton();
-};
+const controlAdminDashboard = function () {};
 
 const init = function () {
   featuredView.addHandlerFeatured(controlFeaturedOpportunities);
@@ -379,6 +377,7 @@ const init = function () {
   signupView.addHandlerUpload(controlSignup);
   signupView.addHandlerValidation(controlValidateEmail);
   applyView.addHandlerApply(controlApplication);
+  adminView.addHandlerShowSection(model.isLoggedIn);
   // controlOpportunities();
 };
 init();
