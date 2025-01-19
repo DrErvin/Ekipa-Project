@@ -468,10 +468,7 @@ export const submitApplication = async function (formData) {
     // console.log('Submitting application data:', formData);
 
     // Send FormData to the backend
-    const response = await sendFormData(
-      `${API_URL}/api/send-application-email`,
-      formData
-    );
+    const response = await sendFormData(`${API_URL}/applications`, formData);
 
     console.log('Application submitted successfully:', response);
     return response;
