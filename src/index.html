@@ -269,7 +269,7 @@
   </div>
 
   <div id="admin-content">
-    <section class="admin-section hidden">
+    <!-- <section class="admin-section hidden">
 
       <h1>Admin Dashboard</h1>
       <form class="admin-search-form">
@@ -279,6 +279,79 @@
         </div>
       </form>
 
+    </section> -->
+
+    <section class="admin-header hidden">
+      <div class="container">
+        <h2 class="header-title">Admin Dashboard</h2>
+        <p class="header-text">
+          Use smart search functionality to enhance your data.
+        </p>
+      </div>
+    </section>
+
+    <!-- Statistical Data Section -->
+    <section class="admin-statistics hidden">
+      <div class="statistics-container">
+        <div class="statistics-card">
+          <h3>Total Applications</h3>
+          <p>1,245</p>
+        </div>
+        <div class="statistics-card">
+          <h3>Active Listings</h3>
+          <p>347</p>
+        </div>
+        <div class="statistics-card pie-chart">
+          <h3>Application Breakdown</h3>
+          <canvas id="pieChart" width="200" height="200"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart Search Form -->
+    <section class="smart-search hidden">
+      <form class="admin-search-form">
+        <div class="admin-search-inputs">
+          <input type="text" placeholder="Smart Search applications..." name="search" required />
+          <button type="submit" class="btn-admin-search">Search</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Dynamic Search Results -->
+    <section class="admin-search-results hidden">
+      <h2>Search Results</h2>
+      <div class="admin-result-cards">
+        <!-- Cards will be dynamically loaded here -->
+        <div class="admin-card">
+          <div class="admin-card-content">
+            <h3 class="admin-card-title">Frontend Developer</h3>
+            <p class="admin-card-subtitle">Applicant: John Doe <span
+                class="admin-applicant-email">(john.doe@example.com)</span></p>
+            <div class="admin-card-details">
+              <p><strong>Application ID:</strong> 12345</p>
+              <p><strong>Opportunity Location:</strong> Berlin</p>
+              <p><strong>Applicant Country:</strong> Germany (California State University)</p>
+              <p><strong>Submitted:</strong> 2025-01-10</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-content">
+            <h3 class="admin-card-title">Backend Developer</h3>
+            <p class="admin-card-subtitle">Applicant: Jane Smith <span
+                class="admin-applicant-email">(jane.smith@example.com)</span></p>
+            <div class="admin-card-details">
+              <p><strong>Application ID:</strong> 67890</p>
+              <p><strong>Opportunity Location:</strong> Sarajevo</p>
+              <p><strong>Applicant Country:</strong> BiH (International University of Sarajevo)</p>
+              <p><strong>Submitted:</strong> 2025-01-12</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
   </div>

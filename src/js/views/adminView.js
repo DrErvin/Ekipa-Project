@@ -1,13 +1,18 @@
 import View from './View.js';
 
 class adminView extends View {
-  _parentElement = document.querySelector('.admin-section');
+  _parentElement = document.querySelector('#admin-content');
   _errorMessage =
     'We could not load the admin dashboard. Please try another time!';
   _message = '';
 
   _btnShow = document.querySelector('#admin-btn');
-  #sectionToShow = this._parentElement;
+  #sectionsToShow = [
+    document.querySelector('.smart-search'),
+    document.querySelector('.admin-statistics'),
+    document.querySelector('.admin-search-results'),
+    document.querySelector('.admin-header'),
+  ];
 
   constructor() {
     super();
@@ -17,7 +22,7 @@ class adminView extends View {
 
   #showSection() {
     // this.#toggleSections();
-    this.toggleSections([this.#sectionToShow]);
+    this.toggleSections(this.#sectionsToShow);
   }
 
   addHandlerShowSection(isLoggedIn) {
