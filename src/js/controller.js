@@ -15,6 +15,7 @@ import signupView from './views/signupView.js';
 import applyView from './views/applyView.js';
 import PDFView from './views/PDFView.js';
 import adminView from './views/adminView.js';
+import SmartSearchView from './views/SmartSearchView.js';
 
 const controlFeaturedOpportunities = async function () {
   try {
@@ -71,6 +72,7 @@ const controlOpportunities = async function () {
     opportunitiesView.renderError();
   }
 };
+
 // A handler function to process the search query
 const controlSearchResults = async function () {
   try {
@@ -361,7 +363,16 @@ const controlDownloadPDF = function () {
   PDFView.generatePDF(opportunity);
 };
 
-const controlAdminDashboard = function () {};
+const controlSmartSearch = async function () {
+  try {
+    // 1. Get the query from the SmartSearchView
+    const query = SmartSearchView.getQuery();
+    if (!query) return;
+    console.log(query);
+  } catch (err) {
+    console.error('💥', err);
+  }
+};
 
 const init = function () {
   featuredView.addHandlerFeatured(controlFeaturedOpportunities);
@@ -378,6 +389,7 @@ const init = function () {
   signupView.addHandlerValidation(controlValidateEmail);
   applyView.addHandlerApply(controlApplication);
   adminView.addHandlerShowSection(model.isLoggedIn);
+  SmartSearchView.addHandlerSearch(controlSmartSearch);
   // controlOpportunities();
 };
 init();
