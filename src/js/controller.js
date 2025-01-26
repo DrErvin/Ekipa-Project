@@ -369,6 +369,10 @@ const controlSmartSearch = async function () {
     const query = SmartSearchView.getQuery();
     if (!query) return;
     console.log(query);
+
+    // 2. Send the query to the backend or API for processing (placeholder logic)
+    const results = await model.performSmartSearch(query);
+    console.log('Smart Search Results:', results);
   } catch (err) {
     console.error('💥', err);
   }

@@ -495,3 +495,23 @@ export const fetchFeatured = async function () {
     throw err;
   }
 };
+
+export const performSmartSearch = async function (query) {
+  try {
+    // Direct fetch without timeout for smart search
+    const res = await fetch(`${API_URL}/smart-search`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query }),
+    });
+
+    if (!res.ok) throw new Error(`Failed to fetch (${res.status})`);
+    const results = await res.json();
+
+    console.log('Smart search results:', results);
+    return results;
+  } catch (err) {
+    console.error('Error performing smart search:', err);
+    throw err;
+  }
+};
