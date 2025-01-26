@@ -43,6 +43,7 @@
 
 .form-heading {
   text-align: center;
+  font-size: 1.4rem;
 }
 
 /* Responsive Design */
@@ -66,6 +67,10 @@
     font-size: 0.95rem;
     padding: 8px 16px;
   }
+
+  .form-heading {
+    font-size: 1.1rem;
+  }
 }
 @media (max-width: 480px) {
   .admin-search-inputs input {
@@ -76,5 +81,9 @@
   .btn-admin-search {
     font-size: 0.85rem;
     padding: 6px 12px;
+  }
+
+  .form-heading {
+    font-size: 0.9rem;
   }
 }
