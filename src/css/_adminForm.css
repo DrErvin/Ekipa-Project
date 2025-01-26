@@ -41,6 +41,10 @@
   background-color: var(--color-primary-darker);
 }
 
+.form-heading {
+  text-align: center;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .admin-search-inputs {
