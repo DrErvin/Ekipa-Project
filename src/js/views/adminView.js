@@ -10,7 +10,7 @@ class adminView extends View {
   #sectionsToShow = [
     document.querySelector('.smart-search'),
     document.querySelector('.admin-statistics'),
-    document.querySelector('.admin-search-results'),
+
     document.querySelector('.admin-header'),
   ];
 
