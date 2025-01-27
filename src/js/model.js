@@ -516,3 +516,23 @@ export const performSmartSearch = async function (query) {
     throw err;
   }
 };
+
+export const fetchAllOpportunities = async function () {
+  try {
+    const opportunities = await AJAX(`${API_URL}/opportunities`);
+    return opportunities;
+  } catch (err) {
+    console.error('Error fetching opportunities:', err);
+    throw err;
+  }
+};
+
+export const fetchAllApplications = async function () {
+  try {
+    const applications = await AJAX(`${API_URL}/applications`);
+    return applications;
+  } catch (err) {
+    console.error('Error fetching applications:', err);
+    throw err;
+  }
+};

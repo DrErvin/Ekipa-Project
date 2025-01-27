@@ -20,12 +20,29 @@ class adminView extends View {
     // this._addHandlerHideWindow();
   }
 
-  #showSection() {
+  _showSection() {
     // this.#toggleSections();
     this.toggleSections(this.#sectionsToShow);
   }
 
-  addHandlerShowSection(isLoggedIn) {
+  renderStats(opportunities, applications) {
+    // Calculate active opportunities
+    const activeOpportunities = opportunities.filter((opp) => {
+      const currentDate = new Date();
+      const endingDate = new Date(opp.endingDate);
+      return endingDate >= currentDate;
+    }).length;
+
+    // Total applications count
+    const totalApplications = applications.length;
+
+    document.querySelector('#opportunities-count').textContent =
+      activeOpportunities;
+    document.querySelector('#applications-count').textContent =
+      totalApplications;
+  }
+
+  addHandlerShowSection(handler, isLoggedIn) {
     this._btnShow.addEventListener('click', (e) => {
       e.preventDefault();
 
@@ -36,7 +53,7 @@ class adminView extends View {
         return;
       }
 
-      this.#showSection();
+      handler();
     });
   }
 }

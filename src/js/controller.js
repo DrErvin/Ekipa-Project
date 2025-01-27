@@ -364,6 +364,21 @@ const controlDownloadPDF = function () {
   PDFView.generatePDF(opportunity);
 };
 
+const controlAdminDashboard = async function () {
+  try {
+    adminView._showSection();
+
+    // Fetch all opportunities and applications
+    const opportunities = await model.fetchAllOpportunities();
+    const applications = await model.fetchAllApplications();
+
+    adminView.renderStats(opportunities, applications);
+  } catch (err) {
+    console.error('💥', err);
+    adminView.renderError(err.message);
+  }
+};
+
 const controlSmartSearch = async function () {
   try {
     smartResultsView.renderSpinner();
@@ -400,7 +415,7 @@ const init = function () {
   signupView.addHandlerUpload(controlSignup);
   signupView.addHandlerValidation(controlValidateEmail);
   applyView.addHandlerApply(controlApplication);
-  adminView.addHandlerShowSection(model.isLoggedIn);
+  adminView.addHandlerShowSection(controlAdminDashboard, model.isLoggedIn);
   SmartSearchView.addHandlerSearch(controlSmartSearch);
   // controlOpportunities();
 };
