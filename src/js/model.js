@@ -499,6 +499,8 @@ export const fetchFeatured = async function () {
 export const performSmartSearch = async function (query) {
   try {
     // Direct fetch without timeout for smart search
+    // Using of native JS fetch instead of our custom AJAX function
+    // due to current configuration of backend server, this is needed
     const res = await fetch(`${API_URL}/smart-search`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -508,7 +510,6 @@ export const performSmartSearch = async function (query) {
     if (!res.ok) throw new Error(`Failed to fetch (${res.status})`);
     const results = await res.json();
 
-    console.log('Smart search results:', results);
     return results;
   } catch (err) {
     console.error('Error performing smart search:', err);

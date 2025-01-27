@@ -16,6 +16,7 @@ import applyView from './views/applyView.js';
 import PDFView from './views/PDFView.js';
 import adminView from './views/adminView.js';
 import SmartSearchView from './views/SmartSearchView.js';
+import smartResultsView from './views/smartResultsView.js';
 
 const controlFeaturedOpportunities = async function () {
   try {
@@ -365,6 +366,9 @@ const controlDownloadPDF = function () {
 
 const controlSmartSearch = async function () {
   try {
+    smartResultsView.renderSpinner();
+    smartResultsView.toggleInit();
+
     // 1. Get the query from the SmartSearchView
     const query = SmartSearchView.getQuery();
     if (!query) return;
@@ -373,8 +377,12 @@ const controlSmartSearch = async function () {
     // 2. Send the query to the backend or API for processing (placeholder logic)
     const results = await model.performSmartSearch(query);
     console.log('Smart Search Results:', results);
+
+    // 3. Render the results
+    smartResultsView.render(results);
   } catch (err) {
     console.error('💥', err);
+    smartResultsView.renderError(err.message);
   }
 };
 
