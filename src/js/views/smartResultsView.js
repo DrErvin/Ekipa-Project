@@ -5,17 +5,17 @@ class smartResultsView extends View {
   _errorMessage = 'No applications found for your query! Please try again';
   _message = '';
 
-  #sectionsToShow = [
+  _sectionsToShow = [
     document.querySelector('.admin-search-results'),
     document.querySelector('.smart-search'),
     document.querySelector('.admin-statistics'),
     document.querySelector('.admin-header'),
   ];
 
-  toggleInit() {
-    // this.#toggleSections();
-    this.toggleSections(this.#sectionsToShow);
-  }
+  // toggleInit() {
+  //   // this.#toggleSections();
+  //   this.toggleSections(this.#sectionsToShow);
+  // }
 
   _generateMarkup() {
     return this._data

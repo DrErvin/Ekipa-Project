@@ -7,7 +7,7 @@ class adminView extends View {
   _message = '';
 
   _btnShow = document.querySelector('#admin-btn');
-  #sectionsToShow = [
+  _sectionsToShow = [
     document.querySelector('.smart-search'),
     document.querySelector('.admin-statistics'),
 
@@ -20,10 +20,10 @@ class adminView extends View {
     // this._addHandlerHideWindow();
   }
 
-  _showSection() {
-    // this.#toggleSections();
-    this.toggleSections(this.#sectionsToShow);
-  }
+  // _showSection() {
+  //   // this.#toggleSections();
+  //   this.toggleSections(this.#sectionsToShow);
+  // }
 
   renderStats(opportunities, applications) {
     // Calculate active opportunities

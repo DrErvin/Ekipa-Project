@@ -70,7 +70,9 @@ export default class View {
   //   if (visibleSection) visibleSection.classList.remove('hidden');
   // }
 
-  toggleSections(visibleSections = []) {
+  toggleSections() {
+    //visibleSections = []
+    const visibleSections = this._sectionsToShow;
     const sections = document.querySelectorAll('section');
 
     sections.forEach((section) => {

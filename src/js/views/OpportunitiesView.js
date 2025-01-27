@@ -8,7 +8,7 @@ class opportunitiesView extends View {
   _errorMessage = 'We could not find that Opportunity. Please try another one!';
   _message = '';
 
-  #sectionToShow = document.querySelector('.details-opportunity');
+  _sectionsToShow = [document.querySelector('.details-opportunity')];
   #telekomPermission = null;
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach((ev) =>
@@ -23,17 +23,22 @@ class opportunitiesView extends View {
   //   this.#detailsContent.classList.remove('hidden');
   // }
 
-  toggleInit() {
-    // this.#toggleSections();
-    this.toggleSections([this.#sectionToShow]);
-  }
+  // toggleInit() {
+  //   // this.#toggleSections();
+  //   this.toggleSections([this.#sectionToShow]);
+  // }
 
   addHandlerPermission(isLoggedIn) {
     this.#telekomPermission = isLoggedIn('Telekom');
   }
 
   updateButtons(isLoggedIn) {
-    if (this.#sectionToShow.classList.contains('hidden')) return;
+    if (
+      this._sectionsToShow.some((section) =>
+        section.classList.contains('hidden')
+      )
+    )
+      return;
 
     // Update the Telekom permission status
     this.#telekomPermission = isLoggedIn('Telekom');

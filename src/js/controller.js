@@ -47,7 +47,7 @@ const controlOpportunities = async function () {
     opportunitiesView.renderSpinner();
 
     // 1) Toggle sections visibility
-    opportunitiesView.toggleInit();
+    opportunitiesView.toggleSections();
 
     // 0) Update results view to mark selected search result
     // resultsView.update(model.getSearchResultsPage());
@@ -82,7 +82,7 @@ const controlSearchResults = async function () {
     resultsView.renderSpinner();
 
     // 1) Toggle sections visibility
-    resultsView.toggleInit();
+    resultsView.toggleSections();
 
     // 2) Get search query
     const query = SearchView.getQuery();
@@ -130,7 +130,7 @@ const controlPublishOpportunity = async function (newOpportunity) {
 
     // Render opportunity
     opportunitiesView.scrollUp();
-    opportunitiesView.toggleInit();
+    opportunitiesView.toggleSections();
     opportunitiesView.render(model.state.opportunity);
 
     // Success message
@@ -366,7 +366,7 @@ const controlDownloadPDF = function () {
 
 const controlAdminDashboard = async function () {
   try {
-    adminView._showSection();
+    adminView.toggleSections();
 
     // Fetch all opportunities and applications
     const opportunities = await model.fetchAllOpportunities();
@@ -382,7 +382,7 @@ const controlAdminDashboard = async function () {
 const controlSmartSearch = async function () {
   try {
     smartResultsView.renderSpinner();
-    smartResultsView.toggleInit();
+    smartResultsView.toggleSections();
 
     // 1. Get the query from the SmartSearchView
     const query = SmartSearchView.getQuery();
