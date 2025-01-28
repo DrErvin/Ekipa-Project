@@ -60,16 +60,19 @@ class adminView extends View {
   }
 
   renderPieChart(applicantsData) {
-    // Aggregate the data by country
+    // Aggregate the data by country with unique accounts
     const applicantsByCountry = applicantsData.reduce((acc, applicant) => {
       const country = applicant.university_location || 'Unknown';
-      acc[country] = (acc[country] || 0) + 1;
+      if (!acc[country]) acc[country] = new Set(); // Use a Set to ensure unique accounts
+      acc[country].add(applicant.id); // Add the unique account ID
       return acc;
     }, {});
 
     // Prepare labels and values for the chart
-    const labels = Object.keys(applicantsByCountry);
-    const values = Object.values(applicantsByCountry);
+    const labels = Object.keys(applicantsByCountry).map(
+      (country) => `${country} (${applicantsByCountry[country].size})` // Add counts to labels
+    );
+    const values = Object.values(applicantsByCountry).map((set) => set.size); // Get unique counts
 
     // Render the chart
     const ctx = document.getElementById('pieChart').getContext('2d');
