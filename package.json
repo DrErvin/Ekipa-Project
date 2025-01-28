@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/DrErvin/Ekipa-Project#readme",
   "dependencies": {
+    "chart.js": "^4.4.7",
     "jspdf": "^2.5.2"
   },
   "devDependencies": {

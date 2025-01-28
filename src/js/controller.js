@@ -371,8 +371,11 @@ const controlAdminDashboard = async function () {
     // Fetch all opportunities and applications
     const opportunities = await model.fetchAllOpportunities();
     const applications = await model.fetchAllApplications();
+    const applicantsData = await model.fetchAllApplicantsData();
 
     adminView.renderStats(opportunities, applications);
+
+    adminView.renderPieChart(applicantsData);
   } catch (err) {
     console.error('💥', err);
     adminView.renderError(err.message);

@@ -1,4 +1,7 @@
 import View from './View.js';
+import { Chart, registerables } from 'chart.js';
+
+Chart.register(...registerables);
 
 class adminView extends View {
   _parentElement = document.querySelector('#admin-content');
@@ -10,7 +13,6 @@ class adminView extends View {
   _sectionsToShow = [
     document.querySelector('.smart-search'),
     document.querySelector('.admin-statistics'),
-
     document.querySelector('.admin-header'),
   ];
 
@@ -54,6 +56,50 @@ class adminView extends View {
       }
 
       handler();
+    });
+  }
+
+  renderPieChart(applicantsData) {
+    // Aggregate the data by country
+    const applicantsByCountry = applicantsData.reduce((acc, applicant) => {
+      const country = applicant.university_location || 'Unknown';
+      acc[country] = (acc[country] || 0) + 1;
+      return acc;
+    }, {});
+
+    // Prepare labels and values for the chart
+    const labels = Object.keys(applicantsByCountry);
+    const values = Object.values(applicantsByCountry);
+
+    // Render the chart
+    const ctx = document.getElementById('pieChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Applicants by Country',
+            data: values,
+            backgroundColor: [
+              '#e20074', //#e20074-#FF6384
+              '#36A2EB',
+              '#FFCE56',
+              '#4BC0C0',
+              '#9966FF',
+              '#FF9F40',
+            ],
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+        },
+      },
     });
   }
 }

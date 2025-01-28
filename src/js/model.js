@@ -536,3 +536,21 @@ export const fetchAllApplications = async function () {
     throw err;
   }
 };
+
+export const fetchAllApplicantsData = async function () {
+  try {
+    // Fetch all applications and accounts
+    const applications = await fetchAllApplications();
+    const accounts = await AJAX(`${API_URL}/accounts`);
+
+    // Match user IDs in applications to accounts
+    const matchedAccounts = applications
+      .map((app) => accounts.find((acc) => acc.id === app.user_id))
+      .filter((account) => account !== undefined); // Filter out unmatched accounts
+
+    return matchedAccounts; // Return an array of matched account objects
+  } catch (err) {
+    console.error('Error fetching applicants data:', err);
+    throw err;
+  }
+};
