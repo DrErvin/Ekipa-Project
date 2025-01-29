@@ -16,6 +16,8 @@ For this project to function correctly, you must have the following:
 - This project uses the deepseek-v3 model for smart search functionality.
 - The DeepSeekV3 model runs locally using Ollama (currently preferred solution due to efficiency and time constraints).
 
+---
+
 ### 🔧 Project Setup (Frontend)
 
 **1. Install Dependencies**
@@ -40,6 +42,8 @@ This will launch the Vite development server, which will serve the frontend loca
 
 Default Localhost: http://localhost:8080/
 Vite configuration can be modified in `vite.config.js`
+
+---
 
 ### 🧠 Setting Up DeepSeekV3 AI Model (Locally via Ollama)
 
