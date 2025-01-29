@@ -1,79 +1,78 @@
-# Ekipa Project - Student Platform
+# Ekipa Project - Student Platform (Frontend)
 
-This is the frontend project for the Ekipa-Student Platform. The platform connects students with various opportunities like internships, jobs, and mentorships from Deutsche Telekom.
+This is the frontend project for the Ekipa-Student Platform, developed in collaboration with Deutsche Telekom. The platform connects students with various opportunities such as internships, jobs, and mentorship programs.
 
-⚠️ **Important:** This frontend application requires a separate backend project to function correctly. Please follow the instructions below to set up both the frontend and backend projects.
+### ⚠️ Important Prerequisites:
 
-### Requirements
+For this project to function correctly, you must have the following:
 
-1. [Node.js](https://nodejs.org/) installed on your machine.
-2. [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) (for running the frontend locally).
-3. Access to the backend repository.
+**1. Running a Separate Backend Repository**
 
-Make sure you locally host the backend project, instructions available in the backend repository readme file
-Backend Repo Link: https://github.com/DrErvin/Student_platform_server.git
+- Instructions on how to run and set up the backend are available in its README file.
+- Backend Repository: [Backend Repo Link](https://github.com/DrErvin/Student_platform_server.git)
 
-### Setting Up the Frontend
+**2. DeepSeek AI Model Running Locally**
 
-To run the frontend application you simply start the live server from the project root directory. Here are a few ways to run live server:
+- This project uses the deepseek-v3 model for smart search functionality.
+- The DeepSeekV3 model runs locally using Ollama (currently preferred solution due to efficiency and time constraints).
 
-1. Right-click anywhere in the editor and select "Open with Live Server".
-2. Click on the Go Live button in the status bar at the bottom of the editor.
-3. Using CLI, run `live-server` command in your favourite terminal.
+### 🔧 Project Setup (Frontend)
 
-## 🧪 Test Automation with Playwright
+**1. Install Dependencies**
 
-The testing/automation branch includes a comprehensive suite of automated tests written using **Playwright**. The suite includes **smoke tests** (critical path tests) and **functional tests** to verify the platform's features.
+Ensure you have Node.js installed on your machine. Then, clone this repository and install dependencies:
 
-### 🛠 Setup Instructions
-
-⚠️ **Important:** Once you cloned the repository and switched to **testing/automation** branch, **navigate to the playwright folder** from the project's root directory. Example instruction: `cd ./playwright/`
-
-Next, Install dependencies
-
-```bash
+```
+git clone https://github.com/DrErvin/Ekipa-Project.git
+cd Ekipa-Project
 npm install
-npx playwright install
 ```
 
-### 🚀 How to Run the Tests
+**2. Start the Frontend**
 
-#### Step 1
+To start the frontend development server, run:
 
-To run the tests you need to locally run the backend and the frontend application. For running the backend, instructions are provided in the readme file of the backend repository: https://github.com/DrErvin/Student_platform_server.git
-
-#### Step 2
-
-To run the frontend application you can't run the live-server anymore, but the http static server instead. Example instruction:
-
-```bash
- npm start
+```
+npm start
 ```
 
-#### Step 3
+This will launch the Vite development server, which will serve the frontend locally.
 
-Next, open up another terminal window to run tests. Navigate again to the playwright folder from the root directory. Now you can run tests.
+Default Localhost: http://localhost:8080/
+Vite configuration can be modified in `vite.config.js`
 
-##### Run All Tests
+### 🧠 Setting Up DeepSeekV3 AI Model (Locally via Ollama)
 
-```bash
-npx playwright test
+We use Deepseek's AI model in our project for smart search feature, to showcase AI integrity in our project.
+
+To enable AI-powered smart search functionality, you need to set up and run the **DeepSeekV3 model** locally.
+
+Why are we currently using V3 model instead of the newer R1 model? DeepSeek-R1 (7B) model has average response times (1:30 - 2:00 minutes) on our current development hardware, while DeepSeek-V3 model is averaging 20-30 seconds per response.
+
+**1. Install Ollama**
+
+Ollama simplifies managing and running local AI models. Download and install it from [Ollama's official website](https://ollama.com/).
+
+**2. Download and Run DeepSeekV3 Model**
+
+Once Ollama is installed, run the following command in any CLI to download and set up the model:
+
+```
+ollama run nezahatkorkmaz/deepseek-v3:latest
 ```
 
-#### Run Smoke Tests Only
+This command will automatically first pull and start the model. If you want to first just pull the model and then run it. You can use the following commands separetely:
 
-```bash
-npm run test:smoke
+```
+ollama pull nezahatkorkmaz/deepseek-v3:latest
+ollama run nezahatkorkmaz/deepseek-v3:latest
 ```
 
-#### Run Functional Tests Only
+**3. Verify Local AI API**
 
-```bash
-npm run test:functional
-```
+By default, Ollama hosts a local API out of the box after installing at: http://localhost:11434/
 
-### 📌 Notes
+You can test if the model is working by sending a request to the Generate a Completion API endpoint:
 
-- Ensure the backend server is running before executing the tests.
-- The tests are designed to run on **Chromium**, **Firefox**, and **WebKit** browsers.
-- All tests are executed in **headless mode** by default. If you want to run them with a visible browser window, append the `--headed` flag to the test command.
+- Endpoint: POST /api/generate
+- This project only uses this endpoint to process and generate responses.
