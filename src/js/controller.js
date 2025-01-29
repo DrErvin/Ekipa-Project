@@ -42,6 +42,12 @@ const controlOpportunities = async function () {
 
     if (!id) return;
 
+    // Ignore scrolling sections
+    if (id === 'featured-section' || id === 'newsletter-section') {
+      document.querySelector(`#${id}`)?.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
     // 0) Scroll the viewport to the top and render the loading spinner
     opportunitiesView.scrollUp();
     opportunitiesView.renderSpinner();

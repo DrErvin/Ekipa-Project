@@ -50,6 +50,10 @@
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Global Styling */
 body {
   font-family: 'TeleNeoWeb', sans-serif;
