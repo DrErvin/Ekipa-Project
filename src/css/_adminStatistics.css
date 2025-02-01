@@ -15,7 +15,8 @@
 .statistics-card {
   flex: 1;
   /* min-width: 200px; */
-  max-width: 300px;
+  max-width: 350px;
+  /* max-height: 350px; */
   padding: 20px;
   text-align: center;
   background: white;
