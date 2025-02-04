@@ -55,6 +55,7 @@ This is the main folder containing the project's source code.
 #### 📁 **img/**
 
 - Stores **images, icons, and logos** used in the frontend.
+- Has visuals of architecture and flow-charts of the project as a demonstration of the project architecture, features and data flow.
 
 #### 📁 **js/**
 
