@@ -13,6 +13,7 @@ Ekipa-Project/
 ├── src/                   # Source code for the frontend
 │ ├── css/                 # Stylesheets (CSS files)
 │ ├── img/                 # Images and icons
+│ | ├── visuals/           # Architecture visuals and feature flow-charts
 │ ├── js/                  # JavaScript codebase
 │ │ ├── views/             # UI components (HTML/JS for rendering)
 │ │ ├── config.js          # Configuration settings
@@ -55,7 +56,7 @@ This is the main folder containing the project's source code.
 #### 📁 **img/**
 
 - Stores **images, icons, and logos** used in the frontend.
-- Has visuals of architecture and flow-charts of the project as a demonstration of the project architecture, features and data flow.
+- **Visuals/** Has visuals of architecture and flow-charts of the project as a demonstration of the project architecture, features and data flow.
 
 #### 📁 **js/**
 
