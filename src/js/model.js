@@ -2,7 +2,7 @@ import {
   RES_PER_PAGE,
   API_URL,
   EMPLOYEE_INFO,
-  UNIVERSITY_API_URL,
+  // UNIVERSITY_API_URL,
 } from './config.js';
 import { AJAX, sendFormData } from './helpers.js';
 import { calculateRemainingDays } from './helpers.js';
