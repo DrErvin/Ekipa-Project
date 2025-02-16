@@ -342,7 +342,12 @@ export const clearLocalStorage = function () {
 export const preloadUniversityDomains = async function () {
   try {
     // Fetch university data from the API
-    const universities = await AJAX(`${UNIVERSITY_API_URL}/search`);
+    // const universities = await AJAX(
+    //   `${UNIVERSITY_API_URL}/search?country=germany`
+    // ); // http://universities.hipolabs.com/search?country=germany
+
+    // Local patch/fix for the universities.hipolabs API not working anymore
+    const universities = await AJAX(`${API_URL}/world-universities`);
 
     // Cache all university domains
     state.universityDomainsCache = universities.flatMap((uni) => uni.domains);
@@ -417,7 +422,7 @@ export const generateUserInfo = async function (email) {
 
     // Fetch university details only if it's a university domain
     // if (!isTelekomDomain) {
-    const universities = await AJAX(`${UNIVERSITY_API_URL}/search`);
+    const universities = await AJAX(`${API_URL}/world-universities`);
     const university = universities.find((uni) =>
       uni.domains.some((domain) => emailDomain.endsWith(domain))
     );
